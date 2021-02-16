@@ -11,9 +11,17 @@
 
 """
 
+def getNumberOfLinesFromUser():
+    numberOfLines = int(input("Number of lines to print out for pyramids? "))
+    return numberOfLines
+
+def getCharacterToPrint():
+    characterToPrint = input('Character to print pyramids? ')
+    return characterToPrint
+
 def main():
-    numberOfLines = 10
-    characterToPrint = '8'
+    numberOfLines = getNumberOfLinesFromUser()
+    characterToPrint = getCharacterToPrint()
 
     # Left Pyramid
     for lineIndex in range(numberOfLines):
