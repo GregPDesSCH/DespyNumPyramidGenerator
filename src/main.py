@@ -11,17 +11,12 @@
 
 """
 
+from conditions import numberIsAWholeNumber
+
 def printCommandMenu():
     print("Pick an option from one of the following:", "1 - Left Pyramid", "2 - Right Pyramid", "3 - Full Pyramid",
         "4 - Silhouette Pyramid", "5 - Upside Down Left Pyramid", "6 - Upside Down Right Pyramid", 
         "7 - Upside Down Pyrmaid", "8 - Silhouette Pyramid (Upside Down)", "9 - All Options", "10 - Quit", sep="\n")
-
-def numberIsAWholeNumber(rawNumber):
-    try:
-        int(rawNumber)
-        return True
-    except ValueError:
-        return False
 
 def getNumberOfLinesFromUser():
     rawNumberOfLines = ""
@@ -144,7 +139,7 @@ def main():
                 for lineIndex in range(numberOfLines):
                     print("".ljust(stepWidth * (lineIndex + 1), characterToPrint).ljust(stepWidth * numberOfLines) + \
                         "".rjust(stepWidth * (lineIndex + 1), characterToPrint).rjust(stepWidth * numberOfLines))
-            
+
 
 if __name__ == "__main__":
     main()
