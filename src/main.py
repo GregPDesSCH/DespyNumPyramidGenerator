@@ -12,6 +12,7 @@
 """
 
 from conditions import numberIsAWholeNumber
+from simple import getCharacterToPrint
 
 def printCommandMenu():
     print("Pick an option from one of the following:", "1 - Left Pyramid", "2 - Right Pyramid", "3 - Full Pyramid",
@@ -35,16 +36,6 @@ def getNumberOfLinesFromUser():
         
     return numberOfLines
 
-def getCharacterToPrint():
-    characterToPrint = ""
-    while len(characterToPrint) != 1:
-        characterToPrint = input('Character to print pyramids? ')
-        if len(characterToPrint) == 0:
-            print("ERROR - Input must not be empty.")
-        elif len(characterToPrint) > 1:
-            print("ERROR - Input must be exactly one character long.")
-
-    return characterToPrint
 
 def getStepWidth():
     rawStepWidth = ""
