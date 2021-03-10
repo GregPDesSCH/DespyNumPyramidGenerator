@@ -47,3 +47,50 @@ def selectPrintCommand():
     
     return printCommand
 
+def printPyramid(printCommand, numberOfLines, characterToPrint, stepWidth):
+    if numberOfLines * stepWidth > 160:
+        print("ERROR - Maximum number of characters to be printed on the screen is 160. Please enter again.")
+    else:
+        if printCommand == 1 or printCommand == 9:
+            # Left Pyramid
+            for lineIndex in range(numberOfLines):
+                print("".ljust(stepWidth * (lineIndex + 1), characterToPrint).ljust(stepWidth * numberOfLines))
+
+        if printCommand == 2 or printCommand == 9:
+            # Right Pyramid
+            for lineIndex in range(numberOfLines):
+                print("".ljust(stepWidth * (lineIndex + 1), characterToPrint).rjust(stepWidth * numberOfLines))
+
+        if printCommand == 3 or printCommand == 9:
+            # Full Pyramid
+            for lineIndex in range(numberOfLines):
+                print("".ljust(stepWidth * (lineIndex + 1), characterToPrint).rjust(stepWidth * numberOfLines) + \
+                    "".rjust(stepWidth * (lineIndex + 1), characterToPrint).ljust(stepWidth * numberOfLines))
+
+        if printCommand == 4 or printCommand == 9:
+            # Silhouette Pyramid
+            for lineIndex in range(numberOfLines):
+                print("".ljust(stepWidth * (numberOfLines - (lineIndex)), characterToPrint).ljust(stepWidth * numberOfLines) + \
+                    "".rjust(stepWidth * (numberOfLines - (lineIndex)), characterToPrint).rjust(stepWidth * numberOfLines))
+
+        if printCommand == 5 or printCommand == 9:
+            # Upside Down Left Pyramid
+            for lineIndex in range(numberOfLines):
+                print("".ljust(stepWidth * (numberOfLines - (lineIndex)), characterToPrint).ljust(stepWidth * numberOfLines))
+
+        if printCommand == 6 or printCommand == 9:
+            # Upside Down Right Pyramid
+            for lineIndex in range(numberOfLines):
+                print("".rjust(stepWidth * (numberOfLines - (lineIndex)), characterToPrint).rjust(stepWidth * numberOfLines))
+
+        if printCommand == 7 or printCommand == 9:
+            # Upside Down Pyramid
+            for lineIndex in range(numberOfLines):
+                print("".ljust(stepWidth * (numberOfLines - (lineIndex)), characterToPrint).rjust(stepWidth * numberOfLines) + \
+                    "".rjust(stepWidth * (numberOfLines - (lineIndex)), characterToPrint).ljust(stepWidth * numberOfLines))
+
+        if printCommand == 8 or printCommand == 9:
+            # Silhouette Pyramid (Upside Down)
+            for lineIndex in range(numberOfLines):
+                print("".ljust(stepWidth * (lineIndex + 1), characterToPrint).ljust(stepWidth * numberOfLines) + \
+                    "".rjust(stepWidth * (lineIndex + 1), characterToPrint).rjust(stepWidth * numberOfLines))
