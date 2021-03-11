@@ -11,23 +11,10 @@
 
 """
 
-from conditions import numberIsAWholeNumber
-from inputs import getNumberOfLinesFromUser, getStepWidth
-from simple import printCommandMenu, getCharacterToPrint, selectPrintCommand, printPyramid
+from simple import printSimplePyramids
 
 def main():
-    while True:
-        printCommand = selectPrintCommand()
-
-        if printCommand == 10:
-            break
-
-        numberOfLines = getNumberOfLinesFromUser()
-        characterToPrint = getCharacterToPrint()
-        stepWidth = getStepWidth()
-
-        printPyramid(printCommand, numberOfLines, characterToPrint, stepWidth)
-
+    printSimplePyramids()
 
 if __name__ == "__main__":
     main()

@@ -12,6 +12,7 @@
 """
 
 from conditions import numberIsAWholeNumber
+from inputs import getNumberOfLinesFromUser, getStepWidth
 
 def printCommandMenu():
     print("Pick an option from one of the following:", "1 - Left Pyramid", "2 - Right Pyramid", "3 - Full Pyramid",
@@ -94,3 +95,16 @@ def printPyramid(printCommand, numberOfLines, characterToPrint, stepWidth):
             for lineIndex in range(numberOfLines):
                 print("".ljust(stepWidth * (lineIndex + 1), characterToPrint).ljust(stepWidth * numberOfLines) + \
                     "".rjust(stepWidth * (lineIndex + 1), characterToPrint).rjust(stepWidth * numberOfLines))
+
+def printSimplePyramids():
+    while True:
+        printCommand = selectPrintCommand()
+
+        if printCommand == 10:
+            break
+
+        numberOfLines = getNumberOfLinesFromUser()
+        characterToPrint = getCharacterToPrint()
+        stepWidth = getStepWidth()
+
+        printPyramid(printCommand, numberOfLines, characterToPrint, stepWidth)
