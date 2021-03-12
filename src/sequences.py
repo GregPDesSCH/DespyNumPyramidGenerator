@@ -45,12 +45,25 @@ def generateSequence(sequenceName):
             total += currentAddend
             currentAddend += 1
 
+    elif sequenceName == "alternatingBits":
+        currentValue = 0
+        totalCharactersInNewSequence = 0
+        newSequence = [[], []]
+
+        while totalCharactersInNewSequence <= _maxNumberOfCharactersToPrint:
+            currentSequenceMember = str(currentValue)
+            newSequence[1].append(currentSequenceMember)
+            totalCharactersInNewSequence += len(currentSequenceMember)
+
+            currentValue = 1 if currentValue == 0 else 0
+
     newSequence[0].append("".join(newSequence[1]))
 
     return newSequence
 
 # For testing only
 if __name__ == "__main__":
-    print("Generating triangle sequence")
-    sequence = generateSequence("triangle")
-    print(sequence)
+    print("Generating alternatingBits sequence")
+    sequence = generateSequence("alternatingBits")
+    print(sequence[0])
+    print(sequence[1])
