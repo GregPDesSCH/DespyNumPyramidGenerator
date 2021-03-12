@@ -13,6 +13,8 @@
 
 _maxNumberOfCharactersToPrint = 12880
 
+#TODO: Move the generate sequence code to a new module called sequence generator.
+
 def generateSequence(sequenceName):
     newSequence = []
     currentSequenceMember = ""
@@ -60,6 +62,8 @@ def generateSequence(sequenceName):
     newSequence[0].append("".join(newSequence[1]))
 
     return newSequence
+
+#TODO: Add starting code to print out the sequences given the number of lines, the step width, and the sequence generated.
 
 # For testing only
 if __name__ == "__main__":
