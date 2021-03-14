@@ -63,11 +63,52 @@ def generateSequence(sequenceName):
 
     return newSequence
 
-#TODO: Add starting code to print out the sequences given the number of lines, the step width, and the sequence generated.
+
+def createLineSegment(sequence, maxLineSegmentLength, sequenceStringIndex):
+    currentLineSegment = ""
+    for _ in range(maxLineSegmentLength):
+        currentLineSegment += sequence[0][0][sequenceStringIndex[0]]
+        sequenceStringIndex[0] += 1
+    return currentLineSegment
+
+
+def generateSequenceLines(sequence, numberOfLines, stepWidth, pyramidIsUpsideDown, pyramidIsFull, pyramidIsSilhouette):
+    sequenceLines = []
+    sequenceStringIndex = [0]
+    maxLineSegmentLength = 0
+
+    if pyramidIsSilhouette == False and pyramidIsFull == False:
+        if pyramidIsUpsideDown == True:
+            maxLineSegmentLength = (numberOfLines + 1) * stepWidth
+
+        for _ in range(numberOfLines):
+            currentLine = ""
+            maxLineSegmentLength += stepWidth * (-1 if pyramidIsUpsideDown == True else 1)
+            sequenceLines.append(createLineSegment(sequence, maxLineSegmentLength, sequenceStringIndex))
+    else:
+        for lineNumber in range(numberOfLines):
+            currentLine = []
+            
+            if pyramidIsSilhouette == True and pyramidIsUpsideDown == False or pyramidIsSilhouette == False \
+                    and pyramidIsUpsideDown == True:
+                maxLineSegmentLength = numberOfLines - lineNumber * stepWidth
+            else:
+                maxLineSegmentLength = (lineNumber + 1) * stepWidth
+
+            currentLine.append(createLineSegment(sequence, maxLineSegmentLength, sequenceStringIndex))
+            currentLine.append(createLineSegment(sequence, maxLineSegmentLength, sequenceStringIndex))
+            sequenceLines.append(currentLine)
+
+
+    return sequenceLines
 
 # For testing only
 if __name__ == "__main__":
     print("Generating alternatingBits sequence")
     sequence = generateSequence("alternatingBits")
-    print(sequence[0])
-    print(sequence[1])
+    print(generateSequenceLines(sequence, 10, 1, False, False, False))
+    print(generateSequenceLines(sequence, 10, 1, False, True, False))
+    print(generateSequenceLines(sequence, 10, 1, False, False, True))
+    print(generateSequenceLines(sequence, 10, 1, True, False, False))
+    print(generateSequenceLines(sequence, 10, 1, True, True, False))
+    print(generateSequenceLines(sequence, 10, 1, True, False, True))
