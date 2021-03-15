@@ -11,6 +11,8 @@
 
 """
 
+from inputs import selectPrintCommand, getNumberOfLinesFromUser, getStepWidth
+
 _maxNumberOfCharactersToPrint = 12880
 
 def generateSequence(sequenceName):
@@ -89,14 +91,13 @@ def generateSequenceLines(sequence, numberOfLines, stepWidth, pyramidIsUpsideDow
             
             if pyramidIsSilhouette == True and pyramidIsUpsideDown == False or pyramidIsSilhouette == False \
                     and pyramidIsUpsideDown == True:
-                maxLineSegmentLength = numberOfLines - lineNumber * stepWidth
+                maxLineSegmentLength = stepWidth * numberOfLines - lineNumber * stepWidth
             else:
                 maxLineSegmentLength = (lineNumber + 1) * stepWidth
 
             currentLine.append(createLineSegment(sequence, maxLineSegmentLength, sequenceStringIndex))
             currentLine.append(createLineSegment(sequence, maxLineSegmentLength, sequenceStringIndex))
             sequenceLines.append(currentLine)
-
 
     return sequenceLines
 
@@ -106,59 +107,74 @@ def printPyramid(printCommand, sequence, numberOfLines, stepWidth):
         print("ERROR - Maximum number of characters to be printed on the screen is 160. Please enter again.")
     else:
         if printCommand == 1 or printCommand == 9:
-            pyramidLines = generateSequenceLines(sequence, 10, 1, False, False, False)
+            pyramidLines = generateSequenceLines(sequence, numberOfLines, stepWidth, False, False, False)
             # Left Pyramid
             for lineIndex in range(numberOfLines):
                 print(pyramidLines[lineIndex].ljust(stepWidth * (lineIndex + 1)).ljust(stepWidth * numberOfLines))
 
         if printCommand == 2 or printCommand == 9:
-            pyramidLines = generateSequenceLines(sequence, 10, 1, False, False, False)
+            pyramidLines = generateSequenceLines(sequence, numberOfLines, stepWidth, False, False, False)
             # Right Pyramid
             for lineIndex in range(numberOfLines):
                 print(pyramidLines[lineIndex].ljust(stepWidth * (lineIndex + 1)).rjust(stepWidth * numberOfLines))
 
         if printCommand == 3 or printCommand == 9:
-            pyramidLines = generateSequenceLines(sequence, 10, 1, False, True, False)
+            pyramidLines = generateSequenceLines(sequence, numberOfLines, stepWidth, False, True, False)
             # Full Pyramid
             for lineIndex in range(numberOfLines):
                 print(pyramidLines[lineIndex][0].rjust(stepWidth * numberOfLines) + \
                     pyramidLines[lineIndex][1].ljust(stepWidth * numberOfLines))
 
         if printCommand == 4 or printCommand == 9:
-            pyramidLines = generateSequenceLines(sequence, 10, 1, False, False, True)
+            pyramidLines = generateSequenceLines(sequence, numberOfLines, stepWidth, False, False, True)
             # Silhouette Pyramid
             for lineIndex in range(numberOfLines):
                 print(pyramidLines[lineIndex][0].ljust(stepWidth * numberOfLines) + \
                     pyramidLines[lineIndex][1].rjust(stepWidth * numberOfLines))
 
         if printCommand == 5 or printCommand == 9:
-            pyramidLines = generateSequenceLines(sequence, 10, 1, True, False, False)
+            pyramidLines = generateSequenceLines(sequence, numberOfLines, stepWidth, True, False, False)
             # Upside Down Left Pyramid
             for lineIndex in range(numberOfLines):
                 print(pyramidLines[lineIndex].ljust(stepWidth * numberOfLines))
 
         if printCommand == 6 or printCommand == 9:
-            pyramidLines = generateSequenceLines(sequence, 10, 1, True, False, False)
+            pyramidLines = generateSequenceLines(sequence, numberOfLines, stepWidth, True, False, False)
             # Upside Down Right Pyramid
             for lineIndex in range(numberOfLines):
                 print(pyramidLines[lineIndex].rjust(stepWidth * numberOfLines))
 
         if printCommand == 7 or printCommand == 9:
-            pyramidLines = generateSequenceLines(sequence, 10, 1, True, True, False)
+            pyramidLines = generateSequenceLines(sequence, numberOfLines, stepWidth, True, True, False)
             # Upside Down Pyramid
             for lineIndex in range(numberOfLines):
                 print(pyramidLines[lineIndex][0].rjust(stepWidth * numberOfLines) + \
                     pyramidLines[lineIndex][1].ljust(stepWidth * numberOfLines))
 
         if printCommand == 8 or printCommand == 9:
-            pyramidLines = generateSequenceLines(sequence, 10, 1, True, False, True)
+            pyramidLines = generateSequenceLines(sequence, numberOfLines, stepWidth, True, False, True)
             # Silhouette Pyramid (Upside Down)
             for lineIndex in range(numberOfLines):
                 print(pyramidLines[lineIndex][0].ljust(stepWidth * numberOfLines) + \
                     pyramidLines[lineIndex][1].rjust(stepWidth * numberOfLines))
 
+
+def printSequencePyramids(sequenceName):
+    sequence = generateSequence(sequenceName)
+    while True:
+        printCommand = selectPrintCommand()
+
+        if printCommand == 10:
+            break
+
+        numberOfLines = getNumberOfLinesFromUser()
+        stepWidth = getStepWidth()
+
+        printPyramid(printCommand, sequence, numberOfLines, stepWidth)
+
 # For testing only
 if __name__ == "__main__":
-    print("Generating alternatingBits sequence")
-    sequence = generateSequence("alternatingBits")
-    printPyramid(9, sequence, 10, 1)
+    # print("Generating alternatingBits sequence")
+    # sequence = generateSequence("alternatingBits")
+    # printPyramid(9, sequence, 10, 1)
+    printSequencePyramids("alternatingBits")
