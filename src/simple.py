@@ -12,7 +12,7 @@
 """
 
 from conditions import numberIsAWholeNumber
-from inputs import printCommandMenu, getNumberOfLinesFromUser, getStepWidth
+from inputs import printCommandMenu, selectPrintCommand, getNumberOfLinesFromUser, getStepWidth
 
 
 
@@ -27,23 +27,7 @@ def getCharacterToPrint():
 
     return characterToPrint
 
-def selectPrintCommand():
-    rawPrintCommand = ""
-    printCommand = 0
-    while len(rawPrintCommand) < 0 or len(rawPrintCommand) > 2 or printCommand < 1 or printCommand > 10 \
-        or not numberIsAWholeNumber(rawPrintCommand):
-        printCommandMenu()
-        rawPrintCommand = input('Select option [1-10]: ')
-        if len(rawPrintCommand) == 0:
-            print("ERROR - Input must not be empty.")
-        elif not numberIsAWholeNumber(rawPrintCommand):
-            print("ERROR - Input must be a whole positive number.")
-        else:
-            printCommand = int(rawPrintCommand)
-            if printCommand < 1 or printCommand > 10:
-                print("ERROR - Command must be in the range [1-8].")
-    
-    return printCommand
+
 
 def printPyramid(printCommand, numberOfLines, characterToPrint, stepWidth):
     if numberOfLines * stepWidth > 160:
