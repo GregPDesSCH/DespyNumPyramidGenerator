@@ -13,6 +13,11 @@
 
 from conditions import numberIsAWholeNumber
 
+def printCommandMenu():
+    print("Pick an option from one of the following:", "1 - Left Pyramid", "2 - Right Pyramid", "3 - Full Pyramid",
+        "4 - Silhouette Pyramid", "5 - Upside Down Left Pyramid", "6 - Upside Down Right Pyramid", 
+        "7 - Upside Down Pyrmaid", "8 - Silhouette Pyramid (Upside Down)", "9 - All Options", "10 - Quit", sep="\n")
+
 def getNumberOfLinesFromUser():
     rawNumberOfLines = ""
     numberOfLines = 0
