@@ -12,7 +12,7 @@
 """
 
 from conditions import numberIsAWholeNumber
-from inputs import printCommandMenu, selectPrintCommand, getNumberOfLinesFromUser, getStepWidth
+from inputs import selectPrintCommand, getNumberOfLinesFromUser, getStepWidth
 
 
 
