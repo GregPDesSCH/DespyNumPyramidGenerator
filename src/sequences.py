@@ -13,8 +13,6 @@
 
 _maxNumberOfCharactersToPrint = 12880
 
-#TODO: Move the generate sequence code to a new module called sequence generator.
-
 def generateSequence(sequenceName):
     newSequence = []
     currentSequenceMember = ""
