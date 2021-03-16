@@ -11,7 +11,8 @@
 
 """
 
-from inputs import selectPrintCommand, getNumberOfLinesFromUser, getStepWidth
+from conditions import numberOfCharactersToPrintIsTooHigh
+from inputs import selectPrintPyramidCommand, getNumberOfLinesFromUser, getStepWidth
 
 _maxNumberOfCharactersToPrint = 12880
 
@@ -103,7 +104,7 @@ def generateSequenceLines(sequence, numberOfLines, stepWidth, pyramidIsUpsideDow
 
 
 def printPyramid(printCommand, sequence, numberOfLines, stepWidth):
-    if numberOfLines * stepWidth > 160:
+    if numberOfCharactersToPrintIsTooHigh(printCommand, numberOfLines, stepWidth):
         print("ERROR - Maximum number of characters to be printed on the screen is 160. Please enter again.")
     else:
         if printCommand == 1 or printCommand == 9:
@@ -162,7 +163,7 @@ def printPyramid(printCommand, sequence, numberOfLines, stepWidth):
 def printSequencePyramids(sequenceName):
     sequence = generateSequence(sequenceName)
     while True:
-        printCommand = selectPrintCommand()
+        printCommand = selectPrintPyramidCommand()
 
         if printCommand == 10:
             break

@@ -11,8 +11,8 @@
 
 """
 
-from conditions import numberIsAWholeNumber
-from inputs import selectPrintCommand, getNumberOfLinesFromUser, getStepWidth
+from conditions import numberOfCharactersToPrintIsTooHigh
+from inputs import selectPrintPyramidCommand, getNumberOfLinesFromUser, getStepWidth
 
 
 
@@ -30,7 +30,7 @@ def getCharacterToPrint():
 
 
 def printPyramid(printCommand, numberOfLines, characterToPrint, stepWidth):
-    if numberOfLines * stepWidth > 160:
+    if numberOfCharactersToPrintIsTooHigh(printCommand, numberOfLines, stepWidth):
         print("ERROR - Maximum number of characters to be printed on the screen is 160. Please enter again.")
     else:
         if printCommand == 1 or printCommand == 9:
@@ -79,7 +79,7 @@ def printPyramid(printCommand, numberOfLines, characterToPrint, stepWidth):
 
 def printSimplePyramids():
     while True:
-        printCommand = selectPrintCommand()
+        printCommand = selectPrintPyramidCommand()
 
         if printCommand == 10:
             break
