@@ -13,17 +13,38 @@
 
 from conditions import numberIsAWholeNumber
 
-def printCommandMenu():
-    print("Pick an option from one of the following:", "1 - Left Pyramid", "2 - Right Pyramid", "3 - Full Pyramid",
-        "4 - Silhouette Pyramid", "5 - Upside Down Left Pyramid", "6 - Upside Down Right Pyramid", 
-        "7 - Upside Down Pyrmaid", "8 - Silhouette Pyramid (Upside Down)", "9 - All Options", "10 - Quit", sep="\n")
+def printMainMenu():
+    print("Pick which sequence you would like to perform printing on.", "1 - Simple", "2 - Fibonacci", "3 - Triangle", 
+        "4 - Alternating Bits", "5 - Quit Program", sep="\n")
 
-def selectPrintCommand():
+def selectSequence():
     rawPrintCommand = ""
     printCommand = 0
-    while len(rawPrintCommand) < 0 or len(rawPrintCommand) > 2 or printCommand < 1 or printCommand > 10 \
+    while len(rawPrintCommand) == 0 or len(rawPrintCommand) > 1 or printCommand < 1 or printCommand > 5 \
         or not numberIsAWholeNumber(rawPrintCommand):
-        printCommandMenu()
+        printMainMenu()
+        rawPrintCommand = input('Select option [1-5]: ')
+        if len(rawPrintCommand) == 0:
+            print("ERROR - Input must not be empty.")
+        elif not numberIsAWholeNumber(rawPrintCommand):
+            print("ERROR - Input must be a whole positive number.")
+        else:
+            printCommand = int(rawPrintCommand)
+            if printCommand < 1 or printCommand > 5:
+                print("ERROR - Command must be in the range [1-5].")
+    return printCommand
+
+def printPyramidCommandMenu():
+    print("Pick an option from one of the following:", "1 - Left Pyramid", "2 - Right Pyramid", "3 - Full Pyramid",
+        "4 - Silhouette Pyramid", "5 - Upside Down Left Pyramid", "6 - Upside Down Right Pyramid", 
+        "7 - Upside Down Pyrmaid", "8 - Silhouette Pyramid (Upside Down)", "9 - All Options", "10 - Back to Previous Menu", sep="\n")
+
+def selectPrintPyramidCommand():
+    rawPrintCommand = ""
+    printCommand = 0
+    while len(rawPrintCommand) == 0 or len(rawPrintCommand) > 2 or printCommand < 1 or printCommand > 10 \
+        or not numberIsAWholeNumber(rawPrintCommand):
+        printPyramidCommandMenu()
         rawPrintCommand = input('Select option [1-10]: ')
         if len(rawPrintCommand) == 0:
             print("ERROR - Input must not be empty.")
@@ -32,7 +53,7 @@ def selectPrintCommand():
         else:
             printCommand = int(rawPrintCommand)
             if printCommand < 1 or printCommand > 10:
-                print("ERROR - Command must be in the range [1-8].")
+                print("ERROR - Command must be in the range [1-10].")
     
     return printCommand
 
