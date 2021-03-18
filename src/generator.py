@@ -11,7 +11,10 @@
 
 """
 
+import math
+
 _maxNumberOfCharactersToPrint = 12880
+_maxNumberOfCharactersInOneLine = 160
 
 def generateSequence(sequenceName):
     newSequence = []
@@ -60,3 +63,47 @@ def generateSequence(sequenceName):
     newSequence[0].append("".join(newSequence[1]))
 
     return newSequence
+
+def generateNumberTriangle(numberTriangleName):
+    newNumberTriangle = []
+
+    if numberTriangleName == "pascal":
+        newNumberTriangle = [[1], [1, 1]]
+        currentCharactersInNewRow = 0
+        latestTriangleRowIndex = 1
+        
+        while True:
+            newTriangleRow = [1]
+            currentCharactersInNewRow = 2
+
+            newTriangleRowIndex = 1
+
+            while newTriangleRowIndex < len(newNumberTriangle[latestTriangleRowIndex]):
+                newValue = newNumberTriangle[latestTriangleRowIndex][newTriangleRowIndex - 1] + \
+                    newNumberTriangle[latestTriangleRowIndex][newTriangleRowIndex]
+
+                currentCharactersInNewRow += int(math.log10(newValue)) + 2
+
+                newTriangleRow.append(newValue)
+                newTriangleRowIndex += 1
+
+            latestTriangleRowIndex += 1
+            newTriangleRow.append(1)
+            currentCharactersInNewRow += 1
+
+            if currentCharactersInNewRow > _maxNumberOfCharactersInOneLine:
+                break
+
+            newNumberTriangle.append(newTriangleRow)
+        
+    return newNumberTriangle
+
+# For testing only
+if __name__ == "__main__":
+    print("Generating Pascal's Triangle")
+    triangle = generateNumberTriangle("pascal")
+    print("Generated Triangle:")
+    print(triangle)
+    for row in triangle:
+        print(row)
+    print("End")
