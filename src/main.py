@@ -12,6 +12,7 @@
 """
 
 from inputs import selectSequence
+from number_triangles import printNumberTrianglePyramids
 from sequences import printSequencePyramids
 from simple import printSimplePyramids
 
@@ -27,7 +28,9 @@ def main():
             printSequencePyramids("triangle")
         elif sequenceIndex == 4:
             printSequencePyramids("alternatingBits")
-        if sequenceIndex == 5:
+        elif sequenceIndex == 5:
+            printNumberTrianglePyramids("pascal")
+        if sequenceIndex == 6:
             break
 
 if __name__ == "__main__":

@@ -15,12 +15,12 @@ from conditions import numberIsAWholeNumber
 
 def printMainMenu():
     print("Pick which sequence you would like to perform printing on.", "1 - Simple", "2 - Fibonacci", "3 - Triangle", 
-        "4 - Alternating Bits", "5 - Quit Program", sep="\n")
+        "4 - Alternating Bits", "5 - Pascal's Triangle", "6 - Quit Program", sep="\n")
 
 def selectSequence():
     rawPrintCommand = ""
     printCommand = 0
-    while len(rawPrintCommand) == 0 or len(rawPrintCommand) > 1 or printCommand < 1 or printCommand > 5 \
+    while len(rawPrintCommand) == 0 or len(rawPrintCommand) > 1 or printCommand < 1 or printCommand > 6 \
         or not numberIsAWholeNumber(rawPrintCommand):
         printMainMenu()
         rawPrintCommand = input('Select option [1-5]: ')
@@ -30,38 +30,47 @@ def selectSequence():
             print("ERROR - Input must be a whole positive number.")
         else:
             printCommand = int(rawPrintCommand)
-            if printCommand < 1 or printCommand > 5:
-                print("ERROR - Command must be in the range [1-5].")
+            if printCommand < 1 or printCommand > 6:
+                print("ERROR - Command must be in the range [1-6].")
     return printCommand
 
-def printPyramidCommandMenu():
-    print("Pick an option from one of the following:", "1 - Left Pyramid", "2 - Right Pyramid", "3 - Full Pyramid",
-        "4 - Silhouette Pyramid", "5 - Upside Down Left Pyramid", "6 - Upside Down Right Pyramid", 
-        "7 - Upside Down Pyrmaid", "8 - Silhouette Pyramid (Upside Down)", "9 - All Options", "10 - Back to Previous Menu", sep="\n")
+def printPyramidCommandMenu(triangleIsANumberTriangle):
+    print("Pick an option from one of the following:")
 
-def selectPrintPyramidCommand():
+    if triangleIsANumberTriangle == True:
+        print("1 - Left Pyramid", "2 - Right Pyramid", "3 - Full Pyramid",
+            "4 - Upside Down Left Pyramid", "5 - Upside Down Right Pyramid", "6 - Upside Down Pyrmaid", 
+            "7 - All Options", "8 - Back to Previous Menu", sep="\n")
+    else:
+        print("1 - Left Pyramid", "2 - Right Pyramid", "3 - Full Pyramid", "4 - Silhouette Pyramid", 
+            "5 - Upside Down Left Pyramid", "6 - Upside Down Right Pyramid",  "7 - Upside Down Pyrmaid", 
+            "8 - Silhouette Pyramid (Upside Down)", "9 - All Options", "10 - Back to Previous Menu", sep="\n")
+
+    
+
+def selectPrintPyramidCommand(lastCommandIndex = 10, triangleIsANumberTriangle = False):
     rawPrintCommand = ""
     printCommand = 0
-    while len(rawPrintCommand) == 0 or len(rawPrintCommand) > 2 or printCommand < 1 or printCommand > 10 \
+    while len(rawPrintCommand) == 0 or len(rawPrintCommand) > 2 or printCommand < 1 or printCommand > lastCommandIndex \
         or not numberIsAWholeNumber(rawPrintCommand):
-        printPyramidCommandMenu()
-        rawPrintCommand = input('Select option [1-10]: ')
+        printPyramidCommandMenu(triangleIsANumberTriangle)
+        rawPrintCommand = input(f'Select option [1-{lastCommandIndex}]: ')
         if len(rawPrintCommand) == 0:
             print("ERROR - Input must not be empty.")
         elif not numberIsAWholeNumber(rawPrintCommand):
             print("ERROR - Input must be a whole positive number.")
         else:
             printCommand = int(rawPrintCommand)
-            if printCommand < 1 or printCommand > 10:
-                print("ERROR - Command must be in the range [1-10].")
+            if printCommand < 1 or printCommand > lastCommandIndex:
+                print(f"ERROR - Command must be in the range [1-{lastCommandIndex}].")
     
     return printCommand
 
-def getNumberOfLinesFromUser():
+def getNumberOfLinesFromUser(maxNumberOfLines = 80):
     rawNumberOfLines = ""
     numberOfLines = 0
 
-    while len(rawNumberOfLines) == 0 or numberOfLines < 3 or numberOfLines > 80 or not numberIsAWholeNumber(rawNumberOfLines):
+    while len(rawNumberOfLines) == 0 or numberOfLines < 3 or numberOfLines > maxNumberOfLines or not numberIsAWholeNumber(rawNumberOfLines):
         rawNumberOfLines = input("Number of lines to print out for pyramids? ")
         if len(rawNumberOfLines) == 0:
             print("ERROR - Input must not be empty.")
@@ -69,8 +78,8 @@ def getNumberOfLinesFromUser():
             print("ERROR - Input must be a whole positive number.")
         else:
             numberOfLines = int(rawNumberOfLines)
-            if numberOfLines < 3 or numberOfLines > 80:
-                print("ERROR - Number of lines must be in the range [3-80].")
+            if numberOfLines < 3 or numberOfLines > maxNumberOfLines:
+                print(f"ERROR - Number of lines must be in the range [3-{maxNumberOfLines}].")
         
     return numberOfLines
 
