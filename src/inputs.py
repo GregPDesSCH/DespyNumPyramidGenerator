@@ -15,12 +15,12 @@ from conditions import numberIsAWholeNumber
 
 def printMainMenu():
     print("Pick which sequence you would like to perform printing on.", "1 - Simple", "2 - Fibonacci", "3 - Triangle", 
-        "4 - Alternating Bits", "5 - Quit Program", sep="\n")
+        "4 - Alternating Bits", "5 - Pascal's Triangle", "6 - Quit Program", sep="\n")
 
 def selectSequence():
     rawPrintCommand = ""
     printCommand = 0
-    while len(rawPrintCommand) == 0 or len(rawPrintCommand) > 1 or printCommand < 1 or printCommand > 5 \
+    while len(rawPrintCommand) == 0 or len(rawPrintCommand) > 1 or printCommand < 1 or printCommand > 6 \
         or not numberIsAWholeNumber(rawPrintCommand):
         printMainMenu()
         rawPrintCommand = input('Select option [1-5]: ')
@@ -30,8 +30,8 @@ def selectSequence():
             print("ERROR - Input must be a whole positive number.")
         else:
             printCommand = int(rawPrintCommand)
-            if printCommand < 1 or printCommand > 5:
-                print("ERROR - Command must be in the range [1-5].")
+            if printCommand < 1 or printCommand > 6:
+                print("ERROR - Command must be in the range [1-6].")
     return printCommand
 
 def printPyramidCommandMenu(triangleIsANumberTriangle):

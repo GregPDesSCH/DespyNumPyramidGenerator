@@ -74,6 +74,19 @@ def printPyramid(printCommand, numberTriangle, numberOfLines):
             for lineIndex in range(numberOfLines):
                 print(triangleLines[lineIndex].center(maximumLineLength))
 
+def printNumberTrianglePyramids(numberTriangleName):
+    triangle = generateNumberTriangle(numberTriangleName)
+
+    while True:
+        printCommand = selectPrintPyramidCommand(8, True)
+
+        if printCommand == 8:
+            break
+
+        numberOfLines = getNumberOfLinesFromUser(len(triangle))
+
+        printPyramid(printCommand, triangle, numberOfLines)
+
 # For testing only
 if __name__ == "__main__":
     #print("Generating Pascal's Triangle")
