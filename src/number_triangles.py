@@ -12,11 +12,7 @@
 """
 
 from generator import generateNumberTriangle
-
-def printPyramidCommandMenu():
-    print("Pick an option from one of the following:", "1 - Left Pyramid", "2 - Right Pyramid", "3 - Full Pyramid",
-        "4 - Upside Down Left Pyramid", "5 - Upside Down Right Pyramid", "6 - Upside Down Pyrmaid", 
-        "7 - All Options", "8 - Back to Previous Menu", sep="\n")
+from inputs import selectPrintPyramidCommand, getNumberOfLinesFromUser
 
 def generateNumberTriangleLines(numberTriangle, numberOfLines, pyramidIsUpsideDown):
     numberTriangleLines = []
@@ -80,15 +76,25 @@ def printPyramid(printCommand, numberTriangle, numberOfLines):
 
 # For testing only
 if __name__ == "__main__":
-    print("Generating Pascal's Triangle")
-    triangle = generateNumberTriangle("pascal")
+    #print("Generating Pascal's Triangle")
+    #triangle = generateNumberTriangle("pascal")
     #print("Creating lines of triangle")
     # triangleLines = generateNumberTriangleLines(triangle, 10, False)
     # print("Printing triangle")
     # for line in triangleLines:
     #     print(line)
 
-    printPyramidCommandMenu()
+    #printPyramidCommandMenu()
 
     # printPyramid(7, triangle, 20)
     # print("End")
+
+    triangle = generateNumberTriangle("pascal")
+    printCommand = selectPrintPyramidCommand(8, True)
+
+    if printCommand == 8:
+        exit()
+
+    numberOfLines = getNumberOfLinesFromUser(len(triangle))
+
+    printPyramid(printCommand, triangle, numberOfLines)
