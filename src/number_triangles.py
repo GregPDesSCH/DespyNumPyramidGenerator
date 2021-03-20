@@ -13,6 +13,10 @@
 
 from generator import generateNumberTriangle
 
+def printPyramidCommandMenu():
+    print("Pick an option from one of the following:", "1 - Left Pyramid", "2 - Right Pyramid", "3 - Full Pyramid",
+        "4 - Upside Down Left Pyramid", "5 - Upside Down Right Pyramid", "6 - Upside Down Pyrmaid", 
+        "7 - All Options", "8 - Back to Previous Menu", sep="\n")
 
 def generateNumberTriangleLines(numberTriangle, numberOfLines, pyramidIsUpsideDown):
     numberTriangleLines = []
@@ -84,5 +88,7 @@ if __name__ == "__main__":
     # for line in triangleLines:
     #     print(line)
 
-    printPyramid(7, triangle, 20)
-    print("End")
+    printPyramidCommandMenu()
+
+    # printPyramid(7, triangle, 20)
+    # print("End")
