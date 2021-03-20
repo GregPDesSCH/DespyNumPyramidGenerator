@@ -30,7 +30,9 @@ def main():
             printSequencePyramids("alternatingBits")
         elif sequenceIndex == 5:
             printNumberTrianglePyramids("pascal")
-        if sequenceIndex == 6:
+        elif sequenceIndex == 6:
+            printNumberTrianglePyramids("euler")
+        if sequenceIndex == 7:
             break
 
 if __name__ == "__main__":
