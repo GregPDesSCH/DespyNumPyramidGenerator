@@ -121,7 +121,30 @@ def generateNumberTriangle(numberTriangleName):
                 break
 
             newNumberTriangle.append(newTriangleRow)
+    elif numberTriangleName == "catalan":
+        triangleRowIndex = 0
+        triangleColIndex = 0
 
+        while True:
+            newTriangleRow = []
+            currentCharactersInNewRow = 0
+            triangleColIndex = 0
+
+            while triangleColIndex <= triangleRowIndex:
+                newValue = int(math.factorial(triangleRowIndex + triangleColIndex) * (triangleRowIndex - triangleColIndex + 1) / \
+                    (math.factorial(triangleColIndex) * math.factorial(triangleRowIndex + 1)))
+
+                currentCharactersInNewRow += int(math.log10(newValue)) + 2
+
+                newTriangleRow.append(newValue)
+                triangleColIndex += 1
+
+            triangleRowIndex += 1
+
+            if currentCharactersInNewRow > _maxNumberOfCharactersInOneLine:
+                break
+            newNumberTriangle.append(newTriangleRow)
+            
         
     return newNumberTriangle
 
@@ -129,8 +152,10 @@ def generateNumberTriangle(numberTriangleName):
 if __name__ == "__main__":
     # print("Generating Pascal's Triangle")
     # triangle = generateNumberTriangle("pascal")
-    print("Generating Euler's Triangle")
-    triangle = generateNumberTriangle("euler")
+    # print("Generating Euler's Triangle")
+    # triangle = generateNumberTriangle("euler")
+    print("Generating Catalan's Triangle")
+    triangle = generateNumberTriangle("catalan")
     print("Generated Triangle:")
     print(triangle)
     for row in triangle:
