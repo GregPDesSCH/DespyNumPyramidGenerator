@@ -44,7 +44,7 @@ Share your comments, suggestions, and improvements, [here in the repo Issue Page
 
 ## Author and Acknowledgements
 
-Gregory Desrosiers, Bachelor of Soft. Eng., UWaterloo 2019
-Personal Website: [https://gregpdessch.github.io](https://gregpdessch.github.io)
-GitHub: [GregPDesSCH](https://github.com/GregPDesSCH)
-LinkedIn: [https://www.linkedin.com/in/gregorydesrosiers/](https://www.linkedin.com/in/gregorydesrosiers/)
+Gregory Desrosiers, Bachelor of Soft. Eng., UWaterloo 2019  
+Personal Website: [https://gregpdessch.github.io](https://gregpdessch.github.io)  
+GitHub: [GregPDesSCH](https://github.com/GregPDesSCH)  
+LinkedIn: [https://www.linkedin.com/in/gregorydesrosiers/](https://www.linkedin.com/in/gregorydesrosiers/)  
