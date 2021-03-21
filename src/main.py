@@ -32,7 +32,9 @@ def main():
             printNumberTrianglePyramids("pascal")
         elif sequenceIndex == 6:
             printNumberTrianglePyramids("euler")
-        if sequenceIndex == 7:
+        elif sequenceIndex == 7:
+            printNumberTrianglePyramids("catalan")
+        if sequenceIndex == 8:
             break
 
 if __name__ == "__main__":
