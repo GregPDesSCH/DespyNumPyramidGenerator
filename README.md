@@ -24,30 +24,30 @@ All triangles printed out have a maximum width of 160 characters across the scre
 
 This program handles the following sequences and number triangles:
 
-##### Basic:
+#### Basic:
 * Simple (you choose which visible letter to make the pyramid out of, including punctuation, symbols, and Unicode characters)
 
-##### Famous Sequences:
+#### Famous Sequences:
 * Fibonacci 
 * Triangle
 * Alternating Bits
 
-##### Number Triangles:
+#### Number Triangles:
 * Pascal's Triangle (max 26 lines)
 * Euler's Triangle (max 15 lines)
 * Catalan's Triangle (max 20 lines)
 
 ## Previews
 
-##### Simple Triangle
+#### Simple Triangle
 Left Pyramid, 20 lines of the character 'K' with a step width of 3 characters.  
 ![Simple Triangle - Sample](https://github.com/GregPDesSCH/DespyNumPyramidGenerator/raw/dev/assets/simple-triangle-example.png "Simple Triangle - Sample")
 
-##### Fibonacci Sequence
+#### Fibonacci Sequence
 Silhouette pyramid, 15 lines with a step width of two characters.  
 ![Fibonacci Sequence Triangle - Sample](https://github.com/GregPDesSCH/DespyNumPyramidGenerator/raw/dev/assets/fibonacci-triangle-example.png "Fibonacci Sequence Triangle - Sample")
 
-##### Pascal's Triangle
+#### Pascal's Triangle
 Center Pyramid, 20 lines.  
 ![Pascal's Triangle - Sample](https://github.com/GregPDesSCH/DespyNumPyramidGenerator/raw/dev/assets/pascal-triangle-example.png "Pascal's Triangle - Sample")
 
