@@ -38,8 +38,8 @@ def printPyramidCommandMenu(triangleIsANumberTriangle):
     print("Pick an option from one of the following:")
 
     if triangleIsANumberTriangle == True:
-        print("1 - Left Pyramid", "2 - Right Pyramid", "3 - Full Pyramid",
-            "4 - Upside Down Left Pyramid", "5 - Upside Down Right Pyramid", "6 - Upside Down Pyrmaid", 
+        print("1 - Left Pyramid", "2 - Right Pyramid", "3 - Center Pyramid",
+            "4 - Upside Down Left Pyramid", "5 - Upside Down Right Pyramid", "6 - Upside Down Center Pyrmaid", 
             "7 - All Options", "8 - Back to Previous Menu", sep="\n")
     else:
         print("1 - Left Pyramid", "2 - Right Pyramid", "3 - Full Pyramid", "4 - Silhouette Pyramid", 
