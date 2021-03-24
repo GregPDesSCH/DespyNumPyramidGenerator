@@ -12,17 +12,18 @@
 """
 
 from conditions import numberOfCharactersToPrintIsTooHigh
-from inputs import selectPrintPyramidCommand, getNumberOfLinesFromUser, getStepWidth
+from inputs import selectPrintPyramidCommand, getNumberOfLinesFromUser, getStepWidth, inputIsGoBackCommand
 
 
 
 def getCharacterToPrint():
     characterToPrint = ""
-    while len(characterToPrint) != 1:
-        characterToPrint = input('Character to print pyramids? ')
+    while len(characterToPrint) != 1 and not inputIsGoBackCommand(characterToPrint):
+        print("Enter a character to create the triangle out of, or type -- to go back to the previous menu.")
+        characterToPrint = input('Character? ')
         if len(characterToPrint) == 0:
             print("ERROR - Input must not be empty.")
-        elif len(characterToPrint) > 1:
+        elif len(characterToPrint) > 1 and not inputIsGoBackCommand(characterToPrint):
             print("ERROR - Input must be exactly one character long.")
 
     return characterToPrint
@@ -84,8 +85,16 @@ def printSimplePyramids():
         if printCommand == 10:
             break
 
-        numberOfLines = getNumberOfLinesFromUser()
         characterToPrint = getCharacterToPrint()
+        if inputIsGoBackCommand(characterToPrint):
+            continue
+
+        numberOfLines = getNumberOfLinesFromUser()
+        if inputIsGoBackCommand(numberOfLines):
+            continue
+
         stepWidth = getStepWidth()
+        if inputIsGoBackCommand(stepWidth):
+            continue
 
         printPyramid(printCommand, numberOfLines, characterToPrint, stepWidth)
