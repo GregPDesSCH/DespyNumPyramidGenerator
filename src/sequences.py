@@ -12,8 +12,12 @@
 """
 
 from conditions import numberOfCharactersToPrintIsTooHigh
-from inputs import selectPrintPyramidCommand, getNumberOfLinesFromUser, getStepWidth
+from inputs import selectPrintPyramidCommand, getNumberOfLinesFromUser, getStepWidth, inputIsGoBackCommand
 from generator import generateSequence
+
+_fullNamesOfSequences = {"fibonacci": "Fibonacci Sequence",
+    "triangle": "Triangular Number Sequence",
+    "alternatingBits": "Alternating Bit Sequence"}
 
 
 def createLineSegment(sequence, maxLineSegmentLength, sequenceStringIndex):
@@ -114,15 +118,22 @@ def printPyramid(printCommand, sequence, numberOfLines, stepWidth):
 def printSequencePyramids(sequenceName):
     sequence = generateSequence(sequenceName)
     while True:
+        print("Pyramid: " + _fullNamesOfSequences[sequenceName])
         printCommand = selectPrintPyramidCommand()
 
         if printCommand == 10:
             break
 
         numberOfLines = getNumberOfLinesFromUser()
+        if inputIsGoBackCommand(numberOfLines):
+            continue
+
         stepWidth = getStepWidth()
+        if inputIsGoBackCommand(stepWidth):
+            continue
 
         printPyramid(printCommand, sequence, numberOfLines, stepWidth)
+        print()
 
 # For testing only
 if __name__ == "__main__":
