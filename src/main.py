@@ -17,6 +17,8 @@ from sequences import printSequencePyramids
 from simple import printSimplePyramids
 
 def main():
+    print("DespyNumPyramidGenerator\nby Gregory Desrosiers\n")
+
     while True:
         sequenceIndex = selectSequence()
 
@@ -36,6 +38,8 @@ def main():
             printNumberTrianglePyramids("catalan")
         if sequenceIndex == 8:
             break
+
+    print("See you!\n\nBy Gregory Desrosiers\nhttps://gregpdessch.github.io\nhttps://www.linkedin.com/in/gregorydesrosiers")
 
 if __name__ == "__main__":
     main()
