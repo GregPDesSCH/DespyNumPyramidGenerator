@@ -128,6 +128,7 @@ def printSequencePyramids(sequenceName):
             continue
 
         printPyramid(printCommand, sequence, numberOfLines, stepWidth)
+        print()
 
 # For testing only
 if __name__ == "__main__":

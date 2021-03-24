@@ -26,6 +26,8 @@ def getCharacterToPrint():
         elif len(characterToPrint) > 1 and not inputIsGoBackCommand(characterToPrint):
             print("ERROR - Input must be exactly one character long.")
 
+        print()
+
     return characterToPrint
 
 
@@ -98,3 +100,4 @@ def printSimplePyramids():
             continue
 
         printPyramid(printCommand, numberOfLines, characterToPrint, stepWidth)
+        print()

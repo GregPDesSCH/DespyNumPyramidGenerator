@@ -38,6 +38,8 @@ def selectSequence():
             printCommand = int(rawPrintCommand)
             if printCommand < 1 or printCommand > 8:
                 print("ERROR - Command must be in the range [1-8].")
+
+        print()
     return printCommand
 
 def printPyramidCommandMenu(triangleIsANumberTriangle):
@@ -69,6 +71,8 @@ def selectPrintPyramidCommand(lastCommandIndex = 10, triangleIsANumberTriangle =
             printCommand = int(rawPrintCommand)
             if printCommand < 1 or printCommand > lastCommandIndex:
                 print(f"ERROR - Command must be in the range [1-{lastCommandIndex}].")
+
+        print()
     
     return printCommand
 
@@ -84,6 +88,7 @@ def getNumberOfLinesFromUser(maxNumberOfLines = 80):
             print("ERROR - Input must not be empty.")
         elif inputIsGoBackCommand(rawNumberOfLines):
             numberOfLines = -1
+            print()
             break
         elif not numberIsAWholeNumber(rawNumberOfLines):
             print("ERROR - Input must be a whole positive number.")
@@ -91,6 +96,8 @@ def getNumberOfLinesFromUser(maxNumberOfLines = 80):
             numberOfLines = int(rawNumberOfLines)
             if numberOfLines < 3 or numberOfLines > maxNumberOfLines:
                 print(f"ERROR - Number of lines must be in the range [3-{maxNumberOfLines}].")
+
+        print()
         
     return numberOfLines
 
@@ -105,6 +112,7 @@ def getStepWidth():
             print("ERROR - Input must not be empty.")
         elif inputIsGoBackCommand(rawStepWidth):
             stepWidth = -1
+            print()
             break
         elif not numberIsAWholeNumber(rawStepWidth):
             print("ERROR - Input must be a whole positive number.")
@@ -112,5 +120,7 @@ def getStepWidth():
             stepWidth = int(rawStepWidth)
             if stepWidth < 1 or stepWidth > 10:
                 print("ERROR - Step width must be in the range [1-10].")
+
+        print()
 
     return stepWidth

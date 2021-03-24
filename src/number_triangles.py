@@ -88,6 +88,7 @@ def printNumberTrianglePyramids(numberTriangleName):
             continue
 
         printPyramid(printCommand, triangle, numberOfLines)
+        print()
 
 # For testing only
 if __name__ == "__main__":
