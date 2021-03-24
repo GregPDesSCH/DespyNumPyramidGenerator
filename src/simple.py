@@ -82,6 +82,7 @@ def printPyramid(printCommand, numberOfLines, characterToPrint, stepWidth):
 
 def printSimplePyramids():
     while True:
+        print("Pyramid: Simple")
         printCommand = selectPrintPyramidCommand()
 
         if printCommand == 10:
