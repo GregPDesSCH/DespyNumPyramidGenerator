@@ -14,6 +14,10 @@
 from generator import generateNumberTriangle
 from inputs import selectPrintPyramidCommand, getNumberOfLinesFromUser, inputIsGoBackCommand
 
+_fullNamesOfNumberTriangles = {"pascal": "Pascal's Triangle",
+    "euler": "Euler's Triangle",
+    "catalan": "Catalan's Triangle"}
+
 def generateNumberTriangleLines(numberTriangle, numberOfLines, pyramidIsUpsideDown):
     numberTriangleLines = []
 
@@ -78,6 +82,7 @@ def printNumberTrianglePyramids(numberTriangleName):
     triangle = generateNumberTriangle(numberTriangleName)
 
     while True:
+        print("Pyramid: " + _fullNamesOfNumberTriangles[numberTriangleName])
         printCommand = selectPrintPyramidCommand(8, True)
 
         if printCommand == 8:
