@@ -20,7 +20,7 @@ def inputIsGoBackCommand(userInput):
     return userInput == _goBackToPreviousMenuInputString or userInput == _goBackToPreviousMenuInputNum
 
 def printMainMenu():
-    print("Pick which sequence you would like to perform printing on.", "1 - Simple", "2 - Fibonacci", "3 - Triangle", 
+    print("Pick which type of pyramid you would like to perform printing on.", "1 - Simple", "2 - Fibonacci", "3 - Triangular Number", 
         "4 - Alternating Bits", "5 - Pascal's Triangle", "6 - Euler's Triangle", "7 - Catalan's Triangle", "8 - Quit Program", sep="\n")
 
 def selectSequence():
