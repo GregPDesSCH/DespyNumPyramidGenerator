@@ -12,7 +12,7 @@
 """
 
 from generator import generateNumberTriangle
-from inputs import selectPrintPyramidCommand, getNumberOfLinesFromUser
+from inputs import selectPrintPyramidCommand, getNumberOfLinesFromUser, inputIsGoBackCommand
 
 def generateNumberTriangleLines(numberTriangle, numberOfLines, pyramidIsUpsideDown):
     numberTriangleLines = []
@@ -84,6 +84,8 @@ def printNumberTrianglePyramids(numberTriangleName):
             break
 
         numberOfLines = getNumberOfLinesFromUser(len(triangle))
+        if inputIsGoBackCommand(numberOfLines):
+            continue
 
         printPyramid(printCommand, triangle, numberOfLines)
 
