@@ -31,11 +31,10 @@ def generateNumberTriangleLines(numberTriangle):
 
     return numberTriangleLines
 
-def printPyramid(printCommand, numberTriangle, numberOfLines):
-    if numberOfLines > len(numberTriangle):
-        print(f"This number triangle only has {len(numberTriangle)} lines. Please use a smaller number of lines.")
+def printPyramid(printCommand, triangleLines, numberOfLines):
+    if numberOfLines > len(triangleLines):
+        print(f"This number triangle only has {len(triangleLines)} lines. Please use a smaller number of lines.")
     else:
-        triangleLines = generateNumberTriangleLines(numberTriangle)
         maximumLineLength = len(triangleLines[numberOfLines - 1])
         
         if printCommand == 1 or printCommand == 7:
@@ -70,6 +69,7 @@ def printPyramid(printCommand, numberTriangle, numberOfLines):
 
 def printNumberTrianglePyramids(numberTriangleName):
     triangle = generateNumberTriangle(numberTriangleName)
+    triangleLines = generateNumberTriangleLines(triangle)
 
     while True:
         print("Pyramid: " + _fullNamesOfNumberTriangles[numberTriangleName])
@@ -82,7 +82,7 @@ def printNumberTrianglePyramids(numberTriangleName):
         if inputIsGoBackCommand(numberOfLines):
             continue
 
-        printPyramid(printCommand, triangle, numberOfLines)
+        printPyramid(printCommand, triangleLines, numberOfLines)
         print()
 
 # For testing only
