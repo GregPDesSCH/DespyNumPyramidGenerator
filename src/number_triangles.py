@@ -31,38 +31,37 @@ def generateNumberTriangleLines(numberTriangle):
 
     return numberTriangleLines
 
-def printPyramid(printCommand, triangleLines, numberOfLines):
+def printPyramid(triangleLines, numberOfLines, alignMode, printInReverse):
+    setOfLineNumbers = range(numberOfLines) if printInReverse == False else range(numberOfLines - 1, -1, -1)
     maximumLineLength = len(triangleLines[numberOfLines - 1])
-    
-    if printCommand == 1 or printCommand == 7:
-        # Left Pyramid
-        for lineIndex in range(numberOfLines):
+
+    for lineIndex in setOfLineNumbers:
+        if alignMode == "LEFT":
             print(triangleLines[lineIndex].ljust(maximumLineLength))
+        elif alignMode == "RIGHT":
+            print(triangleLines[lineIndex].rjust(maximumLineLength))
+        else:
+            print(triangleLines[lineIndex].center(maximumLineLength))
+    print()
+
+def printDesiredPyramid(printCommand, triangleLines, numberOfLines):
+    if printCommand == 1 or printCommand == 7:
+        printPyramid(triangleLines, numberOfLines, "LEFT", False) # Prints a left pyramid
 
     if printCommand == 2 or printCommand == 7:
-        # Right Pyramid
-        for lineIndex in range(numberOfLines):
-            print(triangleLines[lineIndex].rjust(maximumLineLength))
+        printPyramid(triangleLines, numberOfLines, "RIGHT", False) # Prints a right pyramid
 
     if printCommand == 3 or printCommand == 7:
-        # Full Pyramid
-        for lineIndex in range(numberOfLines):
-            print(triangleLines[lineIndex].center(maximumLineLength))
+        printPyramid(triangleLines, numberOfLines, "CENTER", False) # Prints a full pyramid
 
     if printCommand == 4 or printCommand == 7:
-        # Upside Down Left Pyramid
-        for lineIndex in range(numberOfLines - 1, -1, -1):
-            print(triangleLines[lineIndex].ljust(maximumLineLength))
+        printPyramid(triangleLines, numberOfLines, "LEFT", True) # Prints an upside-down left pyramid
 
     if printCommand == 5 or printCommand == 7:
-        # Upside Down Right Pyramid
-        for lineIndex in range(numberOfLines - 1, -1, -1):
-            print(triangleLines[lineIndex].rjust(maximumLineLength))
+        printPyramid(triangleLines, numberOfLines, "RIGHT", True) # Prints an upside-down right pyramid
 
     if printCommand == 6 or printCommand == 7:
-        # Upside Down Full Pyramid
-        for lineIndex in range(numberOfLines - 1, -1, -1):
-            print(triangleLines[lineIndex].center(maximumLineLength))
+        printPyramid(triangleLines, numberOfLines, "CENTER", True) # Prints an upside-down full pyramid
 
 def printNumberTrianglePyramids(numberTriangleName):
     triangle = generateNumberTriangle(numberTriangleName)
@@ -79,8 +78,7 @@ def printNumberTrianglePyramids(numberTriangleName):
         if inputIsGoBackCommand(numberOfLines):
             continue
 
-        printPyramid(printCommand, triangleLines, numberOfLines)
-        print()
+        printDesiredPyramid(printCommand, triangleLines, numberOfLines)
 
 # For testing only
 if __name__ == "__main__":
@@ -105,4 +103,4 @@ if __name__ == "__main__":
 
     numberOfLines = getNumberOfLinesFromUser(len(triangle))
 
-    printPyramid(printCommand, triangle, numberOfLines)
+    printDesiredPyramid(printCommand, triangle, numberOfLines)
