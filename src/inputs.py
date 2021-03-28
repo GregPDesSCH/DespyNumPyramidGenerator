@@ -24,6 +24,9 @@ _inputNotPositiveNumberErrorMessage = _errorMessagePrefix + "Input must be a who
 def getErrorMessagePrefix():
     return _errorMessagePrefix
 
+def getInputEmptyErrorMessage():
+    return _inputEmptyErrorMessage
+
 def inputIsGoBackCommand(userInput):
     return userInput == _goBackToPreviousMenuInputString or userInput == _goBackToPreviousMenuInputNum
 

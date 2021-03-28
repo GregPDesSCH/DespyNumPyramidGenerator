@@ -12,7 +12,14 @@
 """
 
 from conditions import numberOfCharactersToPrintIsTooHigh
-from inputs import selectPrintPyramidCommand, getNumberOfLinesFromUser, getStepWidth, inputIsGoBackCommand
+from inputs import ( 
+    selectPrintPyramidCommand,
+    getNumberOfLinesFromUser, 
+    getStepWidth, 
+    inputIsGoBackCommand, 
+    getErrorMessagePrefix, 
+    getInputEmptyErrorMessage 
+)
 
 
 
@@ -22,9 +29,9 @@ def getCharacterToPrint():
         print("Enter a character to create the triangle out of, or type -- to go back to the previous menu.")
         characterToPrint = input('Character? ')
         if len(characterToPrint) == 0:
-            print("ERROR - Input must not be empty.")
+            print(getInputEmptyErrorMessage())
         elif len(characterToPrint) > 1 and not inputIsGoBackCommand(characterToPrint):
-            print("ERROR - Input must be exactly one character long.")
+            print(getErrorMessagePrefix() + "Input must be exactly one character long.")
 
         print()
 
@@ -34,7 +41,7 @@ def getCharacterToPrint():
 
 def printPyramid(printCommand, numberOfLines, characterToPrint, stepWidth):
     if numberOfCharactersToPrintIsTooHigh(printCommand, numberOfLines, stepWidth):
-        print("ERROR - Maximum number of characters to be printed on the screen is 160. Please enter again.")
+        print(getErrorMessagePrefix() + "Maximum number of characters to be printed on the screen is 160. Please enter again.")
     else:
         if printCommand == 1 or printCommand == 9:
             # Left Pyramid
