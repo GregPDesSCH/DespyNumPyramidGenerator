@@ -23,7 +23,7 @@ _fullNamesOfSequences = {"fibonacci": "Fibonacci Sequence",
 def createLineSegment(sequence, maxLineSegmentLength, sequenceStringIndex):
     currentLineSegment = ""
     for _ in range(maxLineSegmentLength):
-        currentLineSegment += sequence[0][0][sequenceStringIndex[0]]
+        currentLineSegment += sequence[sequenceStringIndex[0]]
         sequenceStringIndex[0] += 1
     return currentLineSegment
 
@@ -138,6 +138,6 @@ def printSequencePyramids(sequenceName):
 # For testing only
 if __name__ == "__main__":
     # print("Generating alternatingBits sequence")
-    # sequence = generateSequence("alternatingBits")
+    # sequence = generateSequence("fibonacci")
     # printPyramid(9, sequence, 10, 1)
-    printSequencePyramids("alternatingBits")
+    printSequencePyramids("fibonacci")

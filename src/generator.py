@@ -17,17 +17,17 @@ _maxNumberOfCharactersToPrint = 12880
 _maxNumberOfCharactersInOneLine = 160
 
 def generateSequence(sequenceName):
-    newSequence = []
+    sequenceElements = []
     currentSequenceMember = ""
     if sequenceName == "fibonacci":
         a = 0
         b = 1
         currentValue = 1
         totalCharactersInNewSequence = 2
-        newSequence = [[], ["0", "1"]]
+        sequenceElements = ["0", "1"]
         while totalCharactersInNewSequence <= _maxNumberOfCharactersToPrint:
             currentSequenceMember = str(currentValue)
-            newSequence[1].append(currentSequenceMember)
+            sequenceElements.append(currentSequenceMember)
             totalCharactersInNewSequence += len(currentSequenceMember)
 
             a = b
@@ -38,11 +38,10 @@ def generateSequence(sequenceName):
         total = 1
         currentAddend = 2
         totalCharactersInNewSequence = 0
-        newSequence = [[], []]
 
         while totalCharactersInNewSequence <= _maxNumberOfCharactersToPrint:
             currentSequenceMember = str(total)
-            newSequence[1].append(currentSequenceMember)
+            sequenceElements.append(currentSequenceMember)
             totalCharactersInNewSequence += len(currentSequenceMember)
 
             total += currentAddend
@@ -51,16 +50,15 @@ def generateSequence(sequenceName):
     elif sequenceName == "alternatingBits":
         currentValue = 0
         totalCharactersInNewSequence = 0
-        newSequence = [[], []]
 
         while totalCharactersInNewSequence <= _maxNumberOfCharactersToPrint:
             currentSequenceMember = str(currentValue)
-            newSequence[1].append(currentSequenceMember)
+            sequenceElements.append(currentSequenceMember)
             totalCharactersInNewSequence += len(currentSequenceMember)
 
             currentValue = 1 if currentValue == 0 else 0
 
-    newSequence[0].append("".join(newSequence[1]))
+    newSequence = "".join(sequenceElements)
 
     return newSequence
 
