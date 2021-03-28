@@ -79,88 +79,103 @@ def generateSequence(sequenceName):
 
     return newSequence
 
-def generateNumberTriangle(numberTriangleName):
+def _generatePascalTriangle():
+    newNumberTriangle = [[1], [1, 1]]
+    latestTriangleRowIndex = 1
+    
+    while True:
+        newTriangleRow = [1]
+        currentCharactersInNewRow = 2
+        newTriangleColIndex = 1
+
+        while newTriangleColIndex < len(newNumberTriangle[latestTriangleRowIndex]):
+            newValue = newNumberTriangle[latestTriangleRowIndex][newTriangleColIndex - 1] + \
+                newNumberTriangle[latestTriangleRowIndex][newTriangleColIndex]
+
+            currentCharactersInNewRow += int(math.log10(newValue)) + 2
+
+            newTriangleRow.append(newValue)
+            newTriangleColIndex += 1
+
+        latestTriangleRowIndex += 1
+        newTriangleRow.append(1)
+        currentCharactersInNewRow += 1
+
+        if currentCharactersInNewRow > _maxNumberOfCharactersInOneLine:
+            break
+
+        newNumberTriangle.append(newTriangleRow)
+    
+    return newNumberTriangle
+
+def _generateEulerTriangle():
+    newNumberTriangle = [[1], [1, 1]]
+    triangleRowIndex = 2
+
+    while True:
+        newTriangleRow = [1]
+        currentCharactersInNewRow = 2
+        newTriangleColIndex = 2
+
+        while newTriangleColIndex < len(newNumberTriangle[triangleRowIndex - 1]) + 1:
+            newValue = newTriangleColIndex * newNumberTriangle[triangleRowIndex - 1][newTriangleColIndex - 1] + \
+                (triangleRowIndex + 2 - newTriangleColIndex) * \
+                newNumberTriangle[triangleRowIndex - 1][newTriangleColIndex - 2]
+
+            currentCharactersInNewRow += int(math.log10(newValue)) + 2
+
+            newTriangleRow.append(newValue)
+            newTriangleColIndex += 1
+
+        triangleRowIndex += 1
+        newTriangleRow.append(1)
+        currentCharactersInNewRow += 1
+
+        if currentCharactersInNewRow > _maxNumberOfCharactersInOneLine:
+            break
+
+        newNumberTriangle.append(newTriangleRow)
+
+    return newNumberTriangle
+
+def _generateCatalanTriangle():
     newNumberTriangle = []
-    currentCharactersInNewRow = 0
+    triangleRowIndex = 0
+    triangleColIndex = 0
 
-    if numberTriangleName == "pascal":
-        newNumberTriangle = [[1], [1, 1]]
-        latestTriangleRowIndex = 1
-        
-        while True:
-            newTriangleRow = [1]
-            currentCharactersInNewRow = 2
-            newTriangleColIndex = 1
-
-            while newTriangleColIndex < len(newNumberTriangle[latestTriangleRowIndex]):
-                newValue = newNumberTriangle[latestTriangleRowIndex][newTriangleColIndex - 1] + \
-                    newNumberTriangle[latestTriangleRowIndex][newTriangleColIndex]
-
-                currentCharactersInNewRow += int(math.log10(newValue)) + 2
-
-                newTriangleRow.append(newValue)
-                newTriangleColIndex += 1
-
-            latestTriangleRowIndex += 1
-            newTriangleRow.append(1)
-            currentCharactersInNewRow += 1
-
-            if currentCharactersInNewRow > _maxNumberOfCharactersInOneLine:
-                break
-
-            newNumberTriangle.append(newTriangleRow)
-    elif numberTriangleName == "euler":
-        newNumberTriangle = [[1], [1, 1]]
-        triangleRowIndex = 2
-
-        while True:
-            newTriangleRow = [1]
-            currentCharactersInNewRow = 2
-            newTriangleColIndex = 2
-
-            while newTriangleColIndex < len(newNumberTriangle[triangleRowIndex - 1]) + 1:
-                newValue = newTriangleColIndex * newNumberTriangle[triangleRowIndex - 1][newTriangleColIndex - 1] + \
-                    (triangleRowIndex + 2 - newTriangleColIndex) * \
-                    newNumberTriangle[triangleRowIndex - 1][newTriangleColIndex - 2]
-
-                currentCharactersInNewRow += int(math.log10(newValue)) + 2
-
-                newTriangleRow.append(newValue)
-                newTriangleColIndex += 1
-
-            triangleRowIndex += 1
-            newTriangleRow.append(1)
-            currentCharactersInNewRow += 1
-
-            if currentCharactersInNewRow > _maxNumberOfCharactersInOneLine:
-                break
-
-            newNumberTriangle.append(newTriangleRow)
-    elif numberTriangleName == "catalan":
-        triangleRowIndex = 0
+    while True:
+        newTriangleRow = []
+        currentCharactersInNewRow = 0
         triangleColIndex = 0
 
-        while True:
-            newTriangleRow = []
-            currentCharactersInNewRow = 0
-            triangleColIndex = 0
+        while triangleColIndex <= triangleRowIndex:
+            newValue = int(math.factorial(triangleRowIndex + triangleColIndex) * (triangleRowIndex - triangleColIndex + 1) / \
+                (math.factorial(triangleColIndex) * math.factorial(triangleRowIndex + 1)))
 
-            while triangleColIndex <= triangleRowIndex:
-                newValue = int(math.factorial(triangleRowIndex + triangleColIndex) * (triangleRowIndex - triangleColIndex + 1) / \
-                    (math.factorial(triangleColIndex) * math.factorial(triangleRowIndex + 1)))
+            currentCharactersInNewRow += int(math.log10(newValue)) + 2
 
-                currentCharactersInNewRow += int(math.log10(newValue)) + 2
+            newTriangleRow.append(newValue)
+            triangleColIndex += 1
 
-                newTriangleRow.append(newValue)
-                triangleColIndex += 1
+        triangleRowIndex += 1
 
-            triangleRowIndex += 1
+        if currentCharactersInNewRow > _maxNumberOfCharactersInOneLine:
+            break
+        newNumberTriangle.append(newTriangleRow)
 
-            if currentCharactersInNewRow > _maxNumberOfCharactersInOneLine:
-                break
-            newNumberTriangle.append(newTriangleRow)
+    return newNumberTriangle
+
+
+def generateNumberTriangle(numberTriangleName):
+    newNumberTriangle = []
+
+    if numberTriangleName == "pascal":
+        newNumberTriangle = _generatePascalTriangle()
+    elif numberTriangleName == "euler":
+        newNumberTriangle = _generateEulerTriangle()
+    elif numberTriangleName == "catalan":
+        newNumberTriangle = _generateCatalanTriangle()
             
-        
     return newNumberTriangle
 
 # For testing only
