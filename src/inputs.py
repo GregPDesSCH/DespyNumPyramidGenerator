@@ -15,6 +15,10 @@ from conditions import numberIsAWholeNumber
 
 _goBackToPreviousMenuInputString = "--"
 _goBackToPreviousMenuInputNum = -1
+_errorMessagePrefix = "ERROR - "
+
+def getErrorMessagePrefix():
+    return _errorMessagePrefix
 
 def inputIsGoBackCommand(userInput):
     return userInput == _goBackToPreviousMenuInputString or userInput == _goBackToPreviousMenuInputNum
@@ -31,13 +35,13 @@ def selectSequence():
         printMainMenu()
         rawPrintCommand = input('Select option [1-8]: ')
         if len(rawPrintCommand) == 0:
-            print("ERROR - Input must not be empty.")
+            print(_errorMessagePrefix + "Input must not be empty.")
         elif not numberIsAWholeNumber(rawPrintCommand):
-            print("ERROR - Input must be a whole positive number.")
+            print(_errorMessagePrefix + "Input must be a whole positive number.")
         else:
             printCommand = int(rawPrintCommand)
             if printCommand < 1 or printCommand > 8:
-                print("ERROR - Command must be in the range [1-8].")
+                print(_errorMessagePrefix + "Command must be in the range [1-8].")
 
         print()
     return printCommand
@@ -64,13 +68,13 @@ def selectPrintPyramidCommand(lastCommandIndex = 10, triangleIsANumberTriangle =
         printPyramidCommandMenu(triangleIsANumberTriangle)
         rawPrintCommand = input(f'Select option [1-{lastCommandIndex}]: ')
         if len(rawPrintCommand) == 0:
-            print("ERROR - Input must not be empty.")
+            print(_errorMessagePrefix + "Input must not be empty.")
         elif not numberIsAWholeNumber(rawPrintCommand):
-            print("ERROR - Input must be a whole positive number.")
+            print(_errorMessagePrefix + "Input must be a whole positive number.")
         else:
             printCommand = int(rawPrintCommand)
             if printCommand < 1 or printCommand > lastCommandIndex:
-                print(f"ERROR - Command must be in the range [1-{lastCommandIndex}].")
+                print(_errorMessagePrefix + f"Command must be in the range [1-{lastCommandIndex}].")
 
         print()
     
@@ -85,17 +89,17 @@ def getNumberOfLinesFromUser(maxNumberOfLines = 80):
         print("Enter number of lines to make the triangle, or type -- to go back to the previous menu.")
         rawNumberOfLines = input("Number of lines for triangle? ")
         if len(rawNumberOfLines) == 0:
-            print("ERROR - Input must not be empty.")
+            print(_errorMessagePrefix + "Input must not be empty.")
         elif inputIsGoBackCommand(rawNumberOfLines):
             numberOfLines = -1
             print()
             break
         elif not numberIsAWholeNumber(rawNumberOfLines):
-            print("ERROR - Input must be a whole positive number.")
+            print(_errorMessagePrefix + "Input must be a whole positive number.")
         else:
             numberOfLines = int(rawNumberOfLines)
             if numberOfLines < 3 or numberOfLines > maxNumberOfLines:
-                print(f"ERROR - Number of lines must be in the range [3-{maxNumberOfLines}].")
+                print(_errorMessagePrefix + f"Number of lines must be in the range [3-{maxNumberOfLines}].")
 
         print()
         
@@ -109,17 +113,17 @@ def getStepWidth():
         print("Enter the width of each triangle step, or type -- to go back to the previous menu.")
         rawStepWidth = input("Width of each step? ")
         if len(rawStepWidth) == 0:
-            print("ERROR - Input must not be empty.")
+            print(_errorMessagePrefix + "Input must not be empty.")
         elif inputIsGoBackCommand(rawStepWidth):
             stepWidth = -1
             print()
             break
         elif not numberIsAWholeNumber(rawStepWidth):
-            print("ERROR - Input must be a whole positive number.")
+            print(_errorMessagePrefix + "Input must be a whole positive number.")
         else:
             stepWidth = int(rawStepWidth)
             if stepWidth < 1 or stepWidth > 10:
-                print("ERROR - Step width must be in the range [1-10].")
+                print(_errorMessagePrefix + "Step width must be in the range [1-10].")
 
         print()
 

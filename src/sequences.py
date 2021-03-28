@@ -12,7 +12,7 @@
 """
 
 from conditions import numberOfCharactersToPrintIsTooHigh
-from inputs import selectPrintPyramidCommand, getNumberOfLinesFromUser, getStepWidth, inputIsGoBackCommand
+from inputs import selectPrintPyramidCommand, getNumberOfLinesFromUser, getStepWidth, inputIsGoBackCommand, getErrorMessagePrefix
 from generator import generateSequence
 
 _fullNamesOfSequences = {"fibonacci": "Fibonacci Sequence",
@@ -60,7 +60,7 @@ def generateSequenceLines(sequence, numberOfLines, stepWidth, pyramidIsUpsideDow
 
 def printPyramid(printCommand, sequence, numberOfLines, stepWidth):
     if numberOfCharactersToPrintIsTooHigh(printCommand, numberOfLines, stepWidth):
-        print("ERROR - Maximum number of characters to be printed on the screen is 160. Please enter again.")
+        print(getErrorMessagePrefix() + "Maximum number of characters to be printed on the screen is 160. Please enter again.")
     else:
         if printCommand == 1 or printCommand == 9:
             pyramidLines = generateSequenceLines(sequence, numberOfLines, stepWidth, False, False, False)
