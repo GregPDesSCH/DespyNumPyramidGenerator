@@ -15,7 +15,11 @@ from conditions import numberIsAWholeNumber
 
 _goBackToPreviousMenuInputString = "--"
 _goBackToPreviousMenuInputNum = -1
+
 _errorMessagePrefix = "ERROR - "
+_inputEmptyErrorMessage = _errorMessagePrefix + "Input must not be empty."
+_inputNotPositiveNumberErrorMessage = _errorMessagePrefix + "Input must be a whole positive number."
+
 
 def getErrorMessagePrefix():
     return _errorMessagePrefix
@@ -35,9 +39,9 @@ def selectSequence():
         printMainMenu()
         rawPrintCommand = input('Select option [1-8]: ')
         if len(rawPrintCommand) == 0:
-            print(_errorMessagePrefix + "Input must not be empty.")
+            print(_inputEmptyErrorMessage)
         elif not numberIsAWholeNumber(rawPrintCommand):
-            print(_errorMessagePrefix + "Input must be a whole positive number.")
+            print(_inputNotPositiveNumberErrorMessage)
         else:
             printCommand = int(rawPrintCommand)
             if printCommand < 1 or printCommand > 8:
@@ -68,9 +72,9 @@ def selectPrintPyramidCommand(lastCommandIndex = 10, triangleIsANumberTriangle =
         printPyramidCommandMenu(triangleIsANumberTriangle)
         rawPrintCommand = input(f'Select option [1-{lastCommandIndex}]: ')
         if len(rawPrintCommand) == 0:
-            print(_errorMessagePrefix + "Input must not be empty.")
+            print(_inputEmptyErrorMessage)
         elif not numberIsAWholeNumber(rawPrintCommand):
-            print(_errorMessagePrefix + "Input must be a whole positive number.")
+            print(_inputNotPositiveNumberErrorMessage)
         else:
             printCommand = int(rawPrintCommand)
             if printCommand < 1 or printCommand > lastCommandIndex:
@@ -89,13 +93,13 @@ def getNumberOfLinesFromUser(maxNumberOfLines = 80):
         print("Enter number of lines to make the triangle, or type -- to go back to the previous menu.")
         rawNumberOfLines = input("Number of lines for triangle? ")
         if len(rawNumberOfLines) == 0:
-            print(_errorMessagePrefix + "Input must not be empty.")
+            print(_inputEmptyErrorMessage)
         elif inputIsGoBackCommand(rawNumberOfLines):
             numberOfLines = -1
             print()
             break
         elif not numberIsAWholeNumber(rawNumberOfLines):
-            print(_errorMessagePrefix + "Input must be a whole positive number.")
+            print(_inputNotPositiveNumberErrorMessage)
         else:
             numberOfLines = int(rawNumberOfLines)
             if numberOfLines < 3 or numberOfLines > maxNumberOfLines:
@@ -113,13 +117,13 @@ def getStepWidth():
         print("Enter the width of each triangle step, or type -- to go back to the previous menu.")
         rawStepWidth = input("Width of each step? ")
         if len(rawStepWidth) == 0:
-            print(_errorMessagePrefix + "Input must not be empty.")
+            print(_inputEmptyErrorMessage)
         elif inputIsGoBackCommand(rawStepWidth):
             stepWidth = -1
             print()
             break
         elif not numberIsAWholeNumber(rawStepWidth):
-            print(_errorMessagePrefix + "Input must be a whole positive number.")
+            print(_inputNotPositiveNumberErrorMessage)
         else:
             stepWidth = int(rawStepWidth)
             if stepWidth < 1 or stepWidth > 10:
