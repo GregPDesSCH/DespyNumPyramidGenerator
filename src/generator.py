@@ -16,47 +16,64 @@ import math
 _maxNumberOfCharactersToPrint = 12880
 _maxNumberOfCharactersInOneLine = 160
 
+def _generateFibonacciSequence():
+    a = 0
+    b = 1
+    currentValue = 1
+    totalCharactersInNewSequence = 2
+    sequenceElements = ["0", "1"]
+
+    while totalCharactersInNewSequence <= _maxNumberOfCharactersToPrint:
+        currentSequenceMember = str(currentValue)
+        sequenceElements.append(currentSequenceMember)
+        totalCharactersInNewSequence += len(currentSequenceMember)
+
+        a = b
+        b = currentValue
+        currentValue = a + b
+
+    return sequenceElements
+
+def _generateTriangleSequence():
+    sequenceElements = []
+    total = 1
+    currentAddend = 2
+    totalCharactersInNewSequence = 0
+
+    while totalCharactersInNewSequence <= _maxNumberOfCharactersToPrint:
+        currentSequenceMember = str(total)
+        sequenceElements.append(currentSequenceMember)
+        totalCharactersInNewSequence += len(currentSequenceMember)
+
+        total += currentAddend
+        currentAddend += 1
+
+    return sequenceElements
+
+def _generateAlternatingBitsSequence():
+    sequenceElements = []
+    currentValue = 0
+    totalCharactersInNewSequence = 0
+
+    while totalCharactersInNewSequence <= _maxNumberOfCharactersToPrint:
+        currentSequenceMember = str(currentValue)
+        sequenceElements.append(currentSequenceMember)
+        totalCharactersInNewSequence += len(currentSequenceMember)
+
+        currentValue = 1 if currentValue == 0 else 0
+
+    return sequenceElements
+    
+
 def generateSequence(sequenceName):
     sequenceElements = []
-    currentSequenceMember = ""
+
     if sequenceName == "fibonacci":
-        a = 0
-        b = 1
-        currentValue = 1
-        totalCharactersInNewSequence = 2
-        sequenceElements = ["0", "1"]
-        while totalCharactersInNewSequence <= _maxNumberOfCharactersToPrint:
-            currentSequenceMember = str(currentValue)
-            sequenceElements.append(currentSequenceMember)
-            totalCharactersInNewSequence += len(currentSequenceMember)
-
-            a = b
-            b = currentValue
-            currentValue = a + b
-
+        sequenceElements = _generateFibonacciSequence()
     elif sequenceName == "triangle":
-        total = 1
-        currentAddend = 2
-        totalCharactersInNewSequence = 0
-
-        while totalCharactersInNewSequence <= _maxNumberOfCharactersToPrint:
-            currentSequenceMember = str(total)
-            sequenceElements.append(currentSequenceMember)
-            totalCharactersInNewSequence += len(currentSequenceMember)
-
-            total += currentAddend
-            currentAddend += 1
-
+        sequenceElements = _generateTriangleSequence()
     elif sequenceName == "alternatingBits":
-        currentValue = 0
-        totalCharactersInNewSequence = 0
-
-        while totalCharactersInNewSequence <= _maxNumberOfCharactersToPrint:
-            currentSequenceMember = str(currentValue)
-            sequenceElements.append(currentSequenceMember)
-            totalCharactersInNewSequence += len(currentSequenceMember)
-
-            currentValue = 1 if currentValue == 0 else 0
+        sequenceElements = _generateAlternatingBitsSequence()
 
     newSequence = "".join(sequenceElements)
 
