@@ -63,6 +63,10 @@ Initial ideas of which number triangles to research and program the generators w
 
 I would like to thank [Emmanuel Acheampong](https://github.com/acheamponge) for providing me a starting motivation to side projects.
 
+I also give thanks to [Refactoring Guru](https://refactoring.guru/) in Ukraine for providing some insight into potential code refactoring.
+
+
+
 Gregory Desrosiers, Bachelor of Soft. Eng., UWaterloo 2019  
 Personal Website: [https://gregpdessch.github.io](https://gregpdessch.github.io)  
 GitHub: [GregPDesSCH](https://github.com/GregPDesSCH)  
