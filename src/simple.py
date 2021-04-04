@@ -46,46 +46,54 @@ def printPyramid(printCommand, numberOfLines, characterToPrint, stepWidth):
         if printCommand == 1 or printCommand == 9:
             # Left Pyramid
             for lineIndex in range(numberOfLines):
-                print("".ljust(stepWidth * (lineIndex + 1), characterToPrint).ljust(stepWidth * numberOfLines))
+                pyramidSegment = "".ljust(stepWidth * (lineIndex + 1), characterToPrint).ljust(stepWidth * numberOfLines)
+                print(pyramidSegment)
 
         if printCommand == 2 or printCommand == 9:
             # Right Pyramid
             for lineIndex in range(numberOfLines):
-                print("".ljust(stepWidth * (lineIndex + 1), characterToPrint).rjust(stepWidth * numberOfLines))
+                pyramidSegment = "".ljust(stepWidth * (lineIndex + 1), characterToPrint).rjust(stepWidth * numberOfLines)
+                print(pyramidSegment)
 
         if printCommand == 3 or printCommand == 9:
             # Full Pyramid
             for lineIndex in range(numberOfLines):
-                print("".ljust(stepWidth * (lineIndex + 1), characterToPrint).rjust(stepWidth * numberOfLines) + \
-                    "".rjust(stepWidth * (lineIndex + 1), characterToPrint).ljust(stepWidth * numberOfLines))
+                pyramidLeftSegment = "".ljust(stepWidth * (lineIndex + 1), characterToPrint).rjust(stepWidth * numberOfLines)
+                pyramidRightSegment = "".rjust(stepWidth * (lineIndex + 1), characterToPrint).ljust(stepWidth * numberOfLines)
+                print(pyramidLeftSegment + pyramidRightSegment)
 
         if printCommand == 4 or printCommand == 9:
             # Silhouette Pyramid
             for lineIndex in range(numberOfLines):
-                print("".ljust(stepWidth * (numberOfLines - (lineIndex)), characterToPrint).ljust(stepWidth * numberOfLines) + \
-                    "".rjust(stepWidth * (numberOfLines - (lineIndex)), characterToPrint).rjust(stepWidth * numberOfLines))
+                pyramidLeftSegment = "".ljust(stepWidth * (numberOfLines - (lineIndex)), characterToPrint).ljust(stepWidth * numberOfLines)
+                pyramidRightSegment = "".rjust(stepWidth * (numberOfLines - (lineIndex)), characterToPrint).rjust(stepWidth * numberOfLines)
+                print(pyramidLeftSegment + pyramidRightSegment)
 
         if printCommand == 5 or printCommand == 9:
             # Upside Down Left Pyramid
             for lineIndex in range(numberOfLines):
-                print("".ljust(stepWidth * (numberOfLines - (lineIndex)), characterToPrint).ljust(stepWidth * numberOfLines))
+                pyramidSegment = "".ljust(stepWidth * (numberOfLines - (lineIndex)), characterToPrint).ljust(stepWidth * numberOfLines)
+                print(pyramidSegment)
 
         if printCommand == 6 or printCommand == 9:
             # Upside Down Right Pyramid
             for lineIndex in range(numberOfLines):
-                print("".rjust(stepWidth * (numberOfLines - (lineIndex)), characterToPrint).rjust(stepWidth * numberOfLines))
+                pyramidSegment = "".rjust(stepWidth * (numberOfLines - (lineIndex)), characterToPrint).rjust(stepWidth * numberOfLines)
+                print(pyramidSegment)
 
         if printCommand == 7 or printCommand == 9:
             # Upside Down Pyramid
             for lineIndex in range(numberOfLines):
-                print("".ljust(stepWidth * (numberOfLines - (lineIndex)), characterToPrint).rjust(stepWidth * numberOfLines) + \
-                    "".rjust(stepWidth * (numberOfLines - (lineIndex)), characterToPrint).ljust(stepWidth * numberOfLines))
+                pyramidLeftSegment = "".ljust(stepWidth * (numberOfLines - (lineIndex)), characterToPrint).rjust(stepWidth * numberOfLines)
+                pyramidRightSegment = "".rjust(stepWidth * (numberOfLines - (lineIndex)), characterToPrint).ljust(stepWidth * numberOfLines)
+                print(pyramidLeftSegment + pyramidRightSegment)
 
         if printCommand == 8 or printCommand == 9:
             # Silhouette Pyramid (Upside Down)
             for lineIndex in range(numberOfLines):
-                print("".ljust(stepWidth * (lineIndex + 1), characterToPrint).ljust(stepWidth * numberOfLines) + \
-                    "".rjust(stepWidth * (lineIndex + 1), characterToPrint).rjust(stepWidth * numberOfLines))
+                pyramidLeftSegment = "".ljust(stepWidth * (lineIndex + 1), characterToPrint).ljust(stepWidth * numberOfLines)
+                pyramidRightSegment = "".rjust(stepWidth * (lineIndex + 1), characterToPrint).rjust(stepWidth * numberOfLines)
+                print(pyramidLeftSegment + pyramidRightSegment)
 
 def printSimplePyramids():
     while True:
@@ -109,3 +117,7 @@ def printSimplePyramids():
 
         printPyramid(printCommand, numberOfLines, characterToPrint, stepWidth)
         print()
+
+# For testing only
+if __name__ == "__main__":
+    printPyramid(9, 10, '5', 2)
