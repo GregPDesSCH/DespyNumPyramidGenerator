@@ -40,12 +40,16 @@ def printPyramid(triangleLines, numberOfLines, alignMode, printInReverse):
     maximumLineLength = len(triangleLines[numberOfLines - 1])
 
     for lineIndex in setOfLineNumbers:
+        pyramidSegment = ""
+
         if alignMode == _triangleLeftAlignMode:
-            print(triangleLines[lineIndex].ljust(maximumLineLength))
+            pyramidSegment = triangleLines[lineIndex].ljust(maximumLineLength)
         elif alignMode == _triangleRightAlignMode:
-            print(triangleLines[lineIndex].rjust(maximumLineLength))
+            pyramidSegment = triangleLines[lineIndex].rjust(maximumLineLength)
         else:
-            print(triangleLines[lineIndex].center(maximumLineLength))
+            pyramidSegment = triangleLines[lineIndex].center(maximumLineLength)
+
+        print(pyramidSegment)
     print()
 
 def printDesiredPyramid(printCommand, triangleLines, numberOfLines):
@@ -108,3 +112,7 @@ if __name__ == "__main__":
     numberOfLines = getNumberOfLinesFromUser(len(triangle))
 
     printDesiredPyramid(printCommand, triangle, numberOfLines)
+
+    # triangle = generateNumberTriangle("pascal")
+    # triangleLines = generateNumberTriangleLines(triangle)
+    # printDesiredPyramid(7, triangleLines, 15)
