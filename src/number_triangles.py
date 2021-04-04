@@ -22,6 +22,15 @@ _triangleLeftAlignMode = "LEFT"
 _triangleRightAlignMode = "RIGHT"
 _triangleCenterAlignMode = "CENTER"
 
+_optionToPrintUpsidePyramidAlignedLeft = 1
+_optionToPrintUpsidePyramidAlignedRight = 2
+_optionToPrintFullUpsidePyramid = 3
+_optionToPrintUpsideDownPyramidAlignedLeft = 4
+_optionToPrintUpsideDownPyramidAlignedRight = 5
+_optionToPrintFullUpsideDownPyramid = 6
+_optionToPrintAllPyramidTypes = 7
+_optionToGoBackToPreviousMenu = 8
+
 def generateNumberTriangleLines(numberTriangle):
     numberTriangleLines = []
     
@@ -53,22 +62,22 @@ def printPyramid(triangleLines, numberOfLines, alignMode, printInReverse):
     print()
 
 def printDesiredPyramid(printCommand, triangleLines, numberOfLines):
-    if printCommand == 1 or printCommand == 7:
+    if printCommand == _optionToPrintUpsidePyramidAlignedLeft or printCommand == _optionToPrintAllPyramidTypes:
         printPyramid(triangleLines, numberOfLines, _triangleLeftAlignMode, False) # Prints a left pyramid
 
-    if printCommand == 2 or printCommand == 7:
+    if printCommand == _optionToPrintUpsidePyramidAlignedRight or printCommand == _optionToPrintAllPyramidTypes:
         printPyramid(triangleLines, numberOfLines, _triangleRightAlignMode, False) # Prints a right pyramid
 
-    if printCommand == 3 or printCommand == 7:
+    if printCommand == _optionToPrintFullUpsidePyramid or printCommand == _optionToPrintAllPyramidTypes:
         printPyramid(triangleLines, numberOfLines, _triangleCenterAlignMode, False) # Prints a full pyramid
 
-    if printCommand == 4 or printCommand == 7:
+    if printCommand == _optionToPrintUpsideDownPyramidAlignedLeft or printCommand == _optionToPrintAllPyramidTypes:
         printPyramid(triangleLines, numberOfLines, _triangleLeftAlignMode, True) # Prints an upside-down left pyramid
 
-    if printCommand == 5 or printCommand == 7:
+    if printCommand == _optionToPrintUpsideDownPyramidAlignedRight or printCommand == _optionToPrintAllPyramidTypes:
         printPyramid(triangleLines, numberOfLines, _triangleRightAlignMode, True) # Prints an upside-down right pyramid
 
-    if printCommand == 6 or printCommand == 7:
+    if printCommand == _optionToPrintFullUpsideDownPyramid or printCommand == _optionToPrintAllPyramidTypes:
         printPyramid(triangleLines, numberOfLines, _triangleCenterAlignMode, True) # Prints an upside-down full pyramid
 
 def printNumberTrianglePyramids(numberTriangleName):
@@ -79,7 +88,7 @@ def printNumberTrianglePyramids(numberTriangleName):
         print("Pyramid: " + _fullNamesOfNumberTriangles[numberTriangleName])
         printCommand = selectPrintPyramidCommand(8, True)
 
-        if printCommand == 8:
+        if printCommand == _optionToGoBackToPreviousMenu:
             break
 
         numberOfLines = getNumberOfLinesFromUser(len(triangle))
