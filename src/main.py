@@ -16,6 +16,13 @@ from number_triangles import printNumberTrianglePyramids
 from sequences import printSequencePyramids
 from simple import printSimplePyramids
 
+_optionForSimplePyramid = 1
+_firstOptionForSequenceOption = 2
+_lastOptionForSequenceOption = 4
+_firstOptionForNumberTriangleOption = 5
+_lastOptionForNumberTriangleOption = 7
+_optionToQuitProgram = 8
+
 def _selectSequence(sequenceIndex):
     if sequenceIndex == 2:
         printSequencePyramids("fibonacci")
@@ -38,13 +45,13 @@ def main():
     while True:
         sequenceIndex = selectSequence()
 
-        if sequenceIndex == 1:
+        if sequenceIndex == _optionForSimplePyramid:
             printSimplePyramids()
-        elif sequenceIndex >= 2 and sequenceIndex <= 4:
+        elif sequenceIndex >= _firstOptionForSequenceOption and sequenceIndex <= _lastOptionForSequenceOption:
             _selectSequence(sequenceIndex)
-        elif sequenceIndex >= 5 and sequenceIndex <= 7:
+        elif sequenceIndex >= _firstOptionForNumberTriangleOption and sequenceIndex <= _lastOptionForNumberTriangleOption:
             _selectNumberTriangle(sequenceIndex)
-        if sequenceIndex == 8:
+        if sequenceIndex == _optionToQuitProgram:
             break
 
     print("See you!\n\nBy Gregory Desrosiers\nhttps://gregpdessch.github.io\nhttps://www.linkedin.com/in/gregorydesrosiers")
