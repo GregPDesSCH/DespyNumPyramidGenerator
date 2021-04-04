@@ -17,8 +17,8 @@ _maxNumberOfCharactersToPrint = 12880
 _maxNumberOfCharactersInOneLine = 160
 
 def _generateFibonacciSequence():
-    a = 0
-    b = 1
+    secondPreviousValue = 0
+    firstPreviousValue = 1
     currentValue = 1
     totalCharactersInNewSequence = 2
     sequenceElements = ["0", "1"]
@@ -28,9 +28,9 @@ def _generateFibonacciSequence():
         sequenceElements.append(currentSequenceMember)
         totalCharactersInNewSequence += len(currentSequenceMember)
 
-        a = b
-        b = currentValue
-        currentValue = a + b
+        secondPreviousValue = firstPreviousValue
+        firstPreviousValue = currentValue
+        currentValue = secondPreviousValue + firstPreviousValue
 
     return sequenceElements
 
@@ -89,12 +89,12 @@ def _generatePascalTriangle():
         newTriangleColIndex = 1
 
         while newTriangleColIndex < len(newNumberTriangle[latestTriangleRowIndex]):
-            newValue = newNumberTriangle[latestTriangleRowIndex][newTriangleColIndex - 1] + \
+            newBinomialCoefficient = newNumberTriangle[latestTriangleRowIndex][newTriangleColIndex - 1] + \
                 newNumberTriangle[latestTriangleRowIndex][newTriangleColIndex]
 
-            currentCharactersInNewRow += int(math.log10(newValue)) + 2
+            currentCharactersInNewRow += int(math.log10(newBinomialCoefficient)) + 2
 
-            newTriangleRow.append(newValue)
+            newTriangleRow.append(newBinomialCoefficient)
             newTriangleColIndex += 1
 
         latestTriangleRowIndex += 1
@@ -118,13 +118,15 @@ def _generateEulerTriangle():
         newTriangleColIndex = 2
 
         while newTriangleColIndex < len(newNumberTriangle[triangleRowIndex - 1]) + 1:
-            newValue = newTriangleColIndex * newNumberTriangle[triangleRowIndex - 1][newTriangleColIndex - 1] + \
-                (triangleRowIndex + 2 - newTriangleColIndex) * \
+            firstShiftedEulerianNumber = newTriangleColIndex * newNumberTriangle[triangleRowIndex - 1][newTriangleColIndex - 1]
+            secondShiftedEulerianNumber = (triangleRowIndex + 2 - newTriangleColIndex) * \
                 newNumberTriangle[triangleRowIndex - 1][newTriangleColIndex - 2]
 
-            currentCharactersInNewRow += int(math.log10(newValue)) + 2
+            newEulerianNumber = firstShiftedEulerianNumber + secondShiftedEulerianNumber
 
-            newTriangleRow.append(newValue)
+            currentCharactersInNewRow += int(math.log10(newEulerianNumber)) + 2
+
+            newTriangleRow.append(newEulerianNumber)
             newTriangleColIndex += 1
 
         triangleRowIndex += 1
@@ -149,12 +151,13 @@ def _generateCatalanTriangle():
         triangleColIndex = 0
 
         while triangleColIndex <= triangleRowIndex:
-            newValue = int(math.factorial(triangleRowIndex + triangleColIndex) * (triangleRowIndex - triangleColIndex + 1) / \
-                (math.factorial(triangleColIndex) * math.factorial(triangleRowIndex + 1)))
+            newCoefficientNumerator = math.factorial(triangleRowIndex + triangleColIndex) * (triangleRowIndex - triangleColIndex + 1)
+            newCoefficientDenominator = math.factorial(triangleColIndex) * math.factorial(triangleRowIndex + 1)
+            newCoefficient = int(newCoefficientNumerator / newCoefficientDenominator)
 
-            currentCharactersInNewRow += int(math.log10(newValue)) + 2
+            currentCharactersInNewRow += int(math.log10(newCoefficient)) + 2
 
-            newTriangleRow.append(newValue)
+            newTriangleRow.append(newCoefficient)
             triangleColIndex += 1
 
         triangleRowIndex += 1
