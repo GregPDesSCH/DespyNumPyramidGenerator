@@ -66,13 +66,13 @@ def printPyramid(printCommand, sequence, numberOfLines, stepWidth):
             pyramidLines = generateSequenceLines(sequence, numberOfLines, stepWidth, False, False, False)
             # Left Pyramid
             for lineIndex in range(numberOfLines):
-                print(pyramidLines[lineIndex].ljust(stepWidth * (lineIndex + 1)).ljust(stepWidth * numberOfLines))
+                print(pyramidLines[lineIndex].ljust(stepWidth * numberOfLines))
 
         if printCommand == 2 or printCommand == 9:
             pyramidLines = generateSequenceLines(sequence, numberOfLines, stepWidth, False, False, False)
             # Right Pyramid
             for lineIndex in range(numberOfLines):
-                print(pyramidLines[lineIndex].ljust(stepWidth * (lineIndex + 1)).rjust(stepWidth * numberOfLines))
+                print(pyramidLines[lineIndex].rjust(stepWidth * numberOfLines))
 
         if printCommand == 3 or printCommand == 9:
             pyramidLines = generateSequenceLines(sequence, numberOfLines, stepWidth, False, True, False)
