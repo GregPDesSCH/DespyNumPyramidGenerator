@@ -20,6 +20,15 @@ _errorMessagePrefix = "ERROR - "
 _inputEmptyErrorMessage = _errorMessagePrefix + "Input must not be empty."
 _inputNotPositiveNumberErrorMessage = _errorMessagePrefix + "Input must be a whole positive number."
 
+_printLineSeparator = "\n"
+_minimumNumberOfLines = 3
+_defaultMaximumNumberOfLines = 80
+
+_firstOptionForProgram = 1
+_lastOptionForProgram = 8
+_firstOptionForPrinting = 1
+_minimumStepWidth = 1
+_maximumStepWidth = 10
 
 def getErrorMessagePrefix():
     return _errorMessagePrefix
@@ -32,23 +41,23 @@ def inputIsGoBackCommand(userInput):
 
 def printMainMenu():
     print("Pick which type of pyramid you would like to perform printing on.", "1 - Simple", "2 - Fibonacci", "3 - Triangular Number", 
-        "4 - Alternating Bits", "5 - Pascal's Triangle", "6 - Euler's Triangle", "7 - Catalan's Triangle", "8 - Quit Program", sep="\n")
+        "4 - Alternating Bits", "5 - Pascal's Triangle", "6 - Euler's Triangle", "7 - Catalan's Triangle", "8 - Quit Program", sep=_printLineSeparator)
 
 def selectSequence():
     rawPrintCommand = ""
     printCommand = 0
-    while len(rawPrintCommand) == 0 or len(rawPrintCommand) > 1 or printCommand < 1 or printCommand > 8 \
+    while len(rawPrintCommand) == 0 or len(rawPrintCommand) > 1 or printCommand < _firstOptionForProgram or printCommand > _lastOptionForProgram \
         or not numberIsAWholeNumber(rawPrintCommand):
         printMainMenu()
-        rawPrintCommand = input('Select option [1-8]: ')
+        rawPrintCommand = input(f'Select option [{_firstOptionForProgram}-{_lastOptionForProgram}]: ')
         if len(rawPrintCommand) == 0:
             print(_inputEmptyErrorMessage)
         elif not numberIsAWholeNumber(rawPrintCommand):
             print(_inputNotPositiveNumberErrorMessage)
         else:
             printCommand = int(rawPrintCommand)
-            if printCommand < 1 or printCommand > 8:
-                print(_errorMessagePrefix + "Command must be in the range [1-8].")
+            if printCommand < _firstOptionForProgram or printCommand > _lastOptionForProgram:
+                print(_errorMessagePrefix + f"Command must be in the range [{_firstOptionForProgram}-{_lastOptionForProgram}].")
 
         print()
     return printCommand
@@ -59,39 +68,39 @@ def printPyramidCommandMenu(triangleIsANumberTriangle):
     if triangleIsANumberTriangle == True:
         print("1 - Left Pyramid", "2 - Right Pyramid", "3 - Center Pyramid",
             "4 - Upside Down Left Pyramid", "5 - Upside Down Right Pyramid", "6 - Upside Down Center Pyrmaid", 
-            "7 - All Options", "8 - Back to Previous Menu", sep="\n")
+            "7 - All Options", "8 - Back to Previous Menu", sep=_printLineSeparator)
     else:
         print("1 - Left Pyramid", "2 - Right Pyramid", "3 - Full Pyramid", "4 - Silhouette Pyramid", 
             "5 - Upside Down Left Pyramid", "6 - Upside Down Right Pyramid",  "7 - Upside Down Pyrmaid", 
-            "8 - Silhouette Pyramid (Upside Down)", "9 - All Options", "10 - Back to Previous Menu", sep="\n")
+            "8 - Silhouette Pyramid (Upside Down)", "9 - All Options", "10 - Back to Previous Menu", sep=_printLineSeparator)
 
     
 
 def selectPrintPyramidCommand(lastCommandIndex = 10, triangleIsANumberTriangle = False):
     rawPrintCommand = ""
     printCommand = 0
-    while len(rawPrintCommand) == 0 or len(rawPrintCommand) > 2 or printCommand < 1 or printCommand > lastCommandIndex \
+    while len(rawPrintCommand) == 0 or len(rawPrintCommand) > 2 or printCommand < _firstOptionForPrinting or printCommand > lastCommandIndex \
         or not numberIsAWholeNumber(rawPrintCommand):
         printPyramidCommandMenu(triangleIsANumberTriangle)
-        rawPrintCommand = input(f'Select option [1-{lastCommandIndex}]: ')
+        rawPrintCommand = input(f'Select option [{_firstOptionForPrinting}-{lastCommandIndex}]: ')
         if len(rawPrintCommand) == 0:
             print(_inputEmptyErrorMessage)
         elif not numberIsAWholeNumber(rawPrintCommand):
             print(_inputNotPositiveNumberErrorMessage)
         else:
             printCommand = int(rawPrintCommand)
-            if printCommand < 1 or printCommand > lastCommandIndex:
-                print(_errorMessagePrefix + f"Command must be in the range [1-{lastCommandIndex}].")
+            if printCommand < _firstOptionForPrinting or printCommand > lastCommandIndex:
+                print(_errorMessagePrefix + f"Command must be in the range [{_firstOptionForPrinting}-{lastCommandIndex}].")
 
         print()
     
     return printCommand
 
-def getNumberOfLinesFromUser(maxNumberOfLines = 80):
+def getNumberOfLinesFromUser(maxNumberOfLines = _defaultMaximumNumberOfLines):
     rawNumberOfLines = ""
     numberOfLines = 0
 
-    while len(rawNumberOfLines) == 0 or numberOfLines < 3 or numberOfLines > maxNumberOfLines \
+    while len(rawNumberOfLines) == 0 or numberOfLines < _minimumNumberOfLines or numberOfLines > maxNumberOfLines \
         or not numberIsAWholeNumber(rawNumberOfLines):
         print("Enter number of lines to make the triangle, or type -- to go back to the previous menu.")
         rawNumberOfLines = input("Number of lines for triangle? ")
@@ -105,8 +114,8 @@ def getNumberOfLinesFromUser(maxNumberOfLines = 80):
             print(_inputNotPositiveNumberErrorMessage)
         else:
             numberOfLines = int(rawNumberOfLines)
-            if numberOfLines < 3 or numberOfLines > maxNumberOfLines:
-                print(_errorMessagePrefix + f"Number of lines must be in the range [3-{maxNumberOfLines}].")
+            if numberOfLines < _minimumNumberOfLines or numberOfLines > maxNumberOfLines:
+                print(_errorMessagePrefix + f"Number of lines must be in the range [{_minimumNumberOfLines}-{maxNumberOfLines}].")
 
         print()
         
@@ -116,7 +125,7 @@ def getStepWidth():
     rawStepWidth = ""
     stepWidth = 0
 
-    while len(rawStepWidth) == 0 or stepWidth < 1 or stepWidth > 10 or not numberIsAWholeNumber(rawStepWidth):
+    while len(rawStepWidth) == 0 or stepWidth < _minimumStepWidth or stepWidth > _maximumStepWidth or not numberIsAWholeNumber(rawStepWidth):
         print("Enter the width of each triangle step, or type -- to go back to the previous menu.")
         rawStepWidth = input("Width of each step? ")
         if len(rawStepWidth) == 0:
@@ -129,8 +138,8 @@ def getStepWidth():
             print(_inputNotPositiveNumberErrorMessage)
         else:
             stepWidth = int(rawStepWidth)
-            if stepWidth < 1 or stepWidth > 10:
-                print(_errorMessagePrefix + "Step width must be in the range [1-10].")
+            if stepWidth < _minimumStepWidth or stepWidth > _maximumStepWidth:
+                print(_errorMessagePrefix + f"Step width must be in the range [{_minimumStepWidth}-{_maximumStepWidth}].")
 
         print()
 
