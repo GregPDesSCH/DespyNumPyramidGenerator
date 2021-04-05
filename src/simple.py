@@ -51,58 +51,59 @@ def getCharacterToPrint():
 def printPyramid(printCommand, numberOfLines, characterToPrint, stepWidth):
     if numberOfCharactersToPrintIsTooHigh(printCommand, numberOfLines, stepWidth):
         print(getErrorMessagePrefix() + "Maximum number of characters to be printed on the screen is 160. Please enter again.")
-    else:
-        if printCommand == _optionToPrintUpsidePyramidAlignedLeft or printCommand == _optionToPrintAllPyramidTypes:
-            # Left Pyramid
-            for lineIndex in range(numberOfLines):
-                pyramidSegment = "".ljust(stepWidth * (lineIndex + 1), characterToPrint).ljust(stepWidth * numberOfLines)
-                print(pyramidSegment)
+        return
 
-        if printCommand == _optionToPrintUpsidePyramidAlignedRight or printCommand == _optionToPrintAllPyramidTypes:
-            # Right Pyramid
-            for lineIndex in range(numberOfLines):
-                pyramidSegment = "".ljust(stepWidth * (lineIndex + 1), characterToPrint).rjust(stepWidth * numberOfLines)
-                print(pyramidSegment)
+    if printCommand == _optionToPrintUpsidePyramidAlignedLeft or printCommand == _optionToPrintAllPyramidTypes:
+        # Left Pyramid
+        for lineIndex in range(numberOfLines):
+            pyramidSegment = "".ljust(stepWidth * (lineIndex + 1), characterToPrint).ljust(stepWidth * numberOfLines)
+            print(pyramidSegment)
 
-        if printCommand == _optionToPrintFullUpsidePyramid or printCommand == _optionToPrintAllPyramidTypes:
-            # Full Pyramid
-            for lineIndex in range(numberOfLines):
-                pyramidLeftSegment = "".ljust(stepWidth * (lineIndex + 1), characterToPrint).rjust(stepWidth * numberOfLines)
-                pyramidRightSegment = "".rjust(stepWidth * (lineIndex + 1), characterToPrint).ljust(stepWidth * numberOfLines)
-                print(pyramidLeftSegment + pyramidRightSegment)
+    if printCommand == _optionToPrintUpsidePyramidAlignedRight or printCommand == _optionToPrintAllPyramidTypes:
+        # Right Pyramid
+        for lineIndex in range(numberOfLines):
+            pyramidSegment = "".ljust(stepWidth * (lineIndex + 1), characterToPrint).rjust(stepWidth * numberOfLines)
+            print(pyramidSegment)
 
-        if printCommand == _optionToPrintFullUpsideSilhouettePyramid or printCommand == _optionToPrintAllPyramidTypes:
-            # Silhouette Pyramid
-            for lineIndex in range(numberOfLines):
-                pyramidLeftSegment = "".ljust(stepWidth * (numberOfLines - (lineIndex)), characterToPrint).ljust(stepWidth * numberOfLines)
-                pyramidRightSegment = "".rjust(stepWidth * (numberOfLines - (lineIndex)), characterToPrint).rjust(stepWidth * numberOfLines)
-                print(pyramidLeftSegment + pyramidRightSegment)
+    if printCommand == _optionToPrintFullUpsidePyramid or printCommand == _optionToPrintAllPyramidTypes:
+        # Full Pyramid
+        for lineIndex in range(numberOfLines):
+            pyramidLeftSegment = "".ljust(stepWidth * (lineIndex + 1), characterToPrint).rjust(stepWidth * numberOfLines)
+            pyramidRightSegment = "".rjust(stepWidth * (lineIndex + 1), characterToPrint).ljust(stepWidth * numberOfLines)
+            print(pyramidLeftSegment + pyramidRightSegment)
 
-        if printCommand == _optionToPrintUpsideDownPyramidAlignedLeft or printCommand == _optionToPrintAllPyramidTypes:
-            # Upside Down Left Pyramid
-            for lineIndex in range(numberOfLines):
-                pyramidSegment = "".ljust(stepWidth * (numberOfLines - (lineIndex)), characterToPrint).ljust(stepWidth * numberOfLines)
-                print(pyramidSegment)
+    if printCommand == _optionToPrintFullUpsideSilhouettePyramid or printCommand == _optionToPrintAllPyramidTypes:
+        # Silhouette Pyramid
+        for lineIndex in range(numberOfLines):
+            pyramidLeftSegment = "".ljust(stepWidth * (numberOfLines - (lineIndex)), characterToPrint).ljust(stepWidth * numberOfLines)
+            pyramidRightSegment = "".rjust(stepWidth * (numberOfLines - (lineIndex)), characterToPrint).rjust(stepWidth * numberOfLines)
+            print(pyramidLeftSegment + pyramidRightSegment)
 
-        if printCommand == _optionToPrintUpsideDownPyramidAlignedRight or printCommand == _optionToPrintAllPyramidTypes:
-            # Upside Down Right Pyramid
-            for lineIndex in range(numberOfLines):
-                pyramidSegment = "".rjust(stepWidth * (numberOfLines - (lineIndex)), characterToPrint).rjust(stepWidth * numberOfLines)
-                print(pyramidSegment)
+    if printCommand == _optionToPrintUpsideDownPyramidAlignedLeft or printCommand == _optionToPrintAllPyramidTypes:
+        # Upside Down Left Pyramid
+        for lineIndex in range(numberOfLines):
+            pyramidSegment = "".ljust(stepWidth * (numberOfLines - (lineIndex)), characterToPrint).ljust(stepWidth * numberOfLines)
+            print(pyramidSegment)
 
-        if printCommand == _optionToPrintFullUpsideDownPyramid or printCommand == _optionToPrintAllPyramidTypes:
-            # Upside Down Pyramid
-            for lineIndex in range(numberOfLines):
-                pyramidLeftSegment = "".ljust(stepWidth * (numberOfLines - (lineIndex)), characterToPrint).rjust(stepWidth * numberOfLines)
-                pyramidRightSegment = "".rjust(stepWidth * (numberOfLines - (lineIndex)), characterToPrint).ljust(stepWidth * numberOfLines)
-                print(pyramidLeftSegment + pyramidRightSegment)
+    if printCommand == _optionToPrintUpsideDownPyramidAlignedRight or printCommand == _optionToPrintAllPyramidTypes:
+        # Upside Down Right Pyramid
+        for lineIndex in range(numberOfLines):
+            pyramidSegment = "".rjust(stepWidth * (numberOfLines - (lineIndex)), characterToPrint).rjust(stepWidth * numberOfLines)
+            print(pyramidSegment)
 
-        if printCommand == _optionToPrintFullUpsideDownSilhouettePyramid or printCommand == _optionToPrintAllPyramidTypes:
-            # Silhouette Pyramid (Upside Down)
-            for lineIndex in range(numberOfLines):
-                pyramidLeftSegment = "".ljust(stepWidth * (lineIndex + 1), characterToPrint).ljust(stepWidth * numberOfLines)
-                pyramidRightSegment = "".rjust(stepWidth * (lineIndex + 1), characterToPrint).rjust(stepWidth * numberOfLines)
-                print(pyramidLeftSegment + pyramidRightSegment)
+    if printCommand == _optionToPrintFullUpsideDownPyramid or printCommand == _optionToPrintAllPyramidTypes:
+        # Upside Down Pyramid
+        for lineIndex in range(numberOfLines):
+            pyramidLeftSegment = "".ljust(stepWidth * (numberOfLines - (lineIndex)), characterToPrint).rjust(stepWidth * numberOfLines)
+            pyramidRightSegment = "".rjust(stepWidth * (numberOfLines - (lineIndex)), characterToPrint).ljust(stepWidth * numberOfLines)
+            print(pyramidLeftSegment + pyramidRightSegment)
+
+    if printCommand == _optionToPrintFullUpsideDownSilhouettePyramid or printCommand == _optionToPrintAllPyramidTypes:
+        # Silhouette Pyramid (Upside Down)
+        for lineIndex in range(numberOfLines):
+            pyramidLeftSegment = "".ljust(stepWidth * (lineIndex + 1), characterToPrint).ljust(stepWidth * numberOfLines)
+            pyramidRightSegment = "".rjust(stepWidth * (lineIndex + 1), characterToPrint).rjust(stepWidth * numberOfLines)
+            print(pyramidLeftSegment + pyramidRightSegment)
 
 def printSimplePyramids():
     while True:
