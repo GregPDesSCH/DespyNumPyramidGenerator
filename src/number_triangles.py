@@ -14,9 +14,11 @@
 from generator import generateNumberTriangle
 from inputs import selectPrintPyramidCommand, getNumberOfLinesFromUser, inputIsGoBackCommand
 
-_fullNamesOfNumberTriangles = {"pascal": "Pascal's Triangle",
+_fullNamesOfNumberTriangles = {
+    "pascal": "Pascal's Triangle",
     "euler": "Euler's Triangle",
-    "catalan": "Catalan's Triangle"}
+    "catalan": "Catalan's Triangle"
+}
 
 _triangleLeftAlignMode = "LEFT"
 _triangleRightAlignMode = "RIGHT"
