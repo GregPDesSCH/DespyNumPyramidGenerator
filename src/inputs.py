@@ -30,6 +30,9 @@ _firstOptionForPrinting = 1
 _minimumStepWidth = 1
 _maximumStepWidth = 10
 
+def _inputIsEmpty(rawInput):
+    return len(rawInput) == 0
+
 def getErrorMessagePrefix():
     return _errorMessagePrefix
 
@@ -46,11 +49,11 @@ def printMainMenu():
 def selectSequence():
     rawPrintCommand = ""
     printCommand = 0
-    while len(rawPrintCommand) == 0 or len(rawPrintCommand) > 1 or printCommand < _firstOptionForProgram or printCommand > _lastOptionForProgram \
+    while _inputIsEmpty(rawPrintCommand) or len(rawPrintCommand) > 1 or printCommand < _firstOptionForProgram or printCommand > _lastOptionForProgram \
         or not numberIsAWholeNumber(rawPrintCommand):
         printMainMenu()
         rawPrintCommand = input(f'Select option [{_firstOptionForProgram}-{_lastOptionForProgram}]: ')
-        if len(rawPrintCommand) == 0:
+        if _inputIsEmpty(rawPrintCommand):
             print(_inputEmptyErrorMessage)
         elif not numberIsAWholeNumber(rawPrintCommand):
             print(_inputNotPositiveNumberErrorMessage)
@@ -79,11 +82,11 @@ def printPyramidCommandMenu(triangleIsANumberTriangle):
 def selectPrintPyramidCommand(lastCommandIndex = 10, triangleIsANumberTriangle = False):
     rawPrintCommand = ""
     printCommand = 0
-    while len(rawPrintCommand) == 0 or len(rawPrintCommand) > 2 or printCommand < _firstOptionForPrinting or printCommand > lastCommandIndex \
+    while _inputIsEmpty(rawPrintCommand) or len(rawPrintCommand) > 2 or printCommand < _firstOptionForPrinting or printCommand > lastCommandIndex \
         or not numberIsAWholeNumber(rawPrintCommand):
         printPyramidCommandMenu(triangleIsANumberTriangle)
         rawPrintCommand = input(f'Select option [{_firstOptionForPrinting}-{lastCommandIndex}]: ')
-        if len(rawPrintCommand) == 0:
+        if _inputIsEmpty(rawPrintCommand):
             print(_inputEmptyErrorMessage)
         elif not numberIsAWholeNumber(rawPrintCommand):
             print(_inputNotPositiveNumberErrorMessage)
@@ -100,11 +103,11 @@ def getNumberOfLinesFromUser(maxNumberOfLines = _defaultMaximumNumberOfLines):
     rawNumberOfLines = ""
     numberOfLines = 0
 
-    while len(rawNumberOfLines) == 0 or numberOfLines < _minimumNumberOfLines or numberOfLines > maxNumberOfLines \
+    while _inputIsEmpty(rawNumberOfLines) or numberOfLines < _minimumNumberOfLines or numberOfLines > maxNumberOfLines \
         or not numberIsAWholeNumber(rawNumberOfLines):
         print("Enter number of lines to make the triangle, or type -- to go back to the previous menu.")
         rawNumberOfLines = input("Number of lines for triangle? ")
-        if len(rawNumberOfLines) == 0:
+        if _inputIsEmpty(rawNumberOfLines):
             print(_inputEmptyErrorMessage)
         elif inputIsGoBackCommand(rawNumberOfLines):
             numberOfLines = -1
@@ -125,10 +128,10 @@ def getStepWidth():
     rawStepWidth = ""
     stepWidth = 0
 
-    while len(rawStepWidth) == 0 or stepWidth < _minimumStepWidth or stepWidth > _maximumStepWidth or not numberIsAWholeNumber(rawStepWidth):
+    while _inputIsEmpty(rawStepWidth) or stepWidth < _minimumStepWidth or stepWidth > _maximumStepWidth or not numberIsAWholeNumber(rawStepWidth):
         print("Enter the width of each triangle step, or type -- to go back to the previous menu.")
         rawStepWidth = input("Width of each step? ")
-        if len(rawStepWidth) == 0:
+        if _inputIsEmpty(rawStepWidth):
             print(_inputEmptyErrorMessage)
         elif inputIsGoBackCommand(rawStepWidth):
             stepWidth = -1
