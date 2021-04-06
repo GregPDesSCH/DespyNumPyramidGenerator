@@ -44,7 +44,8 @@ def inputIsGoBackCommand(userInput):
 
 def printMainMenu():
     print("Pick which type of pyramid you would like to perform printing on.", "1 - Simple", "2 - Fibonacci", "3 - Triangular Number", 
-        "4 - Alternating Bits", "5 - Pascal's Triangle", "6 - Euler's Triangle", "7 - Catalan's Triangle", "8 - Quit Program", sep=_printLineSeparator)
+          "4 - Alternating Bits", "5 - Pascal's Triangle", "6 - Euler's Triangle", "7 - Catalan's Triangle", "8 - Quit Program", 
+          sep=_printLineSeparator)
 
 def selectSequence():
     rawPrintCommand = ""
@@ -69,13 +70,12 @@ def printPyramidCommandMenu(triangleIsANumberTriangle):
     print("Pick an option from one of the following:")
 
     if triangleIsANumberTriangle == True:
-        print("1 - Left Pyramid", "2 - Right Pyramid", "3 - Center Pyramid",
-            "4 - Upside Down Left Pyramid", "5 - Upside Down Right Pyramid", "6 - Upside Down Center Pyrmaid", 
-            "7 - All Options", "8 - Back to Previous Menu", sep=_printLineSeparator)
+        print("1 - Left Pyramid", "2 - Right Pyramid", "3 - Center Pyramid", "4 - Upside Down Left Pyramid", "5 - Upside Down Right Pyramid", 
+              "6 - Upside Down Center Pyrmaid", "7 - All Options", "8 - Back to Previous Menu", sep=_printLineSeparator)
     else:
         print("1 - Left Pyramid", "2 - Right Pyramid", "3 - Full Pyramid", "4 - Silhouette Pyramid", 
-            "5 - Upside Down Left Pyramid", "6 - Upside Down Right Pyramid",  "7 - Upside Down Pyrmaid", 
-            "8 - Silhouette Pyramid (Upside Down)", "9 - All Options", "10 - Back to Previous Menu", sep=_printLineSeparator)
+              "5 - Upside Down Left Pyramid", "6 - Upside Down Right Pyramid",  "7 - Upside Down Pyrmaid", 
+              "8 - Silhouette Pyramid (Upside Down)", "9 - All Options", "10 - Back to Previous Menu", sep=_printLineSeparator)
 
     
 
