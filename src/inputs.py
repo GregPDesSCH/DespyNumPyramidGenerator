@@ -49,7 +49,7 @@ def printMainMenu():
 def selectSequence():
     rawPrintCommand = ""
     printCommand = 0
-    while _inputIsEmpty(rawPrintCommand) or len(rawPrintCommand) > 1 or printCommand < _firstOptionForProgram or printCommand > _lastOptionForProgram \
+    while _inputIsEmpty(rawPrintCommand) or printCommand < _firstOptionForProgram or printCommand > _lastOptionForProgram \
         or not numberIsAWholeNumber(rawPrintCommand):
         printMainMenu()
         rawPrintCommand = input(f'Select option [{_firstOptionForProgram}-{_lastOptionForProgram}]: ')
@@ -82,8 +82,8 @@ def printPyramidCommandMenu(triangleIsANumberTriangle):
 def selectPrintPyramidCommand(lastCommandIndex = 10, triangleIsANumberTriangle = False):
     rawPrintCommand = ""
     printCommand = 0
-    while _inputIsEmpty(rawPrintCommand) or len(rawPrintCommand) > 2 or printCommand < _firstOptionForPrinting or printCommand > lastCommandIndex \
-        or not numberIsAWholeNumber(rawPrintCommand):
+    while _inputIsEmpty(rawPrintCommand) or printCommand < _firstOptionForPrinting or printCommand > lastCommandIndex or not \
+        numberIsAWholeNumber(rawPrintCommand):
         printPyramidCommandMenu(triangleIsANumberTriangle)
         rawPrintCommand = input(f'Select option [{_firstOptionForPrinting}-{lastCommandIndex}]: ')
         if _inputIsEmpty(rawPrintCommand):
