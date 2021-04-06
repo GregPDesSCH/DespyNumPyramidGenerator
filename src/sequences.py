@@ -15,9 +15,11 @@ from conditions import numberOfCharactersToPrintIsTooHigh
 from inputs import selectPrintPyramidCommand, getNumberOfLinesFromUser, getStepWidth, inputIsGoBackCommand, getErrorMessagePrefix
 from generator import generateSequence
 
-_fullNamesOfSequences = {"fibonacci": "Fibonacci Sequence",
+_fullNamesOfSequences = {
+    "fibonacci": "Fibonacci Sequence",
     "triangle": "Triangular Number Sequence",
-    "alternatingBits": "Alternating Bit Sequence"}
+    "alternatingBits": "Alternating Bit Sequence"
+}
 
 _optionToPrintUpsidePyramidAlignedLeft = 1
 _optionToPrintUpsidePyramidAlignedRight = 2
