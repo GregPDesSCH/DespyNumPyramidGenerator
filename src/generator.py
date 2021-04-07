@@ -89,8 +89,8 @@ def _generatePascalTriangle():
         newTriangleColIndex = 1
 
         while newTriangleColIndex < len(newNumberTriangle[latestTriangleRowIndex]):
-            newBinomialCoefficient = newNumberTriangle[latestTriangleRowIndex][newTriangleColIndex - 1] + \
-                newNumberTriangle[latestTriangleRowIndex][newTriangleColIndex]
+            newBinomialCoefficient = newNumberTriangle[latestTriangleRowIndex][newTriangleColIndex - 1] \
+                                     + newNumberTriangle[latestTriangleRowIndex][newTriangleColIndex]
 
             currentCharactersInNewRow += int(math.log10(newBinomialCoefficient)) + 2
 
@@ -119,8 +119,8 @@ def _generateEulerTriangle():
 
         while newTriangleColIndex < len(newNumberTriangle[triangleRowIndex - 1]) + 1:
             firstShiftedEulerianNumber = newTriangleColIndex * newNumberTriangle[triangleRowIndex - 1][newTriangleColIndex - 1]
-            secondShiftedEulerianNumber = (triangleRowIndex + 2 - newTriangleColIndex) * \
-                newNumberTriangle[triangleRowIndex - 1][newTriangleColIndex - 2]
+            secondShiftedEulerianNumber = (triangleRowIndex + 2 - newTriangleColIndex) \
+                                           * newNumberTriangle[triangleRowIndex - 1][newTriangleColIndex - 2]
 
             newEulerianNumber = firstShiftedEulerianNumber + secondShiftedEulerianNumber
 
