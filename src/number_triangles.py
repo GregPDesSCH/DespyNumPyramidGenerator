@@ -14,6 +14,7 @@
 from generator import generateNumberTriangle
 from inputs import selectPrintPyramidCommand, getNumberOfLinesFromUser, inputIsGoBackCommand
 
+
 _fullNamesOfNumberTriangles = {
     "pascal": "Pascal's Triangle",
     "euler": "Euler's Triangle",
@@ -33,18 +34,22 @@ _optionToPrintFullUpsideDownPyramid = 6
 _optionToPrintAllPyramidTypes = 7
 _optionToGoBackToPreviousMenu = 8
 
+
 def generateNumberTriangleLines(numberTriangle):
     numberTriangleLines = []
     
     for lineIndex in range(len(numberTriangle)):
         currentLine = ""
+
         for index, elem in enumerate(numberTriangle[lineIndex]):
             currentLine += str(elem)
             if index < len(numberTriangle[lineIndex]) - 1:
                 currentLine += " "
+        
         numberTriangleLines.append(currentLine)
 
     return numberTriangleLines
+
 
 def printPyramid(triangleLines, numberOfLines, alignMode, printInReverse):
     setOfLineNumbers = range(numberOfLines) if printInReverse == False else range(numberOfLines - 1, -1, -1)
@@ -61,7 +66,9 @@ def printPyramid(triangleLines, numberOfLines, alignMode, printInReverse):
             pyramidSegment = triangleLines[lineIndex].center(maximumLineLength)
 
         print(pyramidSegment)
+
     print()
+
 
 def printDesiredPyramid(printCommand, triangleLines, numberOfLines):
     if printCommand == _optionToPrintUpsidePyramidAlignedLeft or printCommand == _optionToPrintAllPyramidTypes:
@@ -82,6 +89,7 @@ def printDesiredPyramid(printCommand, triangleLines, numberOfLines):
     if printCommand == _optionToPrintFullUpsideDownPyramid or printCommand == _optionToPrintAllPyramidTypes:
         printPyramid(triangleLines, numberOfLines, _triangleCenterAlignMode, True) # Prints an upside-down full pyramid
 
+
 def printNumberTrianglePyramids(numberTriangleName):
     triangle = generateNumberTriangle(numberTriangleName)
     triangleLines = generateNumberTriangleLines(triangle)
@@ -98,6 +106,7 @@ def printNumberTrianglePyramids(numberTriangleName):
             continue
 
         printDesiredPyramid(printCommand, triangleLines, numberOfLines)
+
 
 # For testing only
 if __name__ == "__main__":
