@@ -51,7 +51,7 @@ def selectSequence():
     rawPrintCommand = ""
     printCommand = 0
     while _inputIsEmpty(rawPrintCommand) or printCommand < _firstOptionForProgram or printCommand > _lastOptionForProgram \
-        or not numberIsAWholeNumber(rawPrintCommand):
+            or not numberIsAWholeNumber(rawPrintCommand):
         printMainMenu()
         rawPrintCommand = input(f'Select option [{_firstOptionForProgram}-{_lastOptionForProgram}]: ')
         if _inputIsEmpty(rawPrintCommand):
@@ -82,8 +82,8 @@ def printPyramidCommandMenu(triangleIsANumberTriangle):
 def selectPrintPyramidCommand(lastCommandIndex = 10, triangleIsANumberTriangle = False):
     rawPrintCommand = ""
     printCommand = 0
-    while _inputIsEmpty(rawPrintCommand) or printCommand < _firstOptionForPrinting or printCommand > lastCommandIndex or not \
-        numberIsAWholeNumber(rawPrintCommand):
+    while _inputIsEmpty(rawPrintCommand) or printCommand < _firstOptionForPrinting or printCommand > lastCommandIndex \
+            or not numberIsAWholeNumber(rawPrintCommand):
         printPyramidCommandMenu(triangleIsANumberTriangle)
         rawPrintCommand = input(f'Select option [{_firstOptionForPrinting}-{lastCommandIndex}]: ')
         if _inputIsEmpty(rawPrintCommand):
@@ -104,7 +104,7 @@ def getNumberOfLinesFromUser(maxNumberOfLines = _defaultMaximumNumberOfLines):
     numberOfLines = 0
 
     while _inputIsEmpty(rawNumberOfLines) or numberOfLines < _minimumNumberOfLines or numberOfLines > maxNumberOfLines \
-        or not numberIsAWholeNumber(rawNumberOfLines):
+            or not numberIsAWholeNumber(rawNumberOfLines):
         print("Enter number of lines to make the triangle, or type -- to go back to the previous menu.")
         rawNumberOfLines = input("Number of lines for triangle? ")
         if _inputIsEmpty(rawNumberOfLines):
