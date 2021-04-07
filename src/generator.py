@@ -13,19 +13,23 @@
 
 import math
 
+
 _maxNumberOfCharactersToPrint = 12880
 _maxNumberOfCharactersInOneLine = 160
 
+
 def _generateFibonacciSequence():
+    sequenceElements = ["0", "1"]
+    totalCharactersInNewSequence = 2
+
     secondPreviousValue = 0
     firstPreviousValue = 1
     currentValue = 1
-    totalCharactersInNewSequence = 2
-    sequenceElements = ["0", "1"]
 
     while totalCharactersInNewSequence <= _maxNumberOfCharactersToPrint:
         currentSequenceMember = str(currentValue)
         sequenceElements.append(currentSequenceMember)
+
         totalCharactersInNewSequence += len(currentSequenceMember)
 
         secondPreviousValue = firstPreviousValue
@@ -36,13 +40,15 @@ def _generateFibonacciSequence():
 
 def _generateTriangleSequence():
     sequenceElements = []
+    totalCharactersInNewSequence = 0
+
     total = 1
     currentAddend = 2
-    totalCharactersInNewSequence = 0
 
     while totalCharactersInNewSequence <= _maxNumberOfCharactersToPrint:
         currentSequenceMember = str(total)
         sequenceElements.append(currentSequenceMember)
+
         totalCharactersInNewSequence += len(currentSequenceMember)
 
         total += currentAddend
@@ -52,12 +58,14 @@ def _generateTriangleSequence():
 
 def _generateAlternatingBitsSequence():
     sequenceElements = []
-    currentValue = 0
     totalCharactersInNewSequence = 0
+    
+    currentValue = 0
 
     while totalCharactersInNewSequence <= _maxNumberOfCharactersToPrint:
         currentSequenceMember = str(currentValue)
         sequenceElements.append(currentSequenceMember)
+
         totalCharactersInNewSequence += len(currentSequenceMember)
 
         currentValue = 1 if currentValue == 0 else 0
@@ -78,6 +86,7 @@ def generateSequence(sequenceName):
     newSequence = "".join(sequenceElements)
 
     return newSequence
+
 
 def _generatePascalTriangle():
     newNumberTriangle = [[1], [1, 1]]
@@ -153,6 +162,7 @@ def _generateCatalanTriangle():
         while triangleColIndex <= triangleRowIndex:
             newCoefficientNumerator = math.factorial(triangleRowIndex + triangleColIndex) * (triangleRowIndex - triangleColIndex + 1)
             newCoefficientDenominator = math.factorial(triangleColIndex) * math.factorial(triangleRowIndex + 1)
+
             newCoefficient = int(newCoefficientNumerator / newCoefficientDenominator)
 
             currentCharactersInNewRow += int(math.log10(newCoefficient)) + 2
@@ -180,6 +190,7 @@ def generateNumberTriangle(numberTriangleName):
         newNumberTriangle = _generateCatalanTriangle()
             
     return newNumberTriangle
+
 
 # For testing only
 if __name__ == "__main__":
