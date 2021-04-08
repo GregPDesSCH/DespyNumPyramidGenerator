@@ -14,8 +14,8 @@
 import math
 
 
-_maxNumberOfCharactersToPrint = 12880
-_maxNumberOfCharactersInOneLine = 160
+_MAX_NUMBER_OF_CHARACTERS_TO_PRINT = 12880
+_MAX_NUMBER_OF_CHARACTERS_IN_ONE_LINE = 160
 
 
 def _generateFibonacciSequence():
@@ -26,7 +26,7 @@ def _generateFibonacciSequence():
     firstPreviousValue = 1
     currentValue = 1
 
-    while totalCharactersInNewSequence <= _maxNumberOfCharactersToPrint:
+    while totalCharactersInNewSequence <= _MAX_NUMBER_OF_CHARACTERS_TO_PRINT:
         currentSequenceMember = str(currentValue)
         sequenceElements.append(currentSequenceMember)
 
@@ -45,7 +45,7 @@ def _generateTriangleSequence():
     total = 1
     currentAddend = 2
 
-    while totalCharactersInNewSequence <= _maxNumberOfCharactersToPrint:
+    while totalCharactersInNewSequence <= _MAX_NUMBER_OF_CHARACTERS_TO_PRINT:
         currentSequenceMember = str(total)
         sequenceElements.append(currentSequenceMember)
 
@@ -62,7 +62,7 @@ def _generateAlternatingBitsSequence():
     
     currentValue = 0
 
-    while totalCharactersInNewSequence <= _maxNumberOfCharactersToPrint:
+    while totalCharactersInNewSequence <= _MAX_NUMBER_OF_CHARACTERS_TO_PRINT:
         currentSequenceMember = str(currentValue)
         sequenceElements.append(currentSequenceMember)
 
@@ -110,7 +110,7 @@ def _generatePascalTriangle():
         newTriangleRow.append(1)
         currentCharactersInNewRow += 1
 
-        if currentCharactersInNewRow > _maxNumberOfCharactersInOneLine:
+        if currentCharactersInNewRow > _MAX_NUMBER_OF_CHARACTERS_IN_ONE_LINE:
             break
 
         newNumberTriangle.append(newTriangleRow)
@@ -142,7 +142,7 @@ def _generateEulerTriangle():
         newTriangleRow.append(1)
         currentCharactersInNewRow += 1
 
-        if currentCharactersInNewRow > _maxNumberOfCharactersInOneLine:
+        if currentCharactersInNewRow > _MAX_NUMBER_OF_CHARACTERS_IN_ONE_LINE:
             break
 
         newNumberTriangle.append(newTriangleRow)
@@ -172,7 +172,7 @@ def _generateCatalanTriangle():
 
         triangleRowIndex += 1
 
-        if currentCharactersInNewRow > _maxNumberOfCharactersInOneLine:
+        if currentCharactersInNewRow > _MAX_NUMBER_OF_CHARACTERS_IN_ONE_LINE:
             break
         newNumberTriangle.append(newTriangleRow)
 
