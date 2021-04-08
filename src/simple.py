@@ -39,7 +39,7 @@ def getCharacterToPrint():
     while len(characterToPrint) != 1 and not inputIsGoBackCommand(characterToPrint):
         print("Enter a character to create the triangle out of, or type -- to go back to the previous menu.")
 
-        characterToPrint = input('Character? ')
+        characterToPrint = input("Character? ")
         if len(characterToPrint) == 0:
             print(getInputEmptyErrorMessage())
         elif len(characterToPrint) > 1 and not inputIsGoBackCommand(characterToPrint):
@@ -134,4 +134,4 @@ def printSimplePyramids():
 
 # For testing only
 if __name__ == "__main__":
-    printPyramid(9, 10, '5', 2)
+    printPyramid(9, 10, "5", 2)
