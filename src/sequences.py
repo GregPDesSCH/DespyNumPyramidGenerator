@@ -16,22 +16,22 @@ from inputs import selectPrintPyramidCommand, getNumberOfLinesFromUser, getStepW
 from generator import generateSequence
 
 
-_fullNamesOfSequences = {
+_FULL_NAMES_OF_SEQUENCES = {
     "fibonacci": "Fibonacci Sequence",
     "triangle": "Triangular Number Sequence",
     "alternatingBits": "Alternating Bit Sequence"
 }
 
-_optionToPrintUpsidePyramidAlignedLeft = 1
-_optionToPrintUpsidePyramidAlignedRight = 2
-_optionToPrintFullUpsidePyramid = 3
-_optionToPrintFullUpsideSilhouettePyramid = 4
-_optionToPrintUpsideDownPyramidAlignedLeft = 5
-_optionToPrintUpsideDownPyramidAlignedRight = 6
-_optionToPrintFullUpsideDownPyramid = 7
-_optionToPrintFullUpsideDownSilhouettePyramid = 8
-_optionToPrintAllPyramidTypes = 9
-_optionToGoBackToPreviousMenu = 10
+_OPTION_TO_PRINT_UPSIDE_PYRAMID_ALIGNED_LEFT = 1
+_OPTION_TO_PRINT_UPSIDE_PYRAMID_ALIGNED_RIGHT = 2
+_OPTION_TO_PRINT_FULL_UPSIDE_PYRAMID = 3
+_OPTION_TO_PRINT_FULL_UPSIDE_SILHOUETTE_PYRAMID = 4
+_OPTION_TO_PRINT_UPSIDE_DOWN_PYRAMID_ALIGNED_LEFT = 5
+_OPTION_TO_PRINT_UPSIDE_DOWN_PYRAMID_ALIGNED_RIGHT = 6
+_OPTION_TO_PRINT_FULL_UPSIDE_DOWN_PYRAMID = 7
+_OPTION_TO_PRINT_FULL_UPSIDE_DOWN_SILHOUETTE_PYRAMID = 8
+_OPTION_TO_PRINT_ALL_PYRAMID_TYPES = 9
+_OPTION_TO_GO_BACK_TO_PREVIOUS_MENU = 10
 
 
 
@@ -87,7 +87,7 @@ def printPyramid(printCommand, sequence, numberOfLines, stepWidth):
         return 
     
     # Left Pyramid
-    if printCommand == _optionToPrintUpsidePyramidAlignedLeft or printCommand == _optionToPrintAllPyramidTypes:
+    if printCommand == _OPTION_TO_PRINT_UPSIDE_PYRAMID_ALIGNED_LEFT or printCommand == _OPTION_TO_PRINT_ALL_PYRAMID_TYPES:
         pyramidLines = generateSequenceLines(sequence, numberOfLines, stepWidth, False, False, False)
 
         for lineIndex in range(numberOfLines):
@@ -95,7 +95,7 @@ def printPyramid(printCommand, sequence, numberOfLines, stepWidth):
             print(leftPyramidLine)
 
     # Right Pyramid
-    if printCommand == _optionToPrintUpsidePyramidAlignedRight or printCommand == _optionToPrintAllPyramidTypes:
+    if printCommand == _OPTION_TO_PRINT_UPSIDE_PYRAMID_ALIGNED_RIGHT or printCommand == _OPTION_TO_PRINT_ALL_PYRAMID_TYPES:
         pyramidLines = generateSequenceLines(sequence, numberOfLines, stepWidth, False, False, False)
 
         for lineIndex in range(numberOfLines):
@@ -103,7 +103,7 @@ def printPyramid(printCommand, sequence, numberOfLines, stepWidth):
             print(rightPyramidLine)
 
     # Full Pyramid
-    if printCommand == _optionToPrintFullUpsidePyramid or printCommand == _optionToPrintAllPyramidTypes:
+    if printCommand == _OPTION_TO_PRINT_FULL_UPSIDE_PYRAMID or printCommand == _OPTION_TO_PRINT_ALL_PYRAMID_TYPES:
         pyramidLines = generateSequenceLines(sequence, numberOfLines, stepWidth, False, True, False)
 
         for lineIndex in range(numberOfLines):
@@ -112,7 +112,7 @@ def printPyramid(printCommand, sequence, numberOfLines, stepWidth):
             print(pyramidLeftSegment + pyramidRightSegment)
 
     # Silhouette Pyramid
-    if printCommand == _optionToPrintFullUpsideSilhouettePyramid or printCommand == _optionToPrintAllPyramidTypes:
+    if printCommand == _OPTION_TO_PRINT_FULL_UPSIDE_SILHOUETTE_PYRAMID or printCommand == _OPTION_TO_PRINT_ALL_PYRAMID_TYPES:
         pyramidLines = generateSequenceLines(sequence, numberOfLines, stepWidth, False, False, True)
 
         for lineIndex in range(numberOfLines):
@@ -121,7 +121,7 @@ def printPyramid(printCommand, sequence, numberOfLines, stepWidth):
             print(pyramidLeftSegment + pyramidRightSegment)
 
     # Upside Down Left Pyramid
-    if printCommand == _optionToPrintUpsideDownPyramidAlignedLeft or printCommand == _optionToPrintAllPyramidTypes:
+    if printCommand == _OPTION_TO_PRINT_UPSIDE_DOWN_PYRAMID_ALIGNED_LEFT or printCommand == _OPTION_TO_PRINT_ALL_PYRAMID_TYPES:
         pyramidLines = generateSequenceLines(sequence, numberOfLines, stepWidth, True, False, False)
 
         for lineIndex in range(numberOfLines):
@@ -129,7 +129,7 @@ def printPyramid(printCommand, sequence, numberOfLines, stepWidth):
             print(leftPyramidLine)
 
     # Upside Down Right Pyramid
-    if printCommand == _optionToPrintUpsideDownPyramidAlignedRight or printCommand == _optionToPrintAllPyramidTypes:
+    if printCommand == _OPTION_TO_PRINT_UPSIDE_DOWN_PYRAMID_ALIGNED_RIGHT or printCommand == _OPTION_TO_PRINT_ALL_PYRAMID_TYPES:
         pyramidLines = generateSequenceLines(sequence, numberOfLines, stepWidth, True, False, False)
 
         for lineIndex in range(numberOfLines):
@@ -137,7 +137,7 @@ def printPyramid(printCommand, sequence, numberOfLines, stepWidth):
             print(rightPyramidLine)
 
     # Upside Down Pyramid
-    if printCommand == _optionToPrintFullUpsideDownPyramid or printCommand == _optionToPrintAllPyramidTypes:
+    if printCommand == _OPTION_TO_PRINT_FULL_UPSIDE_DOWN_PYRAMID or printCommand == _OPTION_TO_PRINT_ALL_PYRAMID_TYPES:
         pyramidLines = generateSequenceLines(sequence, numberOfLines, stepWidth, True, True, False)
 
         for lineIndex in range(numberOfLines):
@@ -146,7 +146,7 @@ def printPyramid(printCommand, sequence, numberOfLines, stepWidth):
             print(pyramidLeftSegment + pyramidRightSegment)
 
     # Silhouette Pyramid (Upside Down)
-    if printCommand == _optionToPrintFullUpsideDownSilhouettePyramid or printCommand == _optionToPrintAllPyramidTypes:
+    if printCommand == _OPTION_TO_PRINT_FULL_UPSIDE_DOWN_SILHOUETTE_PYRAMID or printCommand == _OPTION_TO_PRINT_ALL_PYRAMID_TYPES:
         pyramidLines = generateSequenceLines(sequence, numberOfLines, stepWidth, True, False, True)
 
         for lineIndex in range(numberOfLines):
@@ -159,10 +159,10 @@ def printSequencePyramids(sequenceName):
     sequence = generateSequence(sequenceName)
 
     while True:
-        print("Pyramid: " + _fullNamesOfSequences[sequenceName])
+        print("Pyramid: " + _FULL_NAMES_OF_SEQUENCES[sequenceName])
         printCommand = selectPrintPyramidCommand()
 
-        if printCommand == _optionToGoBackToPreviousMenu:
+        if printCommand == _OPTION_TO_GO_BACK_TO_PREVIOUS_MENU:
             break
 
         numberOfLines = getNumberOfLinesFromUser()
