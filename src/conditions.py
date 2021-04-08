@@ -11,7 +11,7 @@
 
 """
 
-_maximumCharactersInOneLine = 160
+_MAXIMUM_CHARACTERS_IN_ONE_LINE = 160
 
 
 def numberIsAWholeNumber(rawNumber):
@@ -23,5 +23,5 @@ def numberIsAWholeNumber(rawNumber):
 
 
 def numberOfCharactersToPrintIsTooHigh(printCommand, numberOfLines, stepWidth):
-    return numberOfLines * stepWidth > _maximumCharactersInOneLine or (printCommand == 3 or printCommand == 4 or printCommand == 7
-            or printCommand == 8 or printCommand == 9) and 2 * numberOfLines * stepWidth > _maximumCharactersInOneLine
+    return numberOfLines * stepWidth > _MAXIMUM_CHARACTERS_IN_ONE_LINE or (printCommand == 3 or printCommand == 4 or printCommand == 7
+            or printCommand == 8 or printCommand == 9) and 2 * numberOfLines * stepWidth > _MAXIMUM_CHARACTERS_IN_ONE_LINE
