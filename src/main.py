@@ -16,12 +16,14 @@ from number_triangles import printNumberTrianglePyramids
 from sequences import printSequencePyramids
 from simple import printSimplePyramids
 
-_optionForSimplePyramid = 1
-_firstOptionForSequenceOption = 2
-_lastOptionForSequenceOption = 4
-_firstOptionForNumberTriangleOption = 5
-_lastOptionForNumberTriangleOption = 7
-_optionToQuitProgram = 8
+
+_OPTION_FOR_SIMPLE_PYRAMID = 1
+_FIRST_OPTION_FOR_SEQUENCE_OPTION = 2
+_LAST_OPTION_FOR_SEQUENCE_OPTION = 4
+_FIRST_OPTION_FOR_NUMBER_TRIANGLE_OPTION = 5
+_LAST_OPTION_FOR_NUMBER_TRIANGLE_OPTION = 7
+_OPTION_TO_QUIT_PROGRAM = 8
+
 
 def _selectSequence(sequenceIndex):
     if sequenceIndex == 2:
@@ -39,19 +41,20 @@ def _selectNumberTriangle(sequenceIndex):
     elif sequenceIndex == 7:
         printNumberTrianglePyramids("catalan")
 
+
 def main():
     print("DespyNumPyramidGenerator\nby Gregory Desrosiers\n")
 
     while True:
         sequenceIndex = selectSequence()
 
-        if sequenceIndex == _optionForSimplePyramid:
+        if sequenceIndex == _OPTION_FOR_SIMPLE_PYRAMID:
             printSimplePyramids()
-        elif sequenceIndex >= _firstOptionForSequenceOption and sequenceIndex <= _lastOptionForSequenceOption:
+        elif sequenceIndex >= _FIRST_OPTION_FOR_SEQUENCE_OPTION and sequenceIndex <= _LAST_OPTION_FOR_SEQUENCE_OPTION:
             _selectSequence(sequenceIndex)
-        elif sequenceIndex >= _firstOptionForNumberTriangleOption and sequenceIndex <= _lastOptionForNumberTriangleOption:
+        elif sequenceIndex >= _FIRST_OPTION_FOR_NUMBER_TRIANGLE_OPTION and sequenceIndex <= _LAST_OPTION_FOR_NUMBER_TRIANGLE_OPTION:
             _selectNumberTriangle(sequenceIndex)
-        if sequenceIndex == _optionToQuitProgram:
+        if sequenceIndex == _OPTION_TO_QUIT_PROGRAM:
             break
 
     print("See you!\n\nBy Gregory Desrosiers\nhttps://gregpdessch.github.io\nhttps://www.linkedin.com/in/gregorydesrosiers")
