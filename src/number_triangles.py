@@ -52,7 +52,7 @@ def generateNumberTriangleLines(numberTriangle):
 
 
 def printPyramid(triangleLines, numberOfLines, alignMode, printInReverse):
-    setOfLineNumbers = range(numberOfLines) if printInReverse == False else range(numberOfLines - 1, -1, -1)
+    setOfLineNumbers = range(numberOfLines) if not printInReverse else range(numberOfLines - 1, -1, -1)
     maximumLineLength = len(triangleLines[numberOfLines - 1])
 
     for lineIndex in setOfLineNumbers:
