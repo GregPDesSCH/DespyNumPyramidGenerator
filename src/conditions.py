@@ -23,5 +23,5 @@ def numberIsAWholeNumber(rawNumber):
 
 
 def numberOfCharactersToPrintIsTooHigh(printCommand, numberOfLines, stepWidth):
-    return numberOfLines * stepWidth > _maximumCharactersInOneLine or (printCommand == 3 or printCommand == 4 or printCommand == 7 
+    return numberOfLines * stepWidth > _maximumCharactersInOneLine or (printCommand == 3 or printCommand == 4 or printCommand == 7
             or printCommand == 8 or printCommand == 9) and 2 * numberOfLines * stepWidth > _maximumCharactersInOneLine
