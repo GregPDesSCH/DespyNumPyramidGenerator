@@ -49,13 +49,13 @@ def generateSequenceLines(sequence, numberOfLines, stepWidth, pyramidIsUpsideDow
     maxLineSegmentLength = 0
 
     if not pyramidIsSilhouette and not pyramidIsFull:
-        if not pyramidIsUpsideDown:
+        if pyramidIsUpsideDown:
             maxLineSegmentLength = (numberOfLines + 1) * stepWidth
 
         for _ in range(numberOfLines):
             currentLine = ""
 
-            maxLineSegmentLength += stepWidth * (-1 if not pyramidIsUpsideDown else 1)
+            maxLineSegmentLength += stepWidth * (-1 if pyramidIsUpsideDown else 1)
             pyramidSegment = createLineSegment(sequence, maxLineSegmentLength, sequenceStringIndex)
 
             sequenceLines.append(pyramidSegment)
@@ -64,7 +64,7 @@ def generateSequenceLines(sequence, numberOfLines, stepWidth, pyramidIsUpsideDow
         for lineNumber in range(numberOfLines):
             currentLine = []
             
-            if not pyramidIsSilhouette and not pyramidIsUpsideDown or not pyramidIsSilhouette \
+            if not pyramidIsSilhouette and pyramidIsUpsideDown or pyramidIsSilhouette \
                     and not pyramidIsUpsideDown:
                 maxLineSegmentLength = stepWidth * numberOfLines - lineNumber * stepWidth
             else:
