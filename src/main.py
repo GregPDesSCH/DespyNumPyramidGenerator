@@ -25,6 +25,7 @@ _LAST_OPTION_FOR_NUMBER_TRIANGLE_OPTION = 7
 _OPTION_TO_QUIT_PROGRAM = 8
 
 
+# Selects a sequence to generate the numbers and print the pyramid.
 def _selectSequence(sequenceIndex):
     if sequenceIndex == 2:
         printSequencePyramids("fibonacci")
@@ -33,6 +34,7 @@ def _selectSequence(sequenceIndex):
     elif sequenceIndex == 4:
         printSequencePyramids("alternatingBits")
 
+# Selects a famous mathematical triangle to print out.
 def _selectNumberTriangle(sequenceIndex):
     if sequenceIndex == 5:
         printNumberTrianglePyramids("pascal")
@@ -41,12 +43,12 @@ def _selectNumberTriangle(sequenceIndex):
     elif sequenceIndex == 7:
         printNumberTrianglePyramids("catalan")
 
-
 def main():
+    """Main program loop"""
     print("DespyNumPyramidGenerator\nby Gregory Desrosiers\n")
 
     while True:
-        sequenceIndex = selectSequence()
+        sequenceIndex = selectSequence() # Select what sequence to interact with
 
         if sequenceIndex == _OPTION_FOR_SIMPLE_PYRAMID:
             printSimplePyramids()
