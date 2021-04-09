@@ -31,30 +31,40 @@ _FIRST_OPTION_FOR_PRINTING = 1
 _MINIMUM_STEP_WIDTH = 1
 _MAXIMUM_STEP_WIDTH = 10
 
-
+# Checks if input is empty
 def _inputIsEmpty(rawInput):
     return len(rawInput) == 0
 
 
 def inputIsGoBackCommand(userInput):
+    """Checks if the input is the command to go back to the previous menu."""
     return userInput == _GO_BACK_TO_PREVIOUS_MENU_INPUT_STRING or userInput == _GO_BACK_TO_PREVIOUS_MENU_INPUT_NUM
 
 
 def getErrorMessagePrefix():
+    """Gets the prefix for printing out error messages."""
     return _ERROR_MESSAGE_PREFIX
 
 def getInputEmptyErrorMessage():
+    """Gets the error message for inputs that are empty."""
     return _INPUT_EMPTY_ERROR_MESSAGE
 
 
 
 def printMainMenu():
+    """Prints out the main menu of the program"""
     print("Pick which type of pyramid you would like to perform printing on.", "1 - Simple", "2 - Fibonacci", "3 - Triangular Number",
           "4 - Alternating Bits", "5 - Pascal's Triangle", "6 - Euler's Triangle", "7 - Catalan's Triangle", "8 - Quit Program",
           sep=_PRINT_LINE_SEPARATOR)
 
 
 def selectSequence():
+    """
+    Reads in user input for selecting the sequence to interact.
+
+    Returns:
+    printCommand - User's selection of sequence to interact.
+    """
     rawPrintCommand = ""
     printCommand = 0
 
@@ -78,6 +88,12 @@ def selectSequence():
 
 
 def printPyramidCommandMenu(triangleIsANumberTriangle):
+    """
+    Prints out a menu of possible orientations to print the pyramid of the selected sequence.
+
+    Params:
+    triangleIsANumberTriangle - Flag denoting whether the pyramid chosen is a famous number triangle.
+    """
     print("Pick an option from one of the following:")
 
     if triangleIsANumberTriangle:
@@ -90,6 +106,16 @@ def printPyramidCommandMenu(triangleIsANumberTriangle):
 
     
 def selectPrintPyramidCommand(lastCommandIndex = 10, triangleIsANumberTriangle = False):
+    """
+    Reads in user input for selecting which orientation to print the pyramid of the selected sequence out of.
+
+    Params:
+    lastCommandIndex - Number representing the last option the user can enter.
+    triangleIsANumberTriangle - Flag denoting whether the pyramid chosen is a famous number triangle.
+
+    Returns:
+    printCommand - User's selection of orientation for the pyramid to be printed out.
+    """
     rawPrintCommand = ""
     printCommand = 0
 
@@ -113,6 +139,15 @@ def selectPrintPyramidCommand(lastCommandIndex = 10, triangleIsANumberTriangle =
 
 
 def getNumberOfLinesFromUser(maxNumberOfLines = _DEFAULT_MAXIMUM_NUMBER_OF_LINES):
+    """
+    Reads in user input for the number of lines the pyramid to be printed will be made up of.
+
+    Params:
+    maxNumberOfLines - Maximum number of lines the user can print out.
+
+    Returns:
+    numberOfLines - User's selection of the number of lines to be printed.
+    """
     rawNumberOfLines = ""
     numberOfLines = 0
 
@@ -140,6 +175,12 @@ def getNumberOfLinesFromUser(maxNumberOfLines = _DEFAULT_MAXIMUM_NUMBER_OF_LINES
 
 
 def getStepWidth():
+    """
+    Reads in user input for the step width of the pyramid to print.
+
+    Returns:
+    stepWidth - User's selection of the pyramid's step width.
+    """
     rawStepWidth = ""
     stepWidth = 0
 
