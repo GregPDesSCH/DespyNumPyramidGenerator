@@ -44,16 +44,35 @@ def _inputIsEmpty(rawInput):
 
 
 def inputIsGoBackCommand(userInput):
-    """Checks if the input is the command to go back to the previous menu."""
+    """
+    Checks if the input is the command to go back to the previous menu.
+
+    Params:
+    userInput - User's raw input
+
+    Returns:
+    Flag saying whether or not the user's input is to go back to the previous menu.
+
+    """
     return userInput == _GO_BACK_TO_PREVIOUS_MENU_INPUT_STRING or userInput == _GO_BACK_TO_PREVIOUS_MENU_INPUT_NUM
 
 
 def getErrorMessagePrefix():
-    """Gets the prefix for printing out error messages."""
+    """
+    Gets the prefix for printing out error messages.
+
+    Returns:
+    _ERROR_MESSAGE_PREFIX - Prefix for error messages.
+    """
     return _ERROR_MESSAGE_PREFIX
 
 def getInputEmptyErrorMessage():
-    """Gets the error message for inputs that are empty."""
+    """
+    Gets the error message for inputs that are empty.
+
+    Returns:
+    _ERROR_MESSAGE_PREFIX - Prefix for error messages.
+    """
     return _INPUT_EMPTY_ERROR_MESSAGE
 
 
