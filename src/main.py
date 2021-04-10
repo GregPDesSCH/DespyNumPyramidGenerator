@@ -16,7 +16,7 @@ from number_triangles import printNumberTrianglePyramids
 from sequences import printSequencePyramids
 from simple import printSimplePyramids
 
-
+# Main menu selection constants
 _OPTION_FOR_SIMPLE_PYRAMID = 1
 _FIRST_OPTION_FOR_SEQUENCE_OPTION = 2
 _LAST_OPTION_FOR_SEQUENCE_OPTION = 4
