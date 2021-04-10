@@ -39,9 +39,10 @@ def numberOfCharactersToPrintIsTooHigh(printCommand, numberOfLines, stepWidth):
     (only for simple pyramids and pyramids involving sequences)
 
     Params:
-    printCommand -
-    numberOfLines -
-    stepWidth -
+    printCommand - User's selection of orientation for the pyramid to be
+    printed out.
+    numberOfLines - User's selection of the number of lines to be printed.
+    stepWidth - User's selection of the pyramid's step width.
 
     Returns:
     Flag representing whether there's at most more than 160 characters to print
