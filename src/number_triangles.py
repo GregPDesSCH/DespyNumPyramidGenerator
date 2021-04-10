@@ -38,7 +38,15 @@ _OPTION_TO_GO_BACK_TO_PREVIOUS_MENU = 8
 
 
 def generateNumberTriangleLines(numberTriangle):
-    """Generate the lines that when printed will give the number triangle appearance."""
+    """
+    Generate the lines that when printed will give the number triangle appearance.
+    
+    Params:
+    numberTriangle - 2D list representing elements of a number triangle
+
+    Returns:
+    numberTriangleLines - List of strings to print the number triangle in order.
+    """
     numberTriangleLines = []
     
     for lineIndex in range(len(numberTriangle)):
@@ -55,8 +63,15 @@ def generateNumberTriangleLines(numberTriangle):
 
 
 def printPyramid(triangleLines, numberOfLines, alignMode, printInReverse):
-    """Prints the pyramid out to the console with the specified options."""
+    """
+    Prints the pyramid out to the console with the specified options.
 
+    Params:
+    triangleLines - List of strings to print the number triangle in order.
+    numberOfLines - Number of lines the triangle will be printed out of.
+    alignMode - String alignment option.
+    printInReverse - Flag whether to print the lines forwards or backwards.
+    """
     setOfLineNumbers = range(numberOfLines) if not printInReverse else range(numberOfLines - 1, -1, -1)
     maximumLineLength = len(triangleLines[numberOfLines - 1])
 
@@ -76,7 +91,14 @@ def printPyramid(triangleLines, numberOfLines, alignMode, printInReverse):
 
 
 def printDesiredPyramid(printCommand, triangleLines, numberOfLines):
-    """Calls a helper function to print the pyramid with the desired options."""
+    """
+    Calls a helper function to print the pyramid with the desired options.
+    
+    Params:
+    printCommand - User's choice for pyramid orientation.
+    triangleLines - List of strings to print the number triangle in order.
+    numberOfLines - Number of lines the triangle will be printed out of.
+    """
     if printCommand == _OPTION_TO_PRINT_UPSIDE_PYRAMID_ALIGNED_LEFT or printCommand == _OPTION_TO_PRINT_ALL_PYRAMID_TYPES:
         printPyramid(triangleLines, numberOfLines, _TRIANGLE_LEFT_ALIGN_MODE, False) # Prints a left pyramid
 
@@ -97,7 +119,12 @@ def printDesiredPyramid(printCommand, triangleLines, numberOfLines):
 
 
 def printNumberTrianglePyramids(numberTriangleName):
-    """Loop for interacting with pyramids of famous number triangles"""
+    """
+    Loop for interacting with pyramids of famous number triangles
+
+    Params:
+    numberTriangleName - Name of the number triangle to generate the pyramid for printing.
+    """
     triangle = generateNumberTriangle(numberTriangleName)
     triangleLines = generateNumberTriangleLines(triangle)
 
