@@ -14,17 +14,19 @@
 from generator import generateNumberTriangle
 from inputs import selectPrintPyramidCommand, getNumberOfLinesFromUser, inputIsGoBackCommand
 
-
+# Number triangle name dictionary
 _FULL_NAMES_OF_NUMBER_TRIANGLES = {
     "pascal": "Pascal's Triangle",
     "euler": "Euler's Triangle",
     "catalan": "Catalan's Triangle"
 }
 
+# Constants for alignment mode options
 _TRIANGLE_LEFT_ALIGN_MODE = "LEFT"
 _TRIANGLE_RIGHT_ALIGN_MODE = "RIGHT"
 _TRIANGLE_CENTER_ALIGN_MODE = "CENTER"
 
+# Constants for different pyramid orientation options
 _OPTION_TO_PRINT_UPSIDE_PYRAMID_ALIGNED_LEFT = 1
 _OPTION_TO_PRINT_UPSIDE_PYRAMID_ALIGNED_RIGHT = 2
 _OPTION_TO_PRINT_FULL_UPSIDE_PYRAMID = 3
@@ -36,6 +38,7 @@ _OPTION_TO_GO_BACK_TO_PREVIOUS_MENU = 8
 
 
 def generateNumberTriangleLines(numberTriangle):
+    """Generate the lines that when printed will give the number triangle appearance."""
     numberTriangleLines = []
     
     for lineIndex in range(len(numberTriangle)):
@@ -52,6 +55,8 @@ def generateNumberTriangleLines(numberTriangle):
 
 
 def printPyramid(triangleLines, numberOfLines, alignMode, printInReverse):
+    """Prints the pyramid out to the console with the specified options."""
+
     setOfLineNumbers = range(numberOfLines) if not printInReverse else range(numberOfLines - 1, -1, -1)
     maximumLineLength = len(triangleLines[numberOfLines - 1])
 
@@ -71,6 +76,7 @@ def printPyramid(triangleLines, numberOfLines, alignMode, printInReverse):
 
 
 def printDesiredPyramid(printCommand, triangleLines, numberOfLines):
+    """Calls a helper function to print the pyramid with the desired options."""
     if printCommand == _OPTION_TO_PRINT_UPSIDE_PYRAMID_ALIGNED_LEFT or printCommand == _OPTION_TO_PRINT_ALL_PYRAMID_TYPES:
         printPyramid(triangleLines, numberOfLines, _TRIANGLE_LEFT_ALIGN_MODE, False) # Prints a left pyramid
 
@@ -91,6 +97,7 @@ def printDesiredPyramid(printCommand, triangleLines, numberOfLines):
 
 
 def printNumberTrianglePyramids(numberTriangleName):
+    """Loop for interacting with pyramids of famous number triangles"""
     triangle = generateNumberTriangle(numberTriangleName)
     triangleLines = generateNumberTriangleLines(triangle)
 
