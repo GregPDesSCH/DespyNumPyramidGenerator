@@ -11,6 +11,7 @@
 
 """
 
+# Max characters to print in one line
 _MAXIMUM_CHARACTERS_IN_ONE_LINE = 160
 
 
