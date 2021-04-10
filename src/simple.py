@@ -59,7 +59,15 @@ def getCharacterToPrint():
 
 
 def printPyramid(printCommand, numberOfLines, characterToPrint, stepWidth):
-    """Prints the pyramid out to the console."""
+    """
+    Prints the pyramid out to the console.
+
+    Params:
+    printCommand - User's choice for pyramid orientation.
+    numberOfLines - Number of lines the pyramid will be printed out of.
+    characterToPrint - The character to fill the pyramid with.
+    stepWidth - The width of each step of the pyramid.
+    """
 
     if numberOfCharactersToPrintIsTooHigh(printCommand, numberOfLines, stepWidth):
         # Only if any of the lines in the pyramid to print has too many characters
