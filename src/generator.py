@@ -13,12 +13,16 @@
 
 import math
 
-
+# Max number of characters a sequence can have
+# (based on a full pyramid with 80 lines and step width of 1)
 _MAX_NUMBER_OF_CHARACTERS_TO_PRINT = 12880
+
+# Max characters to print in one line
 _MAX_NUMBER_OF_CHARACTERS_IN_ONE_LINE = 160
 
 
 def _generateFibonacciSequence():
+    """Generates a list of elements following the Fibonacci sequence."""
     sequenceElements = ["0", "1"]
     totalCharactersInNewSequence = 2
 
@@ -39,6 +43,7 @@ def _generateFibonacciSequence():
     return sequenceElements
 
 def _generateTriangleSequence():
+    """Generates list of elements following sequence of triangle numbers."""
     sequenceElements = []
     totalCharactersInNewSequence = 0
 
@@ -57,6 +62,7 @@ def _generateTriangleSequence():
     return sequenceElements
 
 def _generateAlternatingBitsSequence():
+    """Generates list of elements following sequence of alternating binary numbers."""
     sequenceElements = []
     totalCharactersInNewSequence = 0
     
@@ -74,6 +80,7 @@ def _generateAlternatingBitsSequence():
     
 
 def generateSequence(sequenceName):
+    """Delegates the sequence generation to the appropriate function."""
     sequenceElements = []
 
     if sequenceName == "fibonacci":
@@ -89,6 +96,7 @@ def generateSequence(sequenceName):
 
 
 def _generatePascalTriangle():
+    """Generates a 2D list representing Pascal's Triangle."""
     newNumberTriangle = [[1], [1, 1]]
     latestTriangleRowIndex = 1
     
@@ -118,6 +126,7 @@ def _generatePascalTriangle():
     return newNumberTriangle
 
 def _generateEulerTriangle():
+    """Generates a 2D list representing Euler's Triangle."""
     newNumberTriangle = [[1], [1, 1]]
     triangleRowIndex = 2
 
@@ -150,6 +159,7 @@ def _generateEulerTriangle():
     return newNumberTriangle
 
 def _generateCatalanTriangle():
+    """Generates a 2D list representing Catalan's Triangle."""
     newNumberTriangle = []
     triangleRowIndex = 0
     triangleColIndex = 0
@@ -180,6 +190,7 @@ def _generateCatalanTriangle():
 
 
 def generateNumberTriangle(numberTriangleName):
+    """Delegates the number triangle generation to the appropriate function."""
     newNumberTriangle = []
 
     if numberTriangleName == "pascal":
