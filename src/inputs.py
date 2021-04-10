@@ -13,23 +13,30 @@
 
 from conditions import numberIsAWholeNumber
 
-
+# Constants for going back to previous menu
 _GO_BACK_TO_PREVIOUS_MENU_INPUT_STRING = "--"
 _GO_BACK_TO_PREVIOUS_MENU_INPUT_NUM = -1
 
+# Error message constants
 _ERROR_MESSAGE_PREFIX = "ERROR - "
 _INPUT_EMPTY_ERROR_MESSAGE = _ERROR_MESSAGE_PREFIX + "Input must not be empty."
 _INPUT_NOT_POSITIVE_NUMBER_ERROR_MESSAGE = _ERROR_MESSAGE_PREFIX + "Input must be a whole positive number."
 
+# Constants for lines
 _PRINT_LINE_SEPARATOR = "\n"
 _MINIMUM_NUMBER_OF_LINES = 3
 _DEFAULT_MAXIMUM_NUMBER_OF_LINES = 80
 
-_FIRST_OPTION_FOR_PROGRAM = 1
-_LAST_OPTION_FOR_PROGRAM = 8
-_FIRST_OPTION_FOR_PRINTING = 1
+# Step width constants
 _MINIMUM_STEP_WIDTH = 1
 _MAXIMUM_STEP_WIDTH = 10
+
+# Program menu constants
+_FIRST_OPTION_FOR_PROGRAM = 1
+_LAST_OPTION_FOR_PROGRAM = 8
+
+# Orientation option constant
+_FIRST_OPTION_FOR_PRINTING = 1
 
 # Checks if input is empty
 def _inputIsEmpty(rawInput):
