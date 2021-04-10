@@ -51,6 +51,9 @@ Silhouette pyramid, 15 lines with a step width of two characters.
 Center Pyramid, 20 lines.  
 ![Pascal's Triangle - Sample](https://github.com/GregPDesSCH/DespyNumPyramidGenerator/raw/dev/assets/pascal-triangle-example.png "Pascal's Triangle - Sample")
 
+## Code Formatting
+
+This code complies with some of the guidelines of the Python PEP standards, specifically in the [PEP 8](https://www.python.org/dev/peps/pep-0008/) and [PEP 257](https://www.python.org/dev/peps/pep-0257/) development guides.
 
 ## Feedback?
 
@@ -62,6 +65,10 @@ Share your comments, suggestions, and improvements, [here in the repo Issue Page
 Initial ideas of which number triangles to research and program the generators were found from the [Number Triangles (Triangular Arrays of Numbers): Pascal's Triangle, Others, and The Birth of a New One](https://upload.wikimedia.org/wikipedia/commons/f/fc/Number_Triangle_-_Birth_of_New_One.pdf) report by Jonipol E. Fortaliza of the Notre Dame of Marbel University in Koronadal, Philippines.
 
 I would like to thank [Emmanuel Acheampong](https://github.com/acheamponge) for providing me a starting motivation to side projects.
+
+I also give thanks to [Refactoring Guru](https://refactoring.guru/) in Ukraine for providing some insight into potential code refactoring.
+
+
 
 Gregory Desrosiers, Bachelor of Soft. Eng., UWaterloo 2019  
 Personal Website: [https://gregpdessch.github.io](https://gregpdessch.github.io)  
