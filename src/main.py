@@ -27,7 +27,8 @@ _OPTION_TO_QUIT_PROGRAM = 8
 
 def _selectSequence(sequenceIndex):
     """
-    Selects a mathematical sequence to generate the numbers and print the pyramid.
+    Selects a mathematical sequence to generate the numbers and print the 
+    pyramid.
 
     Params:
     sequenceIndex - User's selection of what sequence to interact.
@@ -58,18 +59,22 @@ def main():
     print("DespyNumPyramidGenerator\nby Gregory Desrosiers\n")
 
     while True:
-        sequenceIndex = selectSequence() # Select what sequence to interact with
+        # Select what sequence to interact with
+        sequenceIndex = selectSequence()
 
         if sequenceIndex == _OPTION_FOR_SIMPLE_PYRAMID:
             printSimplePyramids() 
-        elif sequenceIndex >= _FIRST_OPTION_FOR_SEQUENCE_OPTION and sequenceIndex <= _LAST_OPTION_FOR_SEQUENCE_OPTION:
+        elif sequenceIndex >= _FIRST_OPTION_FOR_SEQUENCE_OPTION \
+                and sequenceIndex <= _LAST_OPTION_FOR_SEQUENCE_OPTION:
             _selectSequence(sequenceIndex) 
-        elif sequenceIndex >= _FIRST_OPTION_FOR_NUMBER_TRIANGLE_OPTION and sequenceIndex <= _LAST_OPTION_FOR_NUMBER_TRIANGLE_OPTION:
+        elif sequenceIndex >= _FIRST_OPTION_FOR_NUMBER_TRIANGLE_OPTION \
+                and sequenceIndex <= _LAST_OPTION_FOR_NUMBER_TRIANGLE_OPTION:
             _selectNumberTriangle(sequenceIndex) 
         if sequenceIndex == _OPTION_TO_QUIT_PROGRAM:
             break
 
-    print("See you!\n\nBy Gregory Desrosiers\nhttps://gregpdessch.github.io\nhttps://www.linkedin.com/in/gregorydesrosiers")
+    print("See you!\n\nBy Gregory Desrosiers\nhttps://gregpdessch.github.io")
+    print("https://www.linkedin.com/in/gregorydesrosiers")
 
 if __name__ == "__main__":
     main()

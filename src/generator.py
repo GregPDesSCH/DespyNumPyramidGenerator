@@ -73,7 +73,8 @@ def _generateTriangleSequence():
 
 def _generateAlternatingBitsSequence():
     """
-    Generates list of elements following sequence of alternating binary numbers.
+    Generates list of elements following sequence of alternating binary 
+    numbers.
 
     Returns:
     sequenceElements - List of elements following the sequence.
@@ -133,11 +134,14 @@ def _generatePascalTriangle():
         currentCharactersInNewRow = 2
         newTriangleColIndex = 1
 
-        while newTriangleColIndex < len(newNumberTriangle[latestTriangleRowIndex]):
-            newBinomialCoefficient = newNumberTriangle[latestTriangleRowIndex][newTriangleColIndex - 1] \
-                                     + newNumberTriangle[latestTriangleRowIndex][newTriangleColIndex]
+        while newTriangleColIndex < len(
+                newNumberTriangle[latestTriangleRowIndex]):
+            newBinomialCoefficient = \
+                    newNumberTriangle[latestTriangleRowIndex][newTriangleColIndex - 1] \
+                    + newNumberTriangle[latestTriangleRowIndex][newTriangleColIndex]
 
-            currentCharactersInNewRow += int(math.log10(newBinomialCoefficient)) + 2
+            currentCharactersInNewRow += \
+                    int(math.log10(newBinomialCoefficient)) + 2
 
             newTriangleRow.append(newBinomialCoefficient)
             newTriangleColIndex += 1
@@ -168,14 +172,21 @@ def _generateEulerTriangle():
         currentCharactersInNewRow = 2
         newTriangleColIndex = 2
 
-        while newTriangleColIndex < len(newNumberTriangle[triangleRowIndex - 1]) + 1:
-            firstShiftedEulerianNumber = newTriangleColIndex * newNumberTriangle[triangleRowIndex - 1][newTriangleColIndex - 1]
-            secondShiftedEulerianNumber = (triangleRowIndex + 2 - newTriangleColIndex) \
-                                           * newNumberTriangle[triangleRowIndex - 1][newTriangleColIndex - 2]
+        while newTriangleColIndex < len(
+                    newNumberTriangle[triangleRowIndex - 1]) + 1:
+            firstShiftedEulerianNumber = newTriangleColIndex \
+                    * newNumberTriangle[triangleRowIndex - 1][
+                    newTriangleColIndex - 1]
+            secondShiftedEulerianNumber = (triangleRowIndex + 2 - 
+                    newTriangleColIndex) \
+                    * newNumberTriangle[triangleRowIndex - 1][
+                    newTriangleColIndex - 2]
 
-            newEulerianNumber = firstShiftedEulerianNumber + secondShiftedEulerianNumber
+            newEulerianNumber = firstShiftedEulerianNumber \
+                + secondShiftedEulerianNumber
 
-            currentCharactersInNewRow += int(math.log10(newEulerianNumber)) + 2
+            currentCharactersInNewRow += \
+                int(math.log10(newEulerianNumber)) + 2
 
             newTriangleRow.append(newEulerianNumber)
             newTriangleColIndex += 1
@@ -208,10 +219,14 @@ def _generateCatalanTriangle():
         triangleColIndex = 0
 
         while triangleColIndex <= triangleRowIndex:
-            newCoefficientNumerator = math.factorial(triangleRowIndex + triangleColIndex) * (triangleRowIndex - triangleColIndex + 1)
-            newCoefficientDenominator = math.factorial(triangleColIndex) * math.factorial(triangleRowIndex + 1)
+            newCoefficientNumerator = math.factorial(triangleRowIndex \
+                    + triangleColIndex) * (triangleRowIndex - triangleColIndex \
+                    + 1)
+            newCoefficientDenominator = math.factorial(triangleColIndex) \
+                    * math.factorial(triangleRowIndex + 1)
 
-            newCoefficient = int(newCoefficientNumerator / newCoefficientDenominator)
+            newCoefficient = int(newCoefficientNumerator / \
+                    newCoefficientDenominator)
 
             currentCharactersInNewRow += int(math.log10(newCoefficient)) + 2
 
@@ -232,10 +247,12 @@ def generateNumberTriangle(numberTriangleName):
     Delegates the number triangle generation to the appropriate function.
     
     Params:
-    numberTriangleName - Name of the number triangle to build the 2D list of elements out of.
+    numberTriangleName - Name of the number triangle to build the 2D list
+    of elements out of.
 
     Returns:
-    newNumberTriangle - 2D list with elements representing the desired number triangle.
+    newNumberTriangle - 2D list with elements representing the desired number
+    triangle.
     """
     newNumberTriangle = []
 
