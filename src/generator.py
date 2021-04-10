@@ -22,7 +22,12 @@ _MAX_NUMBER_OF_CHARACTERS_IN_ONE_LINE = 160
 
 
 def _generateFibonacciSequence():
-    """Generates a list of elements following the Fibonacci sequence."""
+    """
+    Generates a list of elements following the Fibonacci sequence.
+
+    Returns:
+    sequenceElements - List of elements following the sequence.
+    """
     sequenceElements = ["0", "1"]
     totalCharactersInNewSequence = 2
 
@@ -43,7 +48,12 @@ def _generateFibonacciSequence():
     return sequenceElements
 
 def _generateTriangleSequence():
-    """Generates list of elements following sequence of triangle numbers."""
+    """
+    Generates list of elements following sequence of triangle numbers.
+
+    Returns:
+    sequenceElements - List of elements following the sequence.
+    """
     sequenceElements = []
     totalCharactersInNewSequence = 0
 
@@ -62,7 +72,12 @@ def _generateTriangleSequence():
     return sequenceElements
 
 def _generateAlternatingBitsSequence():
-    """Generates list of elements following sequence of alternating binary numbers."""
+    """
+    Generates list of elements following sequence of alternating binary numbers.
+
+    Returns:
+    sequenceElements - List of elements following the sequence.
+    """
     sequenceElements = []
     totalCharactersInNewSequence = 0
     
@@ -80,7 +95,15 @@ def _generateAlternatingBitsSequence():
     
 
 def generateSequence(sequenceName):
-    """Delegates the sequence generation to the appropriate function."""
+    """
+    Delegates the sequence generation to the appropriate function.
+    
+    Params:
+    sequenceName - Name of sequence to build the list of elements out of.
+
+    Returns:
+    newSequence - Full string representing the sequence.
+    """
     sequenceElements = []
 
     if sequenceName == "fibonacci":
@@ -96,7 +119,12 @@ def generateSequence(sequenceName):
 
 
 def _generatePascalTriangle():
-    """Generates a 2D list representing Pascal's Triangle."""
+    """
+    Generates a 2D list representing Pascal's Triangle.
+
+    Returns:
+    newNumberTriangle - 2D list with elements representing the number triangle.
+    """
     newNumberTriangle = [[1], [1, 1]]
     latestTriangleRowIndex = 1
     
@@ -126,7 +154,12 @@ def _generatePascalTriangle():
     return newNumberTriangle
 
 def _generateEulerTriangle():
-    """Generates a 2D list representing Euler's Triangle."""
+    """
+    Generates a 2D list representing Euler's Triangle.
+
+    Returns:
+    newNumberTriangle - 2D list with elements representing the number triangle.
+    """
     newNumberTriangle = [[1], [1, 1]]
     triangleRowIndex = 2
 
@@ -159,7 +192,12 @@ def _generateEulerTriangle():
     return newNumberTriangle
 
 def _generateCatalanTriangle():
-    """Generates a 2D list representing Catalan's Triangle."""
+    """
+    Generates a 2D list representing Catalan's Triangle.
+
+    Returns:
+    newNumberTriangle - 2D list with elements representing the number triangle.
+    """
     newNumberTriangle = []
     triangleRowIndex = 0
     triangleColIndex = 0
@@ -190,7 +228,15 @@ def _generateCatalanTriangle():
 
 
 def generateNumberTriangle(numberTriangleName):
-    """Delegates the number triangle generation to the appropriate function."""
+    """
+    Delegates the number triangle generation to the appropriate function.
+    
+    Params:
+    numberTriangleName - Name of the number triangle to build the 2D list of elements out of.
+
+    Returns:
+    newNumberTriangle - 2D list with elements representing the desired number triangle.
+    """
     newNumberTriangle = []
 
     if numberTriangleName == "pascal":
