@@ -25,23 +25,33 @@ _LAST_OPTION_FOR_NUMBER_TRIANGLE_OPTION = 7
 _OPTION_TO_QUIT_PROGRAM = 8
 
 
-# Selects a sequence to generate the numbers and print the pyramid.
 def _selectSequence(sequenceIndex):
-    if sequenceIndex == 2:
-        printSequencePyramids("fibonacci")
-    elif sequenceIndex == 3:
-        printSequencePyramids("triangle")
-    elif sequenceIndex == 4:
-        printSequencePyramids("alternatingBits")
+    """
+    Selects a mathematical sequence to generate the numbers and print the pyramid.
 
-# Selects a famous mathematical triangle to print out.
+    Params:
+    sequenceIndex - User's selection of what sequence to interact.
+    """
+    if sequenceIndex == 2:
+        printSequencePyramids("fibonacci") # Fibonacci sequence
+    elif sequenceIndex == 3:
+        printSequencePyramids("triangle") # Triangle numbers
+    elif sequenceIndex == 4:
+        printSequencePyramids("alternatingBits") # Alternating bits
+
 def _selectNumberTriangle(sequenceIndex):
+    """
+    Selects a famous mathematical triangle to print out.
+
+    Params:
+    sequenceIndex - User's selection of what sequence to interact.
+    """
     if sequenceIndex == 5:
-        printNumberTrianglePyramids("pascal")
+        printNumberTrianglePyramids("pascal") # Pascal's Triangle
     elif sequenceIndex == 6:
-        printNumberTrianglePyramids("euler")
+        printNumberTrianglePyramids("euler") # Euler's Triangle
     elif sequenceIndex == 7:
-        printNumberTrianglePyramids("catalan")
+        printNumberTrianglePyramids("catalan") # Catalan's Triangle
 
 def main():
     """Main program loop"""
@@ -51,11 +61,11 @@ def main():
         sequenceIndex = selectSequence() # Select what sequence to interact with
 
         if sequenceIndex == _OPTION_FOR_SIMPLE_PYRAMID:
-            printSimplePyramids()
+            printSimplePyramids() 
         elif sequenceIndex >= _FIRST_OPTION_FOR_SEQUENCE_OPTION and sequenceIndex <= _LAST_OPTION_FOR_SEQUENCE_OPTION:
-            _selectSequence(sequenceIndex)
+            _selectSequence(sequenceIndex) 
         elif sequenceIndex >= _FIRST_OPTION_FOR_NUMBER_TRIANGLE_OPTION and sequenceIndex <= _LAST_OPTION_FOR_NUMBER_TRIANGLE_OPTION:
-            _selectNumberTriangle(sequenceIndex)
+            _selectNumberTriangle(sequenceIndex) 
         if sequenceIndex == _OPTION_TO_QUIT_PROGRAM:
             break
 
