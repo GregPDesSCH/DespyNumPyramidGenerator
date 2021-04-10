@@ -51,6 +51,9 @@ Silhouette pyramid, 15 lines with a step width of two characters.
 Center Pyramid, 20 lines.  
 ![Pascal's Triangle - Sample](https://github.com/GregPDesSCH/DespyNumPyramidGenerator/raw/dev/assets/pascal-triangle-example.png "Pascal's Triangle - Sample")
 
+## Code Formatting
+
+This code complies with some of the guidelines of the Python PEP standards, specifically in the [PEP 8](https://www.python.org/dev/peps/pep-0008/) and [PEP 257](https://www.python.org/dev/peps/pep-0257/) development guides.
 
 ## Feedback?
 
