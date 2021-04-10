@@ -39,7 +39,17 @@ _OPTION_TO_GO_BACK_TO_PREVIOUS_MENU = 10
 
 
 def createLineSegment(sequence, maxLineSegmentLength, sequenceStringIndex):
-    """Creates a segment of the pyramid on one line."""
+    """
+    Creates a segment of the pyramid on one line.
+    
+    Params:
+    sequence - Full string representing the sequence.
+    maxLineSegmentLength - Maximum length of one line segment
+    sequenceStringIndex - A reference to an index for fetching sequence characters.
+
+    Returns:
+    currentLineSegment - A segment that will be part of the current line to print.
+    """
     currentLineSegment = ""
     for _ in range(maxLineSegmentLength):
         currentLineSegment += sequence[sequenceStringIndex[0]]
@@ -50,6 +60,17 @@ def createLineSegment(sequence, maxLineSegmentLength, sequenceStringIndex):
 def generateSequenceLines(sequence, numberOfLines, stepWidth, pyramidIsUpsideDown, pyramidIsFull, pyramidIsSilhouette):
     """
     Generates all the lines to be printed in order based on sequence and other options chosen by the user.
+    
+    Params:
+    sequence - Full string representing the sequence.
+    numberOfLines - Number of lines the pyramid will be printed out of.
+    stepWidth - The width of each step of the pyramid.
+    pyramidIsUpsideDown - Flag to have the lines be for an upside down pyramid
+    pyramidIsFull - Flag to have the lines be for a full pyramid.
+    pyramidIsSilhouette - Flag to have lines be for a pyramid as a silhouette.
+
+    Returns:
+    sequenceLines - List of lines representing the pyramid to print in order.
     """
     sequenceLines = []
     sequenceStringIndex = [0]
@@ -91,7 +112,15 @@ def generateSequenceLines(sequence, numberOfLines, stepWidth, pyramidIsUpsideDow
 
 
 def printPyramid(printCommand, sequence, numberOfLines, stepWidth):
-    """Prints the pyramid out to the console."""
+    """
+    Prints the pyramid out to the console.
+    
+    Params:
+    printCommand
+    sequence - Full string representing the sequence.
+    numberOfLines - Number of lines the pyramid will be printed out of.
+    stepWidth - The width of each step of the pyramid.
+    """
 
     if numberOfCharactersToPrintIsTooHigh(printCommand, numberOfLines, stepWidth):
         # Only if any of the lines in the pyramid to print has too many characters
@@ -168,7 +197,12 @@ def printPyramid(printCommand, sequence, numberOfLines, stepWidth):
 
 
 def printSequencePyramids(sequenceName):
-    """Loop for interacting with sequence-based pyramids."""
+    """
+    Loop for interacting with sequence-based pyramids.
+    
+    Params:
+    sequenceName - The name of the sequence to generate the full sequence string.
+    """
     sequence = generateSequence(sequenceName)
 
     while True:
