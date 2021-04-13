@@ -93,6 +93,30 @@ def _generateAlternatingBitsSequence():
         currentValue = 1 if currentValue == 0 else 0
 
     return sequenceElements
+
+def _generateSequenceOfSquares():
+    """
+    Generates list of elements following sequence of squares.
+
+    Returns:
+    sequenceElements - List of elements following the sequence.
+    """
+    sequenceElements = []
+    totalCharactersInNewSequence = 0
+    
+    currentValue = 0
+    currentBase = 1
+
+    while totalCharactersInNewSequence <= _MAX_NUMBER_OF_CHARACTERS_TO_PRINT:
+        currentValue = currentBase * currentBase
+        currentSequenceMember = str(currentValue)
+        sequenceElements.append(currentSequenceMember)
+
+        totalCharactersInNewSequence += len(currentSequenceMember)
+
+        currentBase += 1
+
+    return sequenceElements
     
 
 def generateSequence(sequenceName):
@@ -113,6 +137,8 @@ def generateSequence(sequenceName):
         sequenceElements = _generateTriangleSequence()
     elif sequenceName == "alternatingBits":
         sequenceElements = _generateAlternatingBitsSequence()
+    elif sequenceName == "squares":
+        sequenceElements = _generateSequenceOfSquares()
 
     newSequence = "".join(sequenceElements)
 
@@ -272,10 +298,14 @@ if __name__ == "__main__":
     # triangle = generateNumberTriangle("pascal")
     # print("Generating Euler's Triangle")
     # triangle = generateNumberTriangle("euler")
-    print("Generating Catalan's Triangle")
-    triangle = generateNumberTriangle("catalan")
-    print("Generated Triangle:")
-    print(triangle)
-    for row in triangle:
-        print(row)
-    print("End")
+    # print("Generating Catalan's Triangle")
+    # triangle = generateNumberTriangle("catalan")
+    # print("Generated Triangle:")
+    # print(triangle)
+    # for row in triangle:
+    #     print(row)
+    # print("End")
+
+    print("Generating sequence of squares")
+    fullSequence = generateSequence("squares")
+    print(fullSequence)
