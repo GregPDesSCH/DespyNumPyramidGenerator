@@ -34,7 +34,7 @@ _MAXIMUM_STEP_WIDTH = 10
 
 # Program menu constants
 _FIRST_OPTION_FOR_PROGRAM = 1
-_LAST_OPTION_FOR_PROGRAM = 8
+_LAST_OPTION_FOR_PROGRAM = 9
 
 # Orientation option constant
 _FIRST_OPTION_FOR_PRINTING = 1
@@ -84,8 +84,9 @@ def printMainMenu():
     """Prints out the main menu of the program"""
     print("Pick which type of pyramid you would like to perform printing on.",
           "1 - Simple", "2 - Fibonacci", "3 - Triangular Number",
-          "4 - Alternating Bits", "5 - Pascal's Triangle", 
-          "6 - Euler's Triangle", "7 - Catalan's Triangle", "8 - Quit Program",
+          "4 - Alternating Bits", "5 - Square Numbers", 
+          "6 - Pascal's Triangle", "7 - Euler's Triangle", 
+          "8 - Catalan's Triangle", "9 - Quit Program",
           sep=_PRINT_LINE_SEPARATOR)
 
 
