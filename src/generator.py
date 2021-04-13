@@ -93,6 +93,30 @@ def _generateAlternatingBitsSequence():
         currentValue = 1 if currentValue == 0 else 0
 
     return sequenceElements
+
+def _generateSequenceOfSquares():
+    """
+    Generates list of elements following sequence of squares.
+
+    Returns:
+    sequenceElements - List of elements following the sequence.
+    """
+    sequenceElements = []
+    totalCharactersInNewSequence = 0
+    
+    currentValue = 0
+    currentBase = 1
+
+    while totalCharactersInNewSequence <= _MAX_NUMBER_OF_CHARACTERS_TO_PRINT:
+        currentValue = currentBase * currentBase
+        currentSequenceMember = str(currentValue)
+        sequenceElements.append(currentSequenceMember)
+
+        totalCharactersInNewSequence += len(currentSequenceMember)
+
+        currentBase += 1
+
+    return sequenceElements
     
 
 def generateSequence(sequenceName):
