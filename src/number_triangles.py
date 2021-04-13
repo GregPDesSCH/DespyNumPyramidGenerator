@@ -22,7 +22,8 @@ from inputs import (
 _FULL_NAMES_OF_NUMBER_TRIANGLES = {
     "pascal": "Pascal's Triangle",
     "euler": "Euler's Triangle",
-    "catalan": "Catalan's Triangle"
+    "catalan": "Catalan's Triangle",
+    "bernoulli": "Bernoulli's Triangle"
 }
 
 # Constants for alignment mode options
