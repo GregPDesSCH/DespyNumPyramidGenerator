@@ -34,7 +34,7 @@ _MAXIMUM_STEP_WIDTH = 10
 
 # Program menu constants
 _FIRST_OPTION_FOR_PROGRAM = 1
-_LAST_OPTION_FOR_PROGRAM = 9
+_LAST_OPTION_FOR_PROGRAM = 10
 
 # Orientation option constant
 _FIRST_OPTION_FOR_PRINTING = 1
@@ -86,7 +86,8 @@ def printMainMenu():
           "1 - Simple", "2 - Fibonacci", "3 - Triangular Number",
           "4 - Alternating Bits", "5 - Square Numbers", 
           "6 - Pascal's Triangle", "7 - Euler's Triangle", 
-          "8 - Catalan's Triangle", "9 - Quit Program",
+          "8 - Catalan's Triangle", "9 - Bernoulli's Triangle",
+          "10 - Quit Program",
           sep=_PRINT_LINE_SEPARATOR)
 
 

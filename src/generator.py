@@ -145,14 +145,24 @@ def generateSequence(sequenceName):
     return newSequence
 
 
-def _generatePascalTriangle():
+def _generateBinomialTriangle(generateBernoulliTriangle = False):
     """
-    Generates a 2D list representing Pascal's Triangle.
+    Generates a 2D list representing a binomial triangle. Depending on the
+    parameters, it either generates Pascal's Triangle, or the Bernoulli
+    triangle.
+
+    Params:
+    generateBernoulliTriangle - Flag denoting whether to generate the Bernoulli
+    triangle or not.
 
     Returns:
     newNumberTriangle - 2D list with elements representing the number triangle.
     """
     newNumberTriangle = [[1], [1, 1]]
+
+    if generateBernoulliTriangle:
+        newNumberTriangle[1][1] = 2
+
     latestTriangleRowIndex = 1
     
     while True:
@@ -173,7 +183,11 @@ def _generatePascalTriangle():
             newTriangleColIndex += 1
 
         latestTriangleRowIndex += 1
-        newTriangleRow.append(1)
+
+        if generateBernoulliTriangle:
+            newTriangleRow.append(1 + newTriangleRow[newTriangleColIndex - 1])
+        else:
+            newTriangleRow.append(1)
         currentCharactersInNewRow += 1
 
         if currentCharactersInNewRow > _MAX_NUMBER_OF_CHARACTERS_IN_ONE_LINE:
@@ -283,11 +297,14 @@ def generateNumberTriangle(numberTriangleName):
     newNumberTriangle = []
 
     if numberTriangleName == "pascal":
-        newNumberTriangle = _generatePascalTriangle()
+        newNumberTriangle = _generateBinomialTriangle()
     elif numberTriangleName == "euler":
         newNumberTriangle = _generateEulerTriangle()
     elif numberTriangleName == "catalan":
         newNumberTriangle = _generateCatalanTriangle()
+    elif numberTriangleName == "bernoulli":
+        newNumberTriangle = _generateBinomialTriangle( 
+                generateBernoulliTriangle = True)
             
     return newNumberTriangle
 
@@ -298,14 +315,14 @@ if __name__ == "__main__":
     # triangle = generateNumberTriangle("pascal")
     # print("Generating Euler's Triangle")
     # triangle = generateNumberTriangle("euler")
-    # print("Generating Catalan's Triangle")
-    # triangle = generateNumberTriangle("catalan")
-    # print("Generated Triangle:")
-    # print(triangle)
-    # for row in triangle:
-    #     print(row)
-    # print("End")
+    print("Generating Catalan's Triangle")
+    triangle = generateNumberTriangle("bernoulli")
+    print("Generated Triangle:")
+    print(triangle)
+    for row in triangle:
+        print(row)
+    print("End")
 
-    print("Generating sequence of squares")
-    fullSequence = generateSequence("squares")
-    print(fullSequence)
+    # print("Generating sequence of squares")
+    # fullSequence = generateSequence("squares")
+    # print(fullSequence)

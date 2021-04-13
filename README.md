@@ -27,15 +27,17 @@ This program handles the following sequences and number triangles:
 #### Basic:
 * Simple (you choose which visible letter to make the pyramid out of, including punctuation, symbols, and Unicode characters)
 
-#### Famous Sequences:
+#### Sequences:
 * Fibonacci 
 * Triangle
 * Alternating Bits
+* Square Numbers
 
 #### Number Triangles:
 * Pascal's Triangle (max 26 lines)
 * Euler's Triangle (max 15 lines)
 * Catalan's Triangle (max 20 lines)
+* Bernoulli's Triangle (max 24 lines)
 
 ## Previews
 
