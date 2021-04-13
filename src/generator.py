@@ -137,6 +137,8 @@ def generateSequence(sequenceName):
         sequenceElements = _generateTriangleSequence()
     elif sequenceName == "alternatingBits":
         sequenceElements = _generateAlternatingBitsSequence()
+    elif sequenceName == "squares":
+        sequenceElements = _generateSequenceOfSquares()
 
     newSequence = "".join(sequenceElements)
 
@@ -296,10 +298,14 @@ if __name__ == "__main__":
     # triangle = generateNumberTriangle("pascal")
     # print("Generating Euler's Triangle")
     # triangle = generateNumberTriangle("euler")
-    print("Generating Catalan's Triangle")
-    triangle = generateNumberTriangle("catalan")
-    print("Generated Triangle:")
-    print(triangle)
-    for row in triangle:
-        print(row)
-    print("End")
+    # print("Generating Catalan's Triangle")
+    # triangle = generateNumberTriangle("catalan")
+    # print("Generated Triangle:")
+    # print(triangle)
+    # for row in triangle:
+    #     print(row)
+    # print("End")
+
+    print("Generating sequence of squares")
+    fullSequence = generateSequence("squares")
+    print(fullSequence)

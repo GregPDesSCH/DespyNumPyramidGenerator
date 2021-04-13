@@ -26,7 +26,8 @@ from generator import generateSequence
 _FULL_NAMES_OF_SEQUENCES = {
     "fibonacci": "Fibonacci Sequence",
     "triangle": "Triangular Number Sequence",
-    "alternatingBits": "Alternating Bit Sequence"
+    "alternatingBits": "Alternating Bit Sequence",
+    "squares": "Sequence of Squares"
 }
 
 
