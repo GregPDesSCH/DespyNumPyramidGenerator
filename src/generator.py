@@ -348,7 +348,7 @@ if __name__ == "__main__":
     #     print(row)
     # print("End")
 
-    print("Generating sequence of squares")
+    print("Generating sequence of powers of twos")
     fullSequence = generateSequence("powersOfTwos")
     print(fullSequence)
 
