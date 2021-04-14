@@ -32,6 +32,7 @@ This program handles the following sequences and number triangles:
 * Triangle
 * Alternating Bits
 * Square Numbers
+* Powers of Twos
 
 #### Number Triangles:
 * Pascal's Triangle (max 26 lines)
