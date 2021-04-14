@@ -117,6 +117,28 @@ def _generateSequenceOfSquares():
         currentBase += 1
 
     return sequenceElements
+
+def _generateSequenceOfPowersOfTwos():
+    """
+    Generates list of elements following sequence of powers of twos.
+
+    Returns:
+    sequenceElements - List of elements following the sequence.
+    """
+    sequenceElements = []
+    totalCharactersInNewSequence = 0
+
+    currentValue = 1
+
+    while totalCharactersInNewSequence <= _MAX_NUMBER_OF_CHARACTERS_TO_PRINT:
+        currentSequenceMember = str(currentValue)
+        sequenceElements.append(currentSequenceMember)
+
+        totalCharactersInNewSequence += len(currentSequenceMember)
+        
+        currentValue *= 2
+
+    return sequenceElements
     
 
 def generateSequence(sequenceName):
@@ -315,14 +337,18 @@ if __name__ == "__main__":
     # triangle = generateNumberTriangle("pascal")
     # print("Generating Euler's Triangle")
     # triangle = generateNumberTriangle("euler")
-    print("Generating Catalan's Triangle")
-    triangle = generateNumberTriangle("bernoulli")
-    print("Generated Triangle:")
-    print(triangle)
-    for row in triangle:
-        print(row)
-    print("End")
+    
+    # print("Generating Catalan's Triangle")
+    # triangle = generateNumberTriangle("bernoulli")
+    # print("Generated Triangle:")
+    # print(triangle)
+    # for row in triangle:
+    #     print(row)
+    # print("End")
 
     # print("Generating sequence of squares")
     # fullSequence = generateSequence("squares")
     # print(fullSequence)
+
+    sequence = _generateSequenceOfPowersOfTwos()
+    print(sequence)
