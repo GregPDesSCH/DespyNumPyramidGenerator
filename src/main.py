@@ -19,10 +19,10 @@ from simple import printSimplePyramids
 # Main menu selection constants
 _OPTION_FOR_SIMPLE_PYRAMID = 1
 _FIRST_OPTION_FOR_SEQUENCE_OPTION = 2
-_LAST_OPTION_FOR_SEQUENCE_OPTION = 5
-_FIRST_OPTION_FOR_NUMBER_TRIANGLE_OPTION = 6
-_LAST_OPTION_FOR_NUMBER_TRIANGLE_OPTION = 9
-_OPTION_TO_QUIT_PROGRAM = 10
+_LAST_OPTION_FOR_SEQUENCE_OPTION = 6
+_FIRST_OPTION_FOR_NUMBER_TRIANGLE_OPTION = 7
+_LAST_OPTION_FOR_NUMBER_TRIANGLE_OPTION = 10
+_OPTION_TO_QUIT_PROGRAM = 11
 
 
 def _selectSequence(sequenceIndex):
@@ -40,7 +40,9 @@ def _selectSequence(sequenceIndex):
     elif sequenceIndex == 4:
         printSequencePyramids("alternatingBits") # Alternating bits
     elif sequenceIndex == 5:
-        printSequencePyramids("squares")
+        printSequencePyramids("squares") # Sequence of squares
+    elif sequenceIndex == 6:
+        printSequencePyramids("powersOfTwos") # Sequence of powers of twos
 
 def _selectNumberTriangle(sequenceIndex):
     """
@@ -49,13 +51,13 @@ def _selectNumberTriangle(sequenceIndex):
     Params:
     sequenceIndex - User's selection of what sequence to interact.
     """
-    if sequenceIndex == 6:
+    if sequenceIndex == 7:
         printNumberTrianglePyramids("pascal") # Pascal's Triangle
-    elif sequenceIndex == 7:
-        printNumberTrianglePyramids("euler") # Euler's Triangle
     elif sequenceIndex == 8:
-        printNumberTrianglePyramids("catalan") # Catalan's Triangle
+        printNumberTrianglePyramids("euler") # Euler's Triangle
     elif sequenceIndex == 9:
+        printNumberTrianglePyramids("catalan") # Catalan's Triangle
+    elif sequenceIndex == 10:
         printNumberTrianglePyramids("bernoulli") # Bernoulli's Triangle
 
 def main():
