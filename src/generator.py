@@ -161,6 +161,8 @@ def generateSequence(sequenceName):
         sequenceElements = _generateAlternatingBitsSequence()
     elif sequenceName == "squares":
         sequenceElements = _generateSequenceOfSquares()
+    elif sequenceName == "powersOfTwos":
+        sequenceElements = _generateSequenceOfPowersOfTwos()
 
     newSequence = "".join(sequenceElements)
 
@@ -346,9 +348,9 @@ if __name__ == "__main__":
     #     print(row)
     # print("End")
 
-    # print("Generating sequence of squares")
-    # fullSequence = generateSequence("squares")
-    # print(fullSequence)
+    print("Generating sequence of squares")
+    fullSequence = generateSequence("powersOfTwos")
+    print(fullSequence)
 
-    sequence = _generateSequenceOfPowersOfTwos()
-    print(sequence)
+    # sequence = _generateSequenceOfPowersOfTwos()
+    # print(sequence)
