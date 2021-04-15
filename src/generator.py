@@ -305,6 +305,45 @@ def _generateCatalanTriangle():
 
     return newNumberTriangle
 
+def _generateSeidelEntringerArnoldTriangle():
+    """
+    Generates a 2D list representing the Seidel-Entringer-Arnold Triangle.
+
+    Returns:
+    newNumberTriangle - 2D list with elements representing the number triangle.
+    """
+    newNumberTriangle = [[0], [0, 1]]
+    triangleRowIndex = 2
+    triangleColIndex = 0
+
+    while True:
+        newTriangleRow = [0]
+        currentCharactersInNewRow = 0
+        triangleColIndex = 1
+
+        while triangleColIndex <= triangleRowIndex:
+            newValue = newTriangleRow[triangleColIndex - 1] \
+                    + newNumberTriangle[triangleRowIndex \
+                    - 1][triangleRowIndex - triangleColIndex]
+            
+            currentCharactersInNewRow += int(math.log10(newValue)) + 2
+            newTriangleRow.append(newValue)
+            triangleColIndex += 1
+
+        triangleRowIndex += 1
+
+        if currentCharactersInNewRow > _MAX_NUMBER_OF_CHARACTERS_IN_ONE_LINE:
+            break
+        newNumberTriangle.append(newTriangleRow)
+
+    triangleRowIndex = 2
+    while triangleRowIndex < len(newNumberTriangle):
+        newNumberTriangle[triangleRowIndex] = \
+                list(reversed(newNumberTriangle[triangleRowIndex]))
+        triangleRowIndex += 2
+
+    return newNumberTriangle
+
 
 def generateNumberTriangle(numberTriangleName):
     """
@@ -348,9 +387,12 @@ if __name__ == "__main__":
     #     print(row)
     # print("End")
 
-    print("Generating sequence of powers of twos")
-    fullSequence = generateSequence("powersOfTwos")
-    print(fullSequence)
+    # print("Generating sequence of powers of twos")
+    # fullSequence = generateSequence("powersOfTwos")
+    # print(fullSequence)
 
     # sequence = _generateSequenceOfPowersOfTwos()
     # print(sequence)
+
+    sequence = _generateSeidelEntringerArnoldTriangle()
+    print(sequence)
