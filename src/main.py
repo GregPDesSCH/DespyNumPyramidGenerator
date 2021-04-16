@@ -21,8 +21,8 @@ _OPTION_FOR_SIMPLE_PYRAMID = 1
 _FIRST_OPTION_FOR_SEQUENCE_OPTION = 2
 _LAST_OPTION_FOR_SEQUENCE_OPTION = 6
 _FIRST_OPTION_FOR_NUMBER_TRIANGLE_OPTION = 7
-_LAST_OPTION_FOR_NUMBER_TRIANGLE_OPTION = 10
-_OPTION_TO_QUIT_PROGRAM = 11
+_LAST_OPTION_FOR_NUMBER_TRIANGLE_OPTION = 11
+_OPTION_TO_QUIT_PROGRAM = 12
 
 
 def _selectSequence(sequenceIndex):
@@ -59,6 +59,9 @@ def _selectNumberTriangle(sequenceIndex):
         printNumberTrianglePyramids("catalan") # Catalan's Triangle
     elif sequenceIndex == 10:
         printNumberTrianglePyramids("bernoulli") # Bernoulli's Triangle
+    elif sequenceIndex == 11:
+        # Seidel-Entringer-Arnold Triangle
+        printNumberTrianglePyramids("seidelEntringerArnold") 
 
 def main():
     """Main program loop"""
