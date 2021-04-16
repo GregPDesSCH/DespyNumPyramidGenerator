@@ -39,6 +39,7 @@ This program handles the following sequences and number triangles:
 * Euler's Triangle (max 15 lines)
 * Catalan's Triangle (max 20 lines)
 * Bernoulli's Triangle (max 24 lines)
+* Seidel-Entringer-Arnold Triangle (max 16 lines)
 
 ## Previews
 
@@ -70,6 +71,8 @@ Initial ideas of which number triangles to research and program the generators w
 I would like to thank [Emmanuel Acheampong](https://github.com/acheamponge) for providing me a starting motivation to side projects.
 
 I also give thanks to [Refactoring Guru](https://refactoring.guru/) in Ukraine for providing some insight into potential code refactoring.
+
+In addition, I thank some of my connections for reviewing my code after initial refactoring and providing me some feedback.
 
 
 
