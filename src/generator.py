@@ -368,6 +368,8 @@ def generateNumberTriangle(numberTriangleName):
     elif numberTriangleName == "bernoulli":
         newNumberTriangle = _generateBinomialTriangle( 
                 generateBernoulliTriangle = True)
+    elif numberTriangleName == "seidelEntringerArnold":
+        newNumberTriangle = _generateSeidelEntringerArnoldTriangle()
             
     return newNumberTriangle
 
