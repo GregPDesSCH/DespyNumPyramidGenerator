@@ -23,7 +23,8 @@ _FULL_NAMES_OF_NUMBER_TRIANGLES = {
     "pascal": "Pascal's Triangle",
     "euler": "Euler's Triangle",
     "catalan": "Catalan's Triangle",
-    "bernoulli": "Bernoulli's Triangle"
+    "bernoulli": "Bernoulli's Triangle",
+    "seidelEntringerArnold": "The Seidel-Entringer-Arnold Triangle"
 }
 
 # Constants for alignment mode options
