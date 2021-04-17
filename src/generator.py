@@ -401,29 +401,3 @@ def generateNumberTriangle(numberTriangleName):
         newNumberTriangle = _generateSeidelEntringerArnoldTriangle()
             
     return newNumberTriangle
-
-
-# For testing only
-if __name__ == "__main__":
-    # print("Generating Pascal's Triangle")
-    # triangle = generateNumberTriangle("pascal")
-    # print("Generating Euler's Triangle")
-    # triangle = generateNumberTriangle("euler")
-    
-    # print("Generating Catalan's Triangle")
-    # triangle = generateNumberTriangle("bernoulli")
-    # print("Generated Triangle:")
-    # print(triangle)
-    # for row in triangle:
-    #     print(row)
-    # print("End")
-
-    # print("Generating sequence of powers of twos")
-    # fullSequence = generateSequence("powersOfTwos")
-    # print(fullSequence)
-
-    # sequence = _generateSequenceOfPowersOfTwos()
-    # print(sequence)
-
-    sequence = _generateSeidelEntringerArnoldTriangle()
-    print(sequence)
