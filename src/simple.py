@@ -188,8 +188,3 @@ def printSimplePyramids():
 
         printPyramid(printCommand, numberOfLines, characterToPrint, stepWidth)
         print()
-
-
-# For testing only
-if __name__ == "__main__":
-    printPyramid(9, 10, "5", 2)
