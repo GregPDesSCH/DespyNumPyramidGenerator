@@ -11,7 +11,7 @@
 
 """
 
-from generator import generateNumberTriangle
+from generator import generateNumberTriangle, getListOfNumberTriangleNames
 from inputs import (
     selectPrintPyramidCommand, 
     getNumberOfLinesFromUser, 
@@ -20,11 +20,11 @@ from inputs import (
 
 # Number triangle name dictionary
 _FULL_NAMES_OF_NUMBER_TRIANGLES = {
-    "pascal": "Pascal's Triangle",
-    "euler": "Euler's Triangle",
-    "catalan": "Catalan's Triangle",
-    "bernoulli": "Bernoulli's Triangle",
-    "seidelEntringerArnold": "The Seidel-Entringer-Arnold Triangle"
+    getListOfNumberTriangleNames()[0]: "Pascal's Triangle",
+    getListOfNumberTriangleNames()[1]: "Euler's Triangle",
+    getListOfNumberTriangleNames()[2]: "Catalan's Triangle",
+    getListOfNumberTriangleNames()[3]: "Bernoulli's Triangle",
+    getListOfNumberTriangleNames()[4]: "The Seidel-Entringer-Arnold Triangle"
 }
 
 # Constants for alignment mode options
