@@ -4,8 +4,9 @@
 
     Script responsible for printing number triangles
 
+    Initial Version
     Start Date: March 18, 2021
-    End Date:
+    End Date: April 17, 2021
 
     File Name: number_triangles.py
 
