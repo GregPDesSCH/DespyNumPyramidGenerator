@@ -279,11 +279,3 @@ def printSequencePyramids(sequenceName):
 
         printPyramid(printCommand, sequence, numberOfLines, stepWidth)
         print()
-
-
-# For testing only
-if __name__ == "__main__":
-    # print("Generating alternatingBits sequence")
-    # sequence = generateSequence("fibonacci")
-    # printPyramid(9, sequence, 10, 1)
-    printSequencePyramids("fibonacci")
