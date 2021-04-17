@@ -1,0 +1,13 @@
+{
+    "version": "1.0.0",
+    "configurations": [
+        {
+            "name": "Python:  DespyNumPyramidGenerator",
+            "type": "python",
+            "request": "launch",
+            "cwd": "${fileDirname}",
+            "program": "main.py",
+            "console": "integratedTerminal"
+        }
+    ]
+}
