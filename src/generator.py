@@ -2,12 +2,13 @@
 
     DespyNumPyramidGenerator - Generator
 
-    Script to generate sequences and famous triangles
+    Script to generate sequences and number triangles.
 
+    Initial Version
     Start Date: March 17, 2021
-    End Date:
+    End Date: April 17, 2021
 
-    File Name: sequences.py
+    File Name: generator.py
 
 """
 
