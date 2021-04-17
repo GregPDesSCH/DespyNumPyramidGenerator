@@ -103,7 +103,7 @@ def printPyramid(triangleLines, numberOfLines, alignMode, printInReverse):
 def printDesiredPyramid(printCommand, triangleLines, numberOfLines):
     """
     Calls a helper function to print the pyramid with the desired options.
-    
+
     Params:
     printCommand - User's choice for pyramid orientation.
     triangleLines - List of strings to print the number triangle in order.
