@@ -34,7 +34,7 @@ def numberIsAWholeNumber(rawNumber):
 
 def numberOfCharactersToPrintIsTooHigh(printCommand, numberOfLines, stepWidth):
     """
-    Checks if the required number of characters to print out at most is over 
+    Checks if the required number of characters to print out at most is over
     the console width limit.
     (only for simple pyramids and pyramids involving sequences)
 
