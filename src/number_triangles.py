@@ -175,33 +175,3 @@ def printNumberTrianglePyramids(numberTriangleName):
             continue
 
         printDesiredPyramid(printCommand, triangleLines, numberOfLines)
-
-
-# For testing only
-if __name__ == "__main__":
-    #print("Generating Pascal's Triangle")
-    #triangle = generateNumberTriangle("pascal")
-    #print("Creating lines of triangle")
-    # triangleLines = generateNumberTriangleLines(triangle, 10, False)
-    # print("Printing triangle")
-    # for line in triangleLines:
-    #     print(line)
-
-    #printPyramidCommandMenu()
-
-    # printPyramid(7, triangle, 20)
-    # print("End")
-
-    triangle = generateNumberTriangle("pascal")
-    printCommand = selectPrintPyramidCommand(8, True)
-
-    if printCommand == 8:
-        exit()
-
-    numberOfLines = getNumberOfLinesFromUser(len(triangle))
-
-    printDesiredPyramid(printCommand, triangle, numberOfLines)
-
-    # triangle = generateNumberTriangle("pascal")
-    # triangleLines = generateNumberTriangleLines(triangle)
-    # printDesiredPyramid(7, triangleLines, 15)
