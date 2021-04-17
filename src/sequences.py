@@ -2,10 +2,11 @@
 
     DespyNumPyramidGenerator - Sequences
 
-    Script responsible for printing triangles as sequences
+    Script responsible for printing sequences as triangles
 
+    Initial Version
     Start Date: March 6, 2021
-    End Date:
+    End Date: April 17, 2021
 
     File Name: sequences.py
 
@@ -13,22 +14,22 @@
 
 from conditions import numberOfCharactersToPrintIsTooHigh
 from inputs import (
-    selectPrintPyramidCommand, 
-    getNumberOfLinesFromUser, 
-    getStepWidth, 
-    inputIsGoBackCommand, 
+    selectPrintPyramidCommand,
+    getNumberOfLinesFromUser,
+    getStepWidth,
+    inputIsGoBackCommand,
     getErrorMessagePrefix
 )
-from generator import generateSequence
+from generator import generateSequence, getListOfSequenceNames
 
 
 # Sequence name dictionary
 _FULL_NAMES_OF_SEQUENCES = {
-    "fibonacci": "Fibonacci Sequence",
-    "triangle": "Triangular Number Sequence",
-    "alternatingBits": "Alternating Bit Sequence",
-    "squares": "Sequence of Squares",
-    "powersOfTwos": "Sequence of Powers of Twos"
+    getListOfSequenceNames()[0]: "Fibonacci Sequence",
+    getListOfSequenceNames()[1]: "Triangular Number Sequence",
+    getListOfSequenceNames()[2]: "Alternating Bit Sequence",
+    getListOfSequenceNames()[3]: "Sequence of Squares",
+    getListOfSequenceNames()[4]: "Sequence of Powers of Twos"
 }
 
 
@@ -49,7 +50,7 @@ _OPTION_TO_GO_BACK_TO_PREVIOUS_MENU = 10
 def createLineSegment(sequence, maxLineSegmentLength, sequenceStringIndex):
     """
     Creates a segment of the pyramid on one line.
-    
+
     Params:
     sequence - Full string representing the sequence.
     maxLineSegmentLength - Maximum length of one line segment
@@ -73,7 +74,7 @@ def generateSequenceLines( \
     """
     Generates all the lines to be printed in order based on sequence and other
     options chosen by the user.
-    
+
     Params:
     sequence - Full string representing the sequence.
     numberOfLines - Number of lines the pyramid will be printed out of.
@@ -108,7 +109,7 @@ def generateSequenceLines( \
         # Pyramid is either an inverse silhouette or a real one
         for lineNumber in range(numberOfLines):
             currentLine = []
-            
+
             if not pyramidIsSilhouette and pyramidIsUpsideDown \
                     or pyramidIsSilhouette \
                     and not pyramidIsUpsideDown:
@@ -133,7 +134,7 @@ def generateSequenceLines( \
 def printPyramid(printCommand, sequence, numberOfLines, stepWidth):
     """
     Prints the pyramid out to the console.
-    
+
     Params:
     printCommand
     sequence - Full string representing the sequence.
@@ -149,7 +150,7 @@ def printPyramid(printCommand, sequence, numberOfLines, stepWidth):
         print(getErrorMessagePrefix() + "Maximum number of characters to be "
               "printed on the screen is 160. Please enter again.")
         return 
-    
+
     if printCommand == _OPTION_TO_PRINT_UPSIDE_PYRAMID_ALIGNED_LEFT \
             or printCommand == _OPTION_TO_PRINT_ALL_PYRAMID_TYPES:
         # Pyramid with right angle on bottom left
@@ -174,7 +175,7 @@ def printPyramid(printCommand, sequence, numberOfLines, stepWidth):
 
     if printCommand == _OPTION_TO_PRINT_FULL_UPSIDE_PYRAMID \
             or printCommand == _OPTION_TO_PRINT_ALL_PYRAMID_TYPES:
-        # Pyramid with base on the bottom side and made up of two joined 
+        # Pyramid with base on the bottom side and made up of two joined
         # triangles
         pyramidLines = generateSequenceLines(
                 sequence, numberOfLines, stepWidth, False, True, False)
@@ -188,7 +189,7 @@ def printPyramid(printCommand, sequence, numberOfLines, stepWidth):
 
     if printCommand == _OPTION_TO_PRINT_FULL_UPSIDE_SILHOUETTE_PYRAMID \
             or printCommand == _OPTION_TO_PRINT_ALL_PYRAMID_TYPES:
-        # Pyramid is a silhouette made up of spaces with filled characters 
+        # Pyramid is a silhouette made up of spaces with filled characters
         # outside it, with base on bottom
         pyramidLines = generateSequenceLines(
                 sequence, numberOfLines, stepWidth, False, False, True)
@@ -224,7 +225,7 @@ def printPyramid(printCommand, sequence, numberOfLines, stepWidth):
 
     if printCommand == _OPTION_TO_PRINT_FULL_UPSIDE_DOWN_PYRAMID \
             or printCommand == _OPTION_TO_PRINT_ALL_PYRAMID_TYPES:\
-        # Pyramid with base on the top side and made up of two joined 
+        # Pyramid with base on the top side and made up of two joined
         # triangles
         pyramidLines = generateSequenceLines(
                 sequence, numberOfLines, stepWidth, True, True, False)
@@ -238,7 +239,7 @@ def printPyramid(printCommand, sequence, numberOfLines, stepWidth):
 
     if printCommand == _OPTION_TO_PRINT_FULL_UPSIDE_DOWN_SILHOUETTE_PYRAMID \
             or printCommand == _OPTION_TO_PRINT_ALL_PYRAMID_TYPES:
-        # Pyramid is a silhouette made up of spaces with filled characters 
+        # Pyramid is a silhouette made up of spaces with filled characters
         # outside it, with base on top
         pyramidLines = generateSequenceLines(
                 sequence, numberOfLines, stepWidth, True, False, True)
@@ -254,7 +255,7 @@ def printPyramid(printCommand, sequence, numberOfLines, stepWidth):
 def printSequencePyramids(sequenceName):
     """
     Loop for interacting with sequence-based pyramids.
-    
+
     Params:
     sequenceName - The name of the sequence to generate the full sequence
     string.

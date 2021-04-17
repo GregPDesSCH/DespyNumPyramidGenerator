@@ -4,8 +4,9 @@
 
     Starting point for this program.
 
+    Initial Version
     Start Date: January 24, 2021
-    End Date:
+    End Date: April 17, 2021
 
     File Name: main.py
 
@@ -15,6 +16,7 @@ from inputs import selectSequence
 from number_triangles import printNumberTrianglePyramids
 from sequences import printSequencePyramids
 from simple import printSimplePyramids
+from generator import getListOfSequenceNames, getListOfNumberTriangleNames
 
 # Main menu selection constants
 _OPTION_FOR_SIMPLE_PYRAMID = 1
@@ -27,22 +29,27 @@ _OPTION_TO_QUIT_PROGRAM = 12
 
 def _selectSequence(sequenceIndex):
     """
-    Selects a mathematical sequence to generate the numbers and print the 
+    Selects a mathematical sequence to generate the numbers and print the
     pyramid.
 
     Params:
     sequenceIndex - User's selection of what sequence to interact.
     """
     if sequenceIndex == 2:
-        printSequencePyramids("fibonacci") # Fibonacci sequence
+        # Fibonacci sequence
+        printSequencePyramids(getListOfSequenceNames()[0])
     elif sequenceIndex == 3:
-        printSequencePyramids("triangle") # Triangle numbers
+        # Triangle numbers
+        printSequencePyramids(getListOfSequenceNames()[1])
     elif sequenceIndex == 4:
-        printSequencePyramids("alternatingBits") # Alternating bits
+        # Alternating bits
+        printSequencePyramids(getListOfSequenceNames()[2])
     elif sequenceIndex == 5:
-        printSequencePyramids("squares") # Sequence of squares
+        # Sequence of squares
+        printSequencePyramids(getListOfSequenceNames()[3])
     elif sequenceIndex == 6:
-        printSequencePyramids("powersOfTwos") # Sequence of powers of twos
+        # Sequence of powers of twos
+        printSequencePyramids(getListOfSequenceNames()[4])
 
 def _selectNumberTriangle(sequenceIndex):
     """
@@ -52,16 +59,20 @@ def _selectNumberTriangle(sequenceIndex):
     sequenceIndex - User's selection of what sequence to interact.
     """
     if sequenceIndex == 7:
-        printNumberTrianglePyramids("pascal") # Pascal's Triangle
+        # Pascal's Triangle
+        printNumberTrianglePyramids(getListOfNumberTriangleNames()[0])
     elif sequenceIndex == 8:
-        printNumberTrianglePyramids("euler") # Euler's Triangle
+        # Euler's Triangle
+        printNumberTrianglePyramids(getListOfNumberTriangleNames()[1])
     elif sequenceIndex == 9:
-        printNumberTrianglePyramids("catalan") # Catalan's Triangle
+        # Catalan's Triangle
+        printNumberTrianglePyramids(getListOfNumberTriangleNames()[2])
     elif sequenceIndex == 10:
-        printNumberTrianglePyramids("bernoulli") # Bernoulli's Triangle
+        # Bernoulli's Triangle
+        printNumberTrianglePyramids(getListOfNumberTriangleNames()[3])
     elif sequenceIndex == 11:
         # Seidel-Entringer-Arnold Triangle
-        printNumberTrianglePyramids("seidelEntringerArnold") 
+        printNumberTrianglePyramids(getListOfNumberTriangleNames()[4])
 
 def main():
     """Main program loop"""
@@ -72,7 +83,7 @@ def main():
         sequenceIndex = selectSequence()
 
         if sequenceIndex == _OPTION_FOR_SIMPLE_PYRAMID:
-            printSimplePyramids() 
+            printSimplePyramids()
         elif sequenceIndex >= _FIRST_OPTION_FOR_SEQUENCE_OPTION \
                 and sequenceIndex <= _LAST_OPTION_FOR_SEQUENCE_OPTION:
             _selectSequence(sequenceIndex) 
