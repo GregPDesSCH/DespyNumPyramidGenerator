@@ -28,7 +28,7 @@ _OPTION_TO_QUIT_PROGRAM = 12
 
 def _selectSequence(sequenceIndex):
     """
-    Selects a mathematical sequence to generate the numbers and print the 
+    Selects a mathematical sequence to generate the numbers and print the
     pyramid.
 
     Params:
@@ -36,19 +36,19 @@ def _selectSequence(sequenceIndex):
     """
     if sequenceIndex == 2:
         # Fibonacci sequence
-        printSequencePyramids(getListOfSequenceNames()[0]) 
+        printSequencePyramids(getListOfSequenceNames()[0])
     elif sequenceIndex == 3:
         # Triangle numbers
-        printSequencePyramids(getListOfSequenceNames()[1]) 
+        printSequencePyramids(getListOfSequenceNames()[1])
     elif sequenceIndex == 4:
         # Alternating bits
-        printSequencePyramids(getListOfSequenceNames()[2]) 
+        printSequencePyramids(getListOfSequenceNames()[2])
     elif sequenceIndex == 5:
         # Sequence of squares
-        printSequencePyramids(getListOfSequenceNames()[3]) 
+        printSequencePyramids(getListOfSequenceNames()[3])
     elif sequenceIndex == 6:
         # Sequence of powers of twos
-        printSequencePyramids(getListOfSequenceNames()[4]) 
+        printSequencePyramids(getListOfSequenceNames()[4])
 
 def _selectNumberTriangle(sequenceIndex):
     """
@@ -71,7 +71,7 @@ def _selectNumberTriangle(sequenceIndex):
         printNumberTrianglePyramids(getListOfNumberTriangleNames()[3])
     elif sequenceIndex == 11:
         # Seidel-Entringer-Arnold Triangle
-        printNumberTrianglePyramids(getListOfNumberTriangleNames()[4]) 
+        printNumberTrianglePyramids(getListOfNumberTriangleNames()[4])
 
 def main():
     """Main program loop"""
@@ -82,7 +82,7 @@ def main():
         sequenceIndex = selectSequence()
 
         if sequenceIndex == _OPTION_FOR_SIMPLE_PYRAMID:
-            printSimplePyramids() 
+            printSimplePyramids()
         elif sequenceIndex >= _FIRST_OPTION_FOR_SEQUENCE_OPTION \
                 and sequenceIndex <= _LAST_OPTION_FOR_SEQUENCE_OPTION:
             _selectSequence(sequenceIndex) 
