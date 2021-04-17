@@ -14,6 +14,8 @@ After cloning the repo, navigate to the folder using a terminal of your choice, 
 python src/main.py
 ```
 
+If you have Visual Studio Code installed on your machine, you can also use the provided launch.json file to run the program after opening the project directory there. Open the Run and Debug Panel, then click on the green play button on the configuration combo box, or press either <kbd>F5</kbd> (debug mode) or <kbd>Ctrl</kbd> + <kbd>F5</kbd> (non-debug mode).
+
 Use the number keys and Enter key on your keyboard to navigate the menus and select what you want to print out and how, including orientation, the number of lines, the width of each step (not supported for famous number triangles).
 
 Unless otherwise stated below, you can select to print between 3 to 80 lines.
@@ -66,7 +68,7 @@ Share your comments, suggestions, and improvements, [here in the repo Issue Page
 
 ## Author and Acknowledgements
 
-Initial ideas of which number triangles to research and program the generators were found from the [Number Triangles (Triangular Arrays of Numbers): Pascal's Triangle, Others, and The Birth of a New One](https://upload.wikimedia.org/wikipedia/commons/f/fc/Number_Triangle_-_Birth_of_New_One.pdf) report by Jonipol E. Fortaliza of the Notre Dame of Marbel University in Koronadal, Philippines.
+Initial ideas of which number triangles to research and program the generators were found from the [Number Triangles (Triangular Arrays of Numbers): Pascal's Triangle, Others, and The Birth of a New One](https://upload.wikimedia.org/wikipedia/commons/f/fc/Number_Triangle_-_Birth_of_New_One.pdf) report by Jonipol E. Fortaliza of the Notre Dame of Marbel University in Koronadal, Philippines. Additional insights on the number triangles, including recurrence formulas, were from Wolfram MathWorld.
 
 I would like to thank [Emmanuel Acheampong](https://github.com/acheamponge) for providing me a starting motivation to side projects.
 
