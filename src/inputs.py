@@ -189,7 +189,7 @@ def selectPrintPyramidCommand(
                       f"{_FIRST_OPTION_FOR_PRINTING}-{lastCommandIndex}].")
 
         print()
-    
+
     return printCommand
 
 
@@ -232,7 +232,7 @@ def getNumberOfLinesFromUser(
                       ".")
 
         print()
-        
+
     return numberOfLines
 
 
