@@ -13,8 +13,8 @@
 
 from generator import generateNumberTriangle, getListOfNumberTriangleNames
 from inputs import (
-    selectPrintPyramidCommand, 
-    getNumberOfLinesFromUser, 
+    selectPrintPyramidCommand,
+    getNumberOfLinesFromUser,
     inputIsGoBackCommand
 )
 
@@ -47,7 +47,7 @@ def generateNumberTriangleLines(numberTriangle):
     """
     Generate the lines that when printed will give the number triangle
     appearance.
-    
+
     Params:
     numberTriangle - 2D list representing elements of a number triangle
 
