@@ -14,11 +14,11 @@
 from conditions import numberOfCharactersToPrintIsTooHigh
 from inputs import ( 
     selectPrintPyramidCommand,
-    getNumberOfLinesFromUser, 
-    getStepWidth, 
-    inputIsGoBackCommand, 
-    getErrorMessagePrefix, 
-    getInputEmptyErrorMessage 
+    getNumberOfLinesFromUser,
+    getStepWidth,
+    inputIsGoBackCommand,
+    getErrorMessagePrefix,
+    getInputEmptyErrorMessage
 )
 
 
