@@ -4,8 +4,9 @@
 
     Holds functions for common checks.
 
+    Initial Version
     Start Date: March 8, 2021
-    End Date:
+    End Date: April 17, 2021
 
     File Name: conditions.py
 
@@ -34,7 +35,7 @@ def numberIsAWholeNumber(rawNumber):
 
 def numberOfCharactersToPrintIsTooHigh(printCommand, numberOfLines, stepWidth):
     """
-    Checks if the required number of characters to print out at most is over 
+    Checks if the required number of characters to print out at most is over
     the console width limit.
     (only for simple pyramids and pyramids involving sequences)
 

@@ -4,8 +4,9 @@
 
     Holds common input functions.
 
+    Initial Version
     Start Date: March 10, 2021
-    End Date:
+    End Date: April 17, 2021
 
     File Name: inputs.py
 
@@ -139,20 +140,20 @@ def printPyramidCommandMenu(triangleIsANumberTriangle):
     print("Pick an option from one of the following:")
 
     if triangleIsANumberTriangle:
-        print("1 - Left Pyramid", "2 - Right Pyramid", "3 - Center Pyramid", 
-              "4 - Upside Down Left Pyramid", "5 - Upside Down Right Pyramid", 
-              "6 - Upside Down Center Pyrmaid", "7 - All Options", 
+        print("1 - Left Pyramid", "2 - Right Pyramid", "3 - Center Pyramid",
+              "4 - Upside Down Left Pyramid", "5 - Upside Down Right Pyramid",
+              "6 - Upside Down Center Pyrmaid", "7 - All Options",
               "8 - Back to Previous Menu", sep=_PRINT_LINE_SEPARATOR)
     else:
-        print("1 - Left Pyramid", "2 - Right Pyramid", "3 - Full Pyramid", 
-              "4 - Silhouette Pyramid", "5 - Upside Down Left Pyramid", 
-              "6 - Upside Down Right Pyramid",  "7 - Upside Down Pyrmaid", 
-              "8 - Silhouette Pyramid (Upside Down)", "9 - All Options", 
+        print("1 - Left Pyramid", "2 - Right Pyramid", "3 - Full Pyramid",
+              "4 - Silhouette Pyramid", "5 - Upside Down Left Pyramid",
+              "6 - Upside Down Right Pyramid",  "7 - Upside Down Pyrmaid",
+              "8 - Silhouette Pyramid (Upside Down)", "9 - All Options",
               "10 - Back to Previous Menu", sep=_PRINT_LINE_SEPARATOR)
 
     
 def selectPrintPyramidCommand(
-        lastCommandIndex = 10, 
+        lastCommandIndex = 10,
         triangleIsANumberTriangle = False):
     """
     Reads in user input for selecting which orientation to print the pyramid
@@ -189,7 +190,7 @@ def selectPrintPyramidCommand(
                       f"{_FIRST_OPTION_FOR_PRINTING}-{lastCommandIndex}].")
 
         print()
-    
+
     return printCommand
 
 
@@ -232,7 +233,7 @@ def getNumberOfLinesFromUser(
                       ".")
 
         print()
-        
+
     return numberOfLines
 
 

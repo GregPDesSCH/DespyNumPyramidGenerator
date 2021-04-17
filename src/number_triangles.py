@@ -4,27 +4,28 @@
 
     Script responsible for printing number triangles
 
+    Initial Version
     Start Date: March 18, 2021
-    End Date:
+    End Date: April 17, 2021
 
     File Name: number_triangles.py
 
 """
 
-from generator import generateNumberTriangle
+from generator import generateNumberTriangle, getListOfNumberTriangleNames
 from inputs import (
-    selectPrintPyramidCommand, 
-    getNumberOfLinesFromUser, 
+    selectPrintPyramidCommand,
+    getNumberOfLinesFromUser,
     inputIsGoBackCommand
 )
 
 # Number triangle name dictionary
 _FULL_NAMES_OF_NUMBER_TRIANGLES = {
-    "pascal": "Pascal's Triangle",
-    "euler": "Euler's Triangle",
-    "catalan": "Catalan's Triangle",
-    "bernoulli": "Bernoulli's Triangle",
-    "seidelEntringerArnold": "The Seidel-Entringer-Arnold Triangle"
+    getListOfNumberTriangleNames()[0]: "Pascal's Triangle",
+    getListOfNumberTriangleNames()[1]: "Euler's Triangle",
+    getListOfNumberTriangleNames()[2]: "Catalan's Triangle",
+    getListOfNumberTriangleNames()[3]: "Bernoulli's Triangle",
+    getListOfNumberTriangleNames()[4]: "The Seidel-Entringer-Arnold Triangle"
 }
 
 # Constants for alignment mode options
@@ -47,7 +48,7 @@ def generateNumberTriangleLines(numberTriangle):
     """
     Generate the lines that when printed will give the number triangle
     appearance.
-    
+
     Params:
     numberTriangle - 2D list representing elements of a number triangle
 
@@ -103,7 +104,7 @@ def printPyramid(triangleLines, numberOfLines, alignMode, printInReverse):
 def printDesiredPyramid(printCommand, triangleLines, numberOfLines):
     """
     Calls a helper function to print the pyramid with the desired options.
-    
+
     Params:
     printCommand - User's choice for pyramid orientation.
     triangleLines - List of strings to print the number triangle in order.
@@ -111,37 +112,43 @@ def printDesiredPyramid(printCommand, triangleLines, numberOfLines):
     """
     if printCommand == _OPTION_TO_PRINT_UPSIDE_PYRAMID_ALIGNED_LEFT \
             or printCommand == _OPTION_TO_PRINT_ALL_PYRAMID_TYPES:
+        # Prints a left pyramid
         printPyramid(triangleLines, numberOfLines, _TRIANGLE_LEFT_ALIGN_MODE, \
-                     False) # Prints a left pyramid
+                     False)
 
     if printCommand == _OPTION_TO_PRINT_UPSIDE_PYRAMID_ALIGNED_RIGHT \
             or printCommand == _OPTION_TO_PRINT_ALL_PYRAMID_TYPES:
+        # Prints a right pyramid
         printPyramid(triangleLines, numberOfLines, \
                      _TRIANGLE_RIGHT_ALIGN_MODE, \
-                     False) # Prints a right pyramid
+                     False)
 
     if printCommand == _OPTION_TO_PRINT_FULL_UPSIDE_PYRAMID \
             or printCommand == _OPTION_TO_PRINT_ALL_PYRAMID_TYPES:
+        # Prints a full pyramid
         printPyramid(triangleLines, numberOfLines, \
                      _TRIANGLE_CENTER_ALIGN_MODE, \
-                     False) # Prints a full pyramid
+                     False)
 
     if printCommand == _OPTION_TO_PRINT_UPSIDE_DOWN_PYRAMID_ALIGNED_LEFT \
             or printCommand == _OPTION_TO_PRINT_ALL_PYRAMID_TYPES:
+        # Prints an upside-down left pyramid
         printPyramid(triangleLines, numberOfLines, _TRIANGLE_LEFT_ALIGN_MODE, \
-                     True) # Prints an upside-down left pyramid
+                     True)
 
     if printCommand == _OPTION_TO_PRINT_UPSIDE_DOWN_PYRAMID_ALIGNED_RIGHT \
             or printCommand == _OPTION_TO_PRINT_ALL_PYRAMID_TYPES:
+        # Prints an upside-down right pyramid
         printPyramid(triangleLines, numberOfLines, \
                      _TRIANGLE_RIGHT_ALIGN_MODE, \
-                     True) # Prints an upside-down right pyramid
+                     True)
 
     if printCommand == _OPTION_TO_PRINT_FULL_UPSIDE_DOWN_PYRAMID \
             or printCommand == _OPTION_TO_PRINT_ALL_PYRAMID_TYPES:
+        # Prints an upside-down full pyramid
         printPyramid(triangleLines, numberOfLines, \
                      _TRIANGLE_CENTER_ALIGN_MODE, \
-                     True) # Prints an upside-down full pyramid
+                     True)
 
 
 def printNumberTrianglePyramids(numberTriangleName):

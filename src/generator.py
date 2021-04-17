@@ -2,12 +2,13 @@
 
     DespyNumPyramidGenerator - Generator
 
-    Script to generate sequences and famous triangles
+    Script to generate sequences and number triangles.
 
+    Initial Version
     Start Date: March 17, 2021
-    End Date:
+    End Date: April 17, 2021
 
-    File Name: sequences.py
+    File Name: generator.py
 
 """
 
@@ -20,6 +21,34 @@ _MAX_NUMBER_OF_CHARACTERS_TO_PRINT = 12880
 # Max characters to print in one line
 _MAX_NUMBER_OF_CHARACTERS_IN_ONE_LINE = 160
 
+# Sequence name list
+_LIST_OF_SEQUENCE_NAMES = [
+    "fibonacci", "triangle", "alternatingBits", "squares", "powersOfTwos"
+]
+
+# Number triangle name list
+_LIST_OF_NUMBER_TRIANGLE_NAMES = [
+    "pascal", "euler", "catalan", "bernoulli", "seidelEntringerArnold"
+]
+
+
+def getListOfSequenceNames():
+    """
+    Gets a list of names for all the sequences to be used as arguments.
+
+    Returns:
+    _LIST_OF_SEQUENCE_NAMES - Sequence name list.
+    """
+    return _LIST_OF_SEQUENCE_NAMES
+
+def getListOfNumberTriangleNames():
+    """
+    Gets a list of names for all the number triangles to be used as arguments.
+
+    Returns:
+    _LIST_OF_NUMBER_TRIANGLE_NAMES - Number triangle name list.
+    """
+    return _LIST_OF_NUMBER_TRIANGLE_NAMES
 
 def _generateFibonacciSequence():
     """

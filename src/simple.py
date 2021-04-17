@@ -4,8 +4,9 @@
 
     Performs simple pyramid prints.
 
+    Initial Version
     Start Date: March 9, 2021
-    End Date:
+    End Date: April 17, 2021
 
     File Name: simple.py
 
@@ -14,11 +15,11 @@
 from conditions import numberOfCharactersToPrintIsTooHigh
 from inputs import ( 
     selectPrintPyramidCommand,
-    getNumberOfLinesFromUser, 
-    getStepWidth, 
-    inputIsGoBackCommand, 
-    getErrorMessagePrefix, 
-    getInputEmptyErrorMessage 
+    getNumberOfLinesFromUser,
+    getStepWidth,
+    inputIsGoBackCommand,
+    getErrorMessagePrefix,
+    getInputEmptyErrorMessage
 )
 
 
