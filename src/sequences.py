@@ -2,10 +2,11 @@
 
     DespyNumPyramidGenerator - Sequences
 
-    Script responsible for printing triangles as sequences
+    Script responsible for printing sequences as triangles
 
+    Initial Version
     Start Date: March 6, 2021
-    End Date:
+    End Date: April 17, 2021
 
     File Name: sequences.py
 
