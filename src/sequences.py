@@ -19,16 +19,16 @@ from inputs import (
     inputIsGoBackCommand, 
     getErrorMessagePrefix
 )
-from generator import generateSequence
+from generator import generateSequence, getListOfSequenceNames
 
 
 # Sequence name dictionary
 _FULL_NAMES_OF_SEQUENCES = {
-    "fibonacci": "Fibonacci Sequence",
-    "triangle": "Triangular Number Sequence",
-    "alternatingBits": "Alternating Bit Sequence",
-    "squares": "Sequence of Squares",
-    "powersOfTwos": "Sequence of Powers of Twos"
+    getListOfSequenceNames()[0]: "Fibonacci Sequence",
+    getListOfSequenceNames()[1]: "Triangular Number Sequence",
+    getListOfSequenceNames()[2]: "Alternating Bit Sequence",
+    getListOfSequenceNames()[3]: "Sequence of Squares",
+    getListOfSequenceNames()[4]: "Sequence of Powers of Twos"
 }
 
 
